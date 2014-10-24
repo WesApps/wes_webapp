@@ -1,0 +1,45 @@
+body {
+	font-family: 'EB Garamond', serif;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+    color: red;
+}
+.navbar > ul >li {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.navbar > ul > li > a {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    padding-bottom: 4px;
+}
+.navbar > ul > li > a:hover {
+    text-decoration: none;
+    color: red;
+}
+.navbar-holder {
+	font-size: 1.3em;
+	padding-top: 20px;
+    text-align: center;
+}
+.navbar > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar > ul > li {
+    display: inline;
+}
+.logo {
+    font-size: 4em;
+}
+.logo > a {
+    text-decoration: none;
+    border: none !important;
+}
