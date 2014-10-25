@@ -1,5 +1,5 @@
 body {
-	font-family: 'EB Garamond', serif;
+    font-family: 'EB Garamond', serif;
 }
 a {
     text-decoration: none;
@@ -9,32 +9,34 @@ a:hover {
     text-decoration: none;
     color: red;
 }
-.navbar > ul >li {
-    padding-left: 10px;
-    padding-right: 10px;
+@media (min-width: 769px) {
+    .container-fluid {
+        display: inline-block;
+    }
 }
-.navbar > ul > li > a {
+.navbar-default .navbar-nav>li>a {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: black;
+    padding: 0px 0px;
     padding-bottom: 4px;
-}
-.navbar > ul > li > a:hover {
+    margin-left: 10px;
+    margin-right: 10px;
     text-decoration: none;
-    color: red;
+    color: black;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+   	color: red; 
+}
+.navbar-default {
+    background: transparent;
+    border: none;
 }
 .navbar-holder {
-	font-size: 1.3em;
-	padding-top: 20px;
+    padding-top: 40px;
+    font-size: 1.3em;
     text-align: center;
-}
-.navbar > ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.navbar > ul > li {
-    display: inline;
 }
 .logo {
     font-size: 4em;
@@ -42,4 +44,8 @@ a:hover {
 .logo > a {
     text-decoration: none;
     border: none !important;
+}
+.logo > a:hover {
+    text-decoration: none !important;
+    color: black !important;
 }
