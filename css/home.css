@@ -1,6 +1,15 @@
-.title {
-	font-size: 3em;
+/*.title {
+	font-size: 7em;
+	color: darkcyan
+}*/
+
+#about-row {
+    margin: auto;
+    padding-top: 200px;
 }
 .about {
-	font-size: 3em;
+    font-size: 3em;
+}
+p {
+    color: rgb(65, 56, 56);
 }
