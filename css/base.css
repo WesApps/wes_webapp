@@ -1,6 +1,9 @@
 body {
     font-family: 'EB Garamond', serif;
     background: rgb(254, 255, 233);
+    border-top-style: solid;
+	border-top-color: rgba(146, 0, 0, 0.11);
+	border-width: 11px;
 }
 a {
     text-decoration: none;
@@ -18,7 +21,7 @@ a:hover {
 .navbar-default .navbar-nav>li>a {
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: black;
+    border-bottom-color: rgb(94, 113, 151);
     padding: 0px 0px;
     padding-bottom: 3px;
     margin-left: 10px;
@@ -30,7 +33,9 @@ a:hover {
     letter-spacing: 0.04em;
 }
 .navbar-default .navbar-nav>li>a:hover {
-    color: rgba(60, 70, 84, 0.73);
+    color: rgb(94, 113, 151);
+    border-bottom-color: rgba(94, 113, 151,0.7);
+    border-bottom-width: 10px;
 }
 .navbar-default {
     background: transparent;
@@ -56,4 +61,19 @@ a:hover {
 .logo > a:hover {
     text-decoration: none !important;
     color: rgba(229, 111, 111, 0.4) !important;
+}
+.active-nav {
+	/*color: rgb(94, 113, 151) !important;*/
+    /*border-bottom-color: rgba(94, 113, 151,0.7) !important;*/
+    border-bottom-color: lightcoral !important;
+    border-bottom-width: 10px !important;
+}
+
+.title {
+	color: rgba(105, 82, 82, 0.34);
+	font-variant:small-caps;
+	font-size: 7em;
+	letter-spacing:15px;
+	color: rgba(105, 82, 82, 0.34);
+	margin-top: 0px;
 }
