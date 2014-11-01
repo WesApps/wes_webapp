@@ -23,6 +23,7 @@
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <script src="../js/directory.js"></script>
 </head>
+
 <body>
     <!-- NAVBAR -->
     <div class="navbar-holder container">
@@ -68,8 +69,15 @@
     <div class="row" id="about-row">
         <div id="directory-container" class="col-md-8 col-md-offset-2">
             <h1 class="title">Directory</h1>
+            <!-- Search Bar -->
+            <input type="search" id="directory-search" class="form-control" placeholder="Search..." autofocus="autofocus">
+
+            <!-- Content -->
+            <div ul="directory-list-container">
+                <ul id="directory-list">
+                </ul>
+            </div>
         </div>
-    </div>
 </body>
 
 </html>

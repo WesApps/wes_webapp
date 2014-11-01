@@ -1,9 +1,9 @@
 body {
     font-family: 'EB Garamond', serif;
-    background: rgb(254, 255, 233);
     border-top-style: solid;
-	border-top-color: rgba(146, 0, 0, 0.11);
 	border-width: 11px;
+	background: rgb(254, 255, 233);
+	border-top-color: rgba(146, 0, 0, 0.11);
 }
 a {
     text-decoration: none;
@@ -72,8 +72,9 @@ a:hover {
 .title {
 	color: rgba(105, 82, 82, 0.34);
 	font-variant:small-caps;
-	font-size: 7em;
+	font-size: 4em;
 	letter-spacing:15px;
 	color: rgba(105, 82, 82, 0.34);
-	margin-top: 0px;
+	margin-top: -10px;
+	padding-top: -10px;
 }

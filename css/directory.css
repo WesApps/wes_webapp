@@ -1,3 +1,54 @@
+#directory-search {
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px !important;
+    font-size: 1.2em;
+    background: rgb(255, 249, 232);
+}
+textarea:focus, input[type="search"]:focus {
+    border-color: rgba(118, 114, 114, 0.48);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(147, 127, 127, 0.77);
+    outline: 0 none;
+}
+li {
+    list-style: none;
+}
 #directory-container {
-	text-align: center;
+    text-align: center;
+    font-size: 2em;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#directory-list {
+    padding-top: 40px;
+    padding-left: 0px;
+}
+.entry-name {
+    font-size: 1.2em;
+    font-variant: small-caps;
+    max-width: 500px;
+    /* float: left; */
+    
+    text-align: left;
+    display: inline;
+    float: left;
+}
+.entry-data {
+    display: inline;
+    max-width: 500px;
+}
+.entry-li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    text-align: right;
+}
+.field-div {
+    text-align: left;
+    display: inline;
+    font-weight: bold;
+}
+.field-data {
+    display: inline;
 }
