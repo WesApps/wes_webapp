@@ -1,5 +1,3 @@
-//EXAMPLE!
-
 //on page load, initialize
 $(document).ready(initialize_directory)
 
@@ -24,15 +22,13 @@ function get_directory() {
 
 //handles successful fetch of directory
 function directory_callback(res) {
-    console.log(res);
     var result_count = res["Result Count"];
     var results = res["Results"];
 
     var dirlist = $("#directory-list")[0]
 
-    //display results in a table
+    //display results
     for (i in results) {
-        // console.log(i,results[i]);
         var name = results[i]["name"];
         var raw_data = results[i]["data"];
         var data_ul = document.createElement("ul");
@@ -55,14 +51,9 @@ function directory_callback(res) {
             } else {
                 field_data.innerHTML = data;
             }
-            // }
-            // if typeof()
-            // document.createElement()
-            // console.log(d,raw_data[d])
         }
         var newEntry = document.createElement("li");
         newEntry.setAttribute("class", "entry-li")
-            // newEntry.setAttribute("id", "entry_" + i)
 
         //name
         var entryName = document.createElement("div");
@@ -102,11 +93,30 @@ function filterEntries(query) {
         var name = curr_entries[i].children[0].innerHTML.toLocaleLowerCase();
         //if query not in entry, hide this li element.
         if (name.indexOf(query.toLocaleLowerCase()) == -1) {
-            console.log("1")
             curr_entries[i].hidden = true;
         } else {
-            console.log("2", curr_entries[i])
             curr_entries[i].hidden = false;
         }
     }
 }
+
+
+// function checkScrollBars() {
+//     var b = $('body');
+//     var normalw = 0;
+//     var scrollw = 0;
+//     if (b.prop('scrollHeight') > b.height()) {
+//         normalw = window.innerWidth;
+//         scrollw = normalw - b.width();
+//         $("body").css({
+//             marginRight: '-' + scrollw + 'px'
+//         });
+//     }
+// }
+
+
+// $(document).ready(function() {
+//     if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+//         checkScrollBars()
+//     }
+// })

@@ -1,0 +1,65 @@
+.title {
+    padding-bottom: 40px;
+    transition: text-shadow, 2.4s, ease;
+    color: transparent;
+    text-shadow: #343434 1px 1px 25px;
+}
+#films-list-heading {
+    font-size: 2em;
+    color: rgba(4, 101, 255, 0.35);
+    font-weight: bold;
+    font-variant: small-caps;
+    ;
+}
+#films-search {} #film-row {
+    text-align: center;
+    font-size: 2em;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#films-list-container {
+    background: rgba(255, 216, 109, 0.1);
+}
+#film-display-container {
+    /*border-style: solid;*/
+    /*border-width: 1px;*/
+    /*border-color: red;*/
+    height: 650px;
+    text-align: left;
+}
+#films-list {
+    text-align: left;
+    padding: 0px;
+}
+.film-entry-container {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+.film-entry-container:hover {
+    background: rgba(255, 83, 83, 0.05);
+    cursor: pointer;
+}
+.film-entry-name {
+    font-size: 1em;
+}
+.film-entry-time {
+    font-size: 0.8em;
+    color: rgba(64, 63, 63, 0.86);
+}
+#films-table-scroll {
+    overflow: auto;
+    height: 520px;
+}
+#films-table {
+    width: 100%;
+}
+#film-display-title {
+    font-style: italic;
+    font-size: 1.8em;
+}
+#film-display-imdb {
+    font-size: 0.7em;
+}
+#films-search {
+    margin-bottom: 20px
+}

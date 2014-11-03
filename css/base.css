@@ -1,13 +1,20 @@
+html {
+    height: 100%;
+}
 body {
+    height: 100%;
     font-family: 'EB Garamond', serif;
     border-top-style: solid;
-	border-width: 11px;
-	background: rgb(254, 255, 233);
-	border-top-color: rgba(146, 0, 0, 0.11);
+    background: rgb(254, 255, 233);
+    border-top-color: rgba(146, 0, 0, 0.11);
+    border-width: 11px;
 }
 a {
     text-decoration: none;
     color: inherit;
+}
+.row {
+    width: 100%;
 }
 a:hover {
     text-decoration: none;
@@ -34,7 +41,7 @@ a:hover {
 }
 .navbar-default .navbar-nav>li>a:hover {
     color: rgb(94, 113, 151);
-    border-bottom-color: rgba(94, 113, 151,0.7);
+    border-bottom-color: rgba(94, 113, 151, 0.7);
     border-bottom-width: 10px;
 }
 .navbar-default {
@@ -63,18 +70,18 @@ a:hover {
     color: rgba(229, 111, 111, 0.4) !important;
 }
 .active-nav {
-	/*color: rgb(94, 113, 151) !important;*/
+    /*color: rgb(94, 113, 151) !important;*/
     /*border-bottom-color: rgba(94, 113, 151,0.7) !important;*/
+    
     border-bottom-color: lightcoral !important;
     border-bottom-width: 10px !important;
 }
-
 .title {
-	color: rgba(105, 82, 82, 0.34);
-	font-variant:small-caps;
-	font-size: 3em;
-	letter-spacing:15px;
-	color: rgba(105, 82, 82, 0.34);
-	margin-top: -10px;
-	padding-top: -10px;
+    color: rgba(105, 82, 82, 0.34);
+    font-variant: small-caps;
+    font-size: 3em;
+    letter-spacing: 15px;
+    color: rgba(105, 82, 82, 0.34);
+    margin-top: -10px;
+    padding-top: -10px;
 }

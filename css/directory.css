@@ -51,6 +51,7 @@ li {
     text-align: left;
     display: inline;
     font-weight: bold;
+    text-transform: capitalize;
 }
 .field-data {
     display: inline;

@@ -17,11 +17,79 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
 
     <script src="../js/filmseries.js"></script>
-</head>
-<body>
-    <h1>Film Series</h1>
-</body>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/filmseries.css">
+
+    <body>
+        <!-- NAVBAR -->
+        <div class="navbar-holder container">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="menus.html">Menus</a>
+                            </li>
+                            <li>
+                                <a href="events.html">Events</a>
+                            </li>
+                            <li>
+                                <a href="filmseries.html" class="active-nav">Film Series</a>
+                            </li>
+                            <li class="logo">
+                                <a href="home.html">Wes App</a>
+                            </li>
+                            <li>
+                                <a href="directory.html">Directory</a>
+                            </li>
+                            <li>
+                                <a href="miscellaneous.html">Miscellaneous</a>
+                            </li>
+                            <li>
+                                <a href="social.html">Social</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- END NAVBAR -->
+
+        <div class="row" id="film-row">
+            <h1 class="title">Film Series</h1>
+            <div id="films-container">
+                <div id="films-list-container" class="col-md-3 col-md-offset-1">
+                    <!-- Search Bar -->
+                    <div id="films-list-heading">Films</div>
+                    <input type="search" id="films-search" class="form-control" placeholder="Search..." autofocus="autofocus">
+                    <!-- <ul id="films-list"> -->
+                    <div id="films-table-scroll">
+                        <table id="films-table">
+                            <tbody id="films-list">
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- </ul> -->
+                </div>
+                <div id="film-display-container" class="col-md-6 col-md-offset-1">
+                    <h1 id="film-display-title"></h1>
+                    <h2 id="film-display-time"></h2>
+                    <h3 id="film-display-short"></h3>
+                    <a href="" target="_blank" id="film-display-imdb"></a>
+                    <p id="film-display-long"></p>
+                </div>
+            </div>
+    </body>
 
 </html>
