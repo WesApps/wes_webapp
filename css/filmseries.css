@@ -1,6 +1,11 @@
 .title {
-    padding-bottom: 40px;
-    transition: text-shadow, 2.4s, ease;
+    padding-bottom: 40px !important;
+    transition-property: text-shadow !important;
+    transition-timing-function: ease !important;
+    transition-delay: 0.5s !important;
+    transition-duration: 1.2s !important;
+    /*transition: text-shadow, 2.4s, ease;*/
+    
     color: transparent;
     text-shadow: #343434 1px 1px 25px;
 }
@@ -11,7 +16,21 @@
     font-variant: small-caps;
     ;
 }
-#films-search {} #film-row {
+#films-search {
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px !important;
+    background: rgb(255, 249, 232);
+    padding-left: 15px;
+    font-size: 1em;
+    max-width: 650px;
+}
+textarea:focus, input[type="search"]:focus {
+    border-color: rgba(118, 114, 114, 0.48);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(147, 127, 127, 0.77);
+    outline: 0 none;
+}
+#film-row {
     text-align: center;
     font-size: 2em;
     padding-left: 0px;
@@ -24,8 +43,14 @@
     /*border-style: solid;*/
     /*border-width: 1px;*/
     /*border-color: red;*/
+    
     height: 650px;
     text-align: left;
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: rgb(228, 220, 220);
+    padding-left: 50px;
+    margin-left: 70px;
 }
 #films-list {
     text-align: left;

@@ -1,8 +1,8 @@
 #directory-search {
     margin-left: auto;
     margin-right: auto;
-    height: 60px !important;
-    font-size: 1.2em;
+    height: 55px !important;
+    font-size: 1em;
     background: rgb(255, 249, 232);
     padding-left: 15px;
     max-width: 650px;
@@ -27,8 +27,7 @@ li {
     padding-left: 0px;
 }
 .entry-name {
-    font-size: 1.2em;
-    font-variant: small-caps;
+    font-size: 1.1em;
     max-width: 500px;
     /* float: left; */
     
@@ -50,6 +49,7 @@ li {
 .field-div {
     text-align: left;
     display: inline;
+    /* font-size: 1em; */;
     font-weight: bold;
     text-transform: capitalize;
 }

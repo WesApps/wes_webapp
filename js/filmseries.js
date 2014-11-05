@@ -20,11 +20,13 @@ function get_films() {
     })
 }
 
-
 //handles successful fetch of films
 function films_callback(res) {
     var result_count = res["Result Count"];
     var results = res["Results"];
+    var m_names = new Array("January", "February", "March",
+        "April", "May", "June", "July", "August", "September",
+        "October", "November", "December");
     //display results
     for (i in results) {
         var name = results[i]["name"];
@@ -33,7 +35,12 @@ function films_callback(res) {
         var long_info = raw_data["long"] ? raw_data["long"][0] : "";
         var imdb = raw_data["imdb"] ? raw_data["imdb"][0] : "";
         var time = raw_data["time"] ? raw_data["time"][0] : "";
+        time = time.replace("T", " ");
         var date = new Date(Date.parse(time));
+        var curr_day = date.toString().split(" ")[0];
+        var curr_date = date.getDate();
+        var curr_month = date.getMonth();
+        time = curr_day + ", " + m_names[curr_month] + " " + curr_date;
         film_data[i] = {
             "name": name,
             "short": short_info,
@@ -50,7 +57,11 @@ function populate_list(films) {
     //Populates list based on films and initializes the display
     // area with a film
     var films_list = $("#films-list")[0];
-    var today = new Date();
+    var dateObj = new Date();
+    var day = dateObj.getDate();
+    var month = dateObj.getMonth();
+    var today = new Date(dateObj.getFullYear(), month, day);
+    // console.log(current_date);
     var display_film;
 
     for (i in films) {
@@ -70,8 +81,7 @@ function populate_list(films) {
 
         var time = document.createElement("div");
         time.setAttribute("class", "film-entry-time");
-        var filmDateString = curr_film["date"].toDateString();
-        time.innerHTML = filmDateString;
+        time.innerHTML = curr_film["time"];
         entry.appendChild(time);
 
         //while we're looking at each item, we might as 
@@ -80,14 +90,16 @@ function populate_list(films) {
         //base case, there is no display_film yet
         if (!(display_film)) {
             display_film = curr_film;
+            continue;
         }
         //if curr film is ever today, it wins!
-        if (filmDateString == today.toDateString()) {
+        if (curr_film["date"].toISOString() == today.toISOString()) {
             display_film = curr_film;
+            continue;
         }
         //otherwise, if curr_film is closer to today than display
         //film, replace display film with curr film
-        if ((Math.abs(curr_film["date"] - today)) < (Math.abs(display_film["date"] - today))) {
+        if ((curr_film["date"] - today) < (display_film["date"]) - today) {
             display_film = curr_film;
         }
 
@@ -112,7 +124,7 @@ function populate_list(films) {
 function populate_film_display(film) {
     //populates the film display area with the film data given
     $("#film-display-title")[0].innerHTML = film["name"];
-    $("#film-display-time")[0].innerHTML = film["date"].toDateString();
+    $("#film-display-time")[0].innerHTML = film["time"];
     $("#film-display-short")[0].innerHTML = film["short"];
     $("#film-display-imdb")[0].innerHTML = film["imdb"];
     $("#film-display-imdb")[0].href = film["imdb"];
@@ -122,7 +134,6 @@ function populate_film_display(film) {
 
     //if previously selected element, clear
     if (previous_selection) {
-        console.log(previous_selection);
         previous_selection.style.background = "";
     }
 
