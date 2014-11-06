@@ -1,33 +1,31 @@
 .title {
-    padding-bottom: 40px !important;
-    transition-property: text-shadow !important;
-    transition-timing-function: ease !important;
-    transition-delay: 0.5s !important;
-    transition-duration: 1.2s !important;
-    /*transition: text-shadow, 2.4s, ease;*/
     
-    color: transparent;
-    text-shadow: #343434 1px 1px 25px;
 }
 #films-list-heading {
-    font-size: 2em;
-    color: rgba(4, 101, 255, 0.35);
-    font-weight: bold;
+    font-weight: 400;
+    padding-top: 11px;
+    color: rgba(255, 94, 94, 0.77);
+    font-family: Josefin sans;
     font-variant: small-caps;
-    ;
+    font-size: 1.8em;;
 }
 #films-search {
-    margin-left: auto;
     margin-right: auto;
-    height: 50px !important;
-    background: rgb(255, 249, 232);
-    padding-left: 15px;
-    font-size: 1em;
+    height: 41px !important;
+    padding-left: 11px;
+    font-size: 0.8em;
+    width: 80%;
+    margin-left: auto;
     max-width: 650px;
+    background: rgb(255, 249, 232);
+    border-radius: 0px;
+    font-weight: 300;
+    font-family: Josefin Sans;
+    padding-top: 7px;
 }
 textarea:focus, input[type="search"]:focus {
-    border-color: rgba(118, 114, 114, 0.48);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(147, 127, 127, 0.77);
+    border-color: rgba(255, 83, 83, 0.48039);
+    box-shadow: none;
     outline: 0 none;
 }
 #film-row {
@@ -38,19 +36,22 @@ textarea:focus, input[type="search"]:focus {
 }
 #films-list-container {
     background: rgba(255, 216, 109, 0.1);
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 #film-display-container {
-    /*border-style: solid;*/
-    /*border-width: 1px;*/
-    /*border-color: red;*/
-    
     height: 650px;
     text-align: left;
-    border-left-style: solid;
     border-width: 1px;
     border-color: rgb(228, 220, 220);
-    padding-left: 50px;
+    padding-left: 70px;
     margin-left: 70px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-top-style: solid;
 }
 #films-list {
     text-align: left;
@@ -59,6 +60,10 @@ textarea:focus, input[type="search"]:focus {
 .film-entry-container {
     border-bottom-width: 1px;
     border-bottom-style: solid;
+    padding-left: 23px;
+    padding-bottom: 5px;
+    background: rgb(253, 255, 212);
+    padding-top: 5px;
 }
 .film-entry-container:hover {
     background: rgba(255, 83, 83, 0.05);
@@ -66,6 +71,8 @@ textarea:focus, input[type="search"]:focus {
 }
 .film-entry-name {
     font-size: 1em;
+    font-weight: 400;
+    font-family: Alegreya sans;
 }
 .film-entry-time {
     font-size: 0.8em;
@@ -73,17 +80,33 @@ textarea:focus, input[type="search"]:focus {
 }
 #films-table-scroll {
     overflow: auto;
-    height: 520px;
+    height: 500px;
 }
 #films-table {
     width: 100%;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 30px;
+    margin-top: 10px;
 }
 #film-display-title {
-    font-style: italic;
     font-size: 1.8em;
+    font-style: italic;
+    font-family: Josefin Sans;
+    font-weight: 800;
+    padding-top: 19px;
+    ;
 }
 #film-display-imdb {
-    font-size: 0.7em;
+    font-size: 0.8em;
+    color: rgb(238, 92, 92);
+    font-family: Alegreya sans;
+    font-weight: 400;
+}
+#film-display-long {
+    font-weight: 300;
+    font-family: Alegreya sans;
 }
 #films-search {
     margin-bottom: 20px
