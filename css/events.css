@@ -1,0 +1,112 @@
+#events-list-heading {
+    font-weight: 400;
+    padding-top: 11px;
+    color: rgba(255, 94, 94, 0.77);
+    font-family: Josefin sans;
+    font-variant: small-caps;
+    font-size: 1.8em;;
+}
+#events-search {
+    margin-right: auto;
+    height: 41px !important;
+    padding-left: 11px;
+    font-size: 0.8em;
+    width: 80%;
+    margin-left: auto;
+    max-width: 650px;
+    background: rgb(255, 249, 232);
+    border-radius: 0px;
+    font-weight: 300;
+    font-family: Josefin Sans;
+    padding-top: 7px;
+}
+textarea:focus, input[type="search"]:focus {
+    border-color: rgba(255, 83, 83, 0.48039);
+    box-shadow: none;
+    outline: 0 none;
+}
+#events-row {
+    text-align: center;
+    font-size: 2em;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#events-list-container {
+    background: rgba(255, 216, 109, 0.1);
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#event-display-container {
+    height: 650px;
+    text-align: left;
+    border-width: 1px;
+    border-color: rgb(228, 220, 220);
+    padding-left: 70px;
+    margin-left: 70px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-top-style: solid;
+    overflow-y: auto !important;
+}
+#events-list {
+    text-align: left;
+    padding: 0px;
+}
+.event-entry-container {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-left: 23px;
+    padding-bottom: 5px;
+    background: rgb(253, 255, 212);
+    padding-top: 5px;
+}
+.event-entry-container:hover {
+    background: rgba(255, 83, 83, 0.05);
+    cursor: pointer;
+}
+.event-entry-name {
+    font-size: 1em;
+    font-weight: 400;
+    font-family: Alegreya sans;
+}
+.event-entry-time {
+    font-size: 0.8em;
+    color: rgba(64, 63, 63, 0.86);
+}
+#events-table-scroll {
+    overflow: auto;
+    height: 500px;
+}
+#events-table {
+    width: 100%;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+#event-display-title {
+    font-size: 1.8em;
+    font-style: italic;
+    font-family: Josefin Sans;
+    font-weight: 800;
+    padding-top: 19px;
+    ;
+}
+#event-display-link {
+    font-size: 0.8em;
+    color: rgb(238, 92, 92);
+    font-weight: 400;
+    word-wrap: break-word;
+    font-family: Alegreya sans;
+}
+#event-display-description {
+    font-weight: 300;
+    font-family: Alegreya sans;
+}
+#events-search {
+    margin-bottom: 20px
+}

@@ -19,19 +19,79 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <script src="../js/events.js"></script>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/events.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic|Josefin+Sans:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic|Alegreya+Sans:100,300,400,500,700,800,900,700italic,900italic,300italic,800italic,400italic,500italic,100italic|Alegreya:400italic,700italic,900italic,400,900,700|Alegreya+SC:400,900italic,900,700italic,700,400italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-md-3">
-            <h1>Search/K\</h1>
-            <div id="events_result_count"></div>
-            <di v id="events_results">
-        </div>
-        </di>
-        <div class="col-md-3">skdjfnsdkjfnskdjfnskdjfnskdjfnsd</div>
-        <div class="col-md-6">skdjfnsdkjfnskdjfnskdjfnskdjfnsd</div>
+    <!-- NAVBAR -->
+    <div class="navbar-holder container">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="menus.html">Menus</a>
+                        </li>
+                        <li>
+                            <a href="events.html" class="active-nav">Events</a>
+                        </li>
+                        <li>
+                            <a href="filmseries.html">Film Series</a>
+                        </li>
+                        <li class="logo">
+                            <a href="home.html">Wes App</a>
+                        </li>
+                        <li>
+                            <a href="directory.html">Directory</a>
+                        </li>
+                        <li>
+                            <a href="miscellaneous.html">Miscellaneous</a>
+                        </li>
+                        <li>
+                            <a href="social.html">Social</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
+    <!-- END NAVBAR -->
+
+    <div class="row" id="events-row">
+        <h1 class="title">Events</h1>
+        <div id="events-container">
+            <div id="events-list-container" class="col-md-4 col-md-offset-1">
+                <!-- Search Bar -->
+                <div id="events-list-heading">Events</div>
+                <input type="search" id="events-search" class="form-control" placeholder="Search..." autofocus="autofocus">
+                <div id="events-table-scroll">
+                    <table id="events-table">
+                        <tbody id="events-list">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="event-display-container" class="col-md-6">
+                <h1 id="event-display-title"></h1>
+                <h2 id="event-display-time"></h2>
+                <h2 id="event-display-location"></h2>
+                <h3 id="event-display-category"></h3>
+                <a href="" target="_blank" id="event-display-link"></a>
+                <p id="event-display-description"></p>
+            </div>
+        </div>
 </body>
 
 </html>

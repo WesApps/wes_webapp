@@ -6,8 +6,6 @@ var previous_selection;
 
 function initialize_filmseries() {
     get_films();
-    //do that title fade effect
-    $(".title")[0].style.textShadow = "rgba(105, 82, 82, 0.34) 0px 0px 0px";
 }
 
 function get_films() {

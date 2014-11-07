@@ -1,6 +1,3 @@
-.title {
-    
-}
 #films-list-heading {
     font-weight: 400;
     padding-top: 11px;
@@ -101,8 +98,8 @@ textarea:focus, input[type="search"]:focus {
 #film-display-imdb {
     font-size: 0.8em;
     color: rgb(238, 92, 92);
-    font-family: Alegreya sans;
     font-weight: 400;
+    font-family: Alegreya sans;
 }
 #film-display-long {
     font-weight: 300;
