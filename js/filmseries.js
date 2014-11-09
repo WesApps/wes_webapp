@@ -97,9 +97,13 @@ function populate_list(films) {
         }
         //otherwise, if curr_film is closer to today than display
         //film, replace display film with curr film
-        if ((curr_film["date"] - today) < (display_film["date"]) - today) {
-            display_film = curr_film;
+        // console.log(curr_film["date"] - today, display_film["date"] - today)
+        if ((curr_film["date"] - today) >= 0) {
+            if (Math.abs((curr_film["date"] - today)) < (Math.abs((display_film["date"]) - today))) {
+                display_film = curr_film;
+            }
         }
+
 
     }
     // set on click listeners
