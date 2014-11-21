@@ -70,12 +70,21 @@
     <!-- END NAVBAR -->
 
     <div class="row" id="events-row">
-        <h1 class="title">Events</h1>
+        <!-- <h1 class="title">Events</h1> -->
         <div id="events-container">
             <div id="events-list-container" class="col-md-4 col-md-offset-1">
                 <!-- Search Bar -->
-                <div id="events-list-heading">Events</div>
-                <input type="search" id="events-search" class="form-control" placeholder="Search..." autofocus="autofocus">
+                <div id="events-search-holder">
+                    <div id="events-list-heading">Events</div>
+                    <input type="search" id="events-search" class="form-control" placeholder="Search..." autofocus="autofocus">
+                </div>
+                <div id="show-div">
+                    <!-- <span>Show:w</span> -->
+                    <input type="button" name="display-checkbox" value="Just Today" id="show-today">
+                    <br>
+                    <input type="checkbox" name="display-checkbox" value="upcoming" id="show-upcoming">Upcoming
+                    <input type="checkbox" name="display-checkbox" value="previous" id="show-previous">Previous
+                </div>
                 <div id="events-table-scroll">
                     <table id="events-table">
                         <tbody id="events-list">
@@ -88,8 +97,8 @@
                 <h2 id="event-display-time"></h2>
                 <h2 id="event-display-location"></h2>
                 <h3 id="event-display-category"></h3>
-                <a href="" target="_blank" id="event-display-link"></a>
                 <p id="event-display-description"></p>
+                <a href="" target="_blank" id="event-display-link"></a>
             </div>
         </div>
 </body>

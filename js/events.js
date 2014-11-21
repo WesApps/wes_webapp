@@ -2,6 +2,9 @@ $(document).ready(initialize_events);
 
 var event_data = {}
 var previous_selection;
+var filter = {};
+filter.today = false;
+filter.query = "";
 
 function initialize_events() {
     get_events();
@@ -39,7 +42,14 @@ function events_callback(res) {
         var curr_day = date.toString().split(" ")[0];
         var curr_date = date.getDate();
         var curr_month = date.getMonth();
-        time = curr_day + ", " + m_names[curr_month] + " " + curr_date;
+        var time_str = date.toLocaleString().split(" ");
+        time_str.splice(0, 1);
+        tmp_time = time_str[0];
+        tmp_time = tmp_time.split(":")
+        tmp_time.splice(2, 1);
+        time_str[0] = tmp_time.join(":");
+        time = curr_day + ", " + m_names[curr_month] + " " +
+            curr_date + ", " + time_str.join(" ");
         event_data[i] = {
             "name": name,
             "category": category,
@@ -51,7 +61,6 @@ function events_callback(res) {
             "location": location
         }
     }
-    console.log(event_data, "!");
     populate_list(event_data);
 }
 
@@ -88,31 +97,26 @@ function populate_list(events) {
         //Grab first event
         if (!(display_event)) {
             display_event = curr_event;
-            continue;
         }
         //if curr event is ever today, it wins!
-        if (curr_event["date"].toISOString() == today.toISOString()) {
+        if (curr_event["date"].toDateString() == today.toDateString()) {
             display_event = curr_event;
             continue;
         }
-        //otherwise, if curr_event is closer to today than display
-        //event, replace display event with curr event
-        if ((curr_event["date"] - today) < (display_event["date"]) - today) {
-            display_event = curr_event;
+        if ((curr_event["date"] - today) >= 0) {
+            if (Math.abs((curr_event["date"] - today)) < (Math.abs((display_event["date"]) - today))) {
+                display_event = curr_event;
+            }
         }
 
-    }
-    // set on click listeners
-    set_on_click();
 
-    // set listener for search
-    $("#events-search").on("input", function(e) {
-        if ($(this).data("lastval") != $(this).val()) {
-            $(this).data("lastval", $(this).val());
-            //change action
-            filterEntries($(this).val())
-        };
-    });
+        //Add an id to event-entry-time to indicate
+        //if today, previous, or upcoming. This will
+        //be used to toggle hidden status
+    }
+    // set listeners
+    set_listeners();
+
 
     //populate event display with either today's event or if not
     //today's then the closest event to today (looking forwards)
@@ -122,13 +126,23 @@ function populate_list(events) {
 function populate_event_display(d_event) {
     //populates the event display area with the event data given
     $("#event-display-title")[0].innerHTML = d_event["name"];
-    $("#event-display-time")[0].innerHTML = d_event["time"];
+    $("#event-display-time")[0].innerHTML = "<b>When: </b>" + d_event["time"];
     if (d_event["link"]) {
+        $("#event-display-link")[0].hidden = false;
         $("#event-display-link")[0].innerHTML = "Read on " + d_event["source"];
         $("#event-display-link")[0].href = d_event["link"];
+    } else {
+        $("#event-display-link")[0].hidden = true;
+        $("#event-display-link")[0].href = "";
+        $("#event-display-link")[0].innerHTML = "";
     }
-    $("#event-display-category")[0].innerHTML = d_event["category"];
-    $("#event-display-location")[0].innerHTML = d_event["location"];
+    $("#event-display-category")[0].innerHTML = "<b>Category: </b>" + d_event["category"];
+    if (d_event["location"]) {
+        $("#event-display-location")[0].hidden = false;
+        $("#event-display-location")[0].innerHTML = "<b>Where: </b>" + d_event["location"];
+    } else {
+        $("#event-display-location")[0].hidden = true;
+    }
     $("#event-display-description")[0].innerHTML = d_event["description"];
 
     var current_event_element = $("#" + d_event["id"])[0];
@@ -147,27 +161,89 @@ function populate_event_display(d_event) {
     previous_selection = current_event_element;
 }
 
-function set_on_click() {
+function set_listeners() {
     $(".event-entry-container").click(function(ev) {
         var lookup_id = ev.currentTarget.id.split("event_")[1];
         var current_event = event_data[lookup_id];
         populate_event_display(current_event);
     })
+
+    //on click for just today button
+    $("#show-today").click(function(ev) {
+        filter.today = !(filter.today);
+        if (filter.today) {
+            $("#show-today")[0].className = "btn-active";
+        } else {
+            $("#show-today")[0].className = "";
+        }
+        console.log($("#show-today")[0].className);
+        filterEntries();
+    })
+
+    // set listener for search
+    $("#events-search").on("input", function(e) {
+        if ($(this).data("lastval") != $(this).val()) {
+            $(this).data("lastval", $(this).val());
+            //change action
+            filter.query = $(this).val()
+            filterEntries()
+        };
+    });
 }
 
-function filterEntries(query) {
-    // Hides entries iff !(query subset of entry name)
+function filterToday() {
     var curr_entries = document.getElementsByClassName("event-entry-container");
+    var dateObj = new Date();
+    var day = dateObj.getDate();
+    var month = dateObj.getMonth();
+    var today = new Date(dateObj.getFullYear(), month, day);
+    for (i in curr_entries) {
+        if (!(curr_entries[i].children)) {
+            continue;
+        }
+        var ev_id = curr_entries[i].id.split("event_")[1];
+        // console.log(ev_id, event_data[ev_id]);
+        curr_event = event_data[ev_id];
+        if (curr_event["date"].toDateString() != today.toDateString()) {
+            curr_entries[i].hidden = true;
+        }
+    }
+
+}
+
+function filterEntries() {
+    console.log(filter)
+        // Hides entries iff !(query subset of entry name)
+    var curr_entries = document.getElementsByClassName("event-entry-container");
+    var dateObj = new Date();
+    var day = dateObj.getDate();
+    var month = dateObj.getMonth();
+    var today = new Date(dateObj.getFullYear(), month, day);
     for (i in curr_entries) {
         if (!(curr_entries[i].children)) {
             continue;
         }
         var name = curr_entries[i].children[0].innerHTML.toLocaleLowerCase();
-        //if query not in entry, hide this li element.
-        if (name.indexOf(query.toLocaleLowerCase()) == -1) {
-            curr_entries[i].hidden = true;
+        var ev_id = curr_entries[i].id.split("event_")[1];
+        curr_event = event_data[ev_id];
+        //if filter.today, check if event time is today, else if hidden show it.
+        //this may be overridden by the query filter
+        if (filter.today) {
+            if (curr_event["date"].toDateString() != today.toDateString()) {
+                curr_entries[i].hidden = true;
+                continue;
+            }
         } else {
             curr_entries[i].hidden = false;
+        }
+
+        if (filter.query) {
+            //if query not in entry, hide this li element.
+            if (name.indexOf(filter.query.toLocaleLowerCase()) == -1) {
+                curr_entries[i].hidden = true;
+            } else {
+                curr_entries[i].hidden = false;
+            }
         }
     }
 }
