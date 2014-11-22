@@ -4,6 +4,7 @@ var event_data = {}
 var previous_selection;
 var filter = {};
 filter.today = false;
+filter.past = false;
 filter.query = "";
 
 function initialize_events() {
@@ -50,6 +51,9 @@ function events_callback(res) {
         time_str[0] = tmp_time.join(":");
         time = curr_day + ", " + m_names[curr_month] + " " +
             curr_date + ", " + time_str.join(" ");
+        date_tomorrow = new Date(date);
+        date_tomorrow.setDate(date.getDate()+1);
+
         event_data[i] = {
             "name": name,
             "category": category,
@@ -58,8 +62,9 @@ function events_callback(res) {
             "source": source,
             "time": time,
             "date": date,
+            "date_tomorrow":date_tomorrow,
             "location": location
-        }
+        };
     }
     populate_list(event_data);
 }
@@ -98,11 +103,18 @@ function populate_list(events) {
         if (!(display_event)) {
             display_event = curr_event;
         }
+
+        //If curr event is more than a day old, hide it.
+        if (curr_event["date_tomorrow"] < today) {
+            entry.hidden = true;
+        }
+
         //if curr event is ever today, it wins!
         if (curr_event["date"].toDateString() == today.toDateString()) {
             display_event = curr_event;
             continue;
         }
+        //otherwise get the closest event
         if ((curr_event["date"] - today) >= 0) {
             if (Math.abs((curr_event["date"] - today)) < (Math.abs((display_event["date"]) - today))) {
                 display_event = curr_event;
@@ -168,7 +180,7 @@ function set_listeners() {
         populate_event_display(current_event);
     })
 
-    //on click for just today button
+    //on click for only today button
     $("#show-today").click(function(ev) {
         filter.today = !(filter.today);
         if (filter.today) {
@@ -177,6 +189,18 @@ function set_listeners() {
             $("#show-today")[0].className = "";
         }
         console.log($("#show-today")[0].className);
+        filterEntries();
+    })
+
+    //on click for show pas button
+    $("#show-past").click(function(ev) {
+        filter.past = !(filter.past);
+        if (!(filter.past)) {
+            $("#show-past")[0].className = "btn-active";
+        } else {
+            $("#show-past")[0].className = "";
+        }
+        console.log($("#show-past")[0].className);
         filterEntries();
     })
 
@@ -230,6 +254,17 @@ function filterEntries() {
         //this may be overridden by the query filter
         if (filter.today) {
             if (curr_event["date"].toDateString() != today.toDateString()) {
+                curr_entries[i].hidden = true;
+                continue;
+            }
+        } else {
+            curr_entries[i].hidden = false;
+        }
+
+        //if filter.past, check if event time + 24 hours is < today, else if hidden show it.
+        //this may be overridden by the query filter
+        if (filter.past) {
+            if (curr_event["date_tomorrow"] < today) {
                 curr_entries[i].hidden = true;
                 continue;
             }
