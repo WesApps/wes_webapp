@@ -4,6 +4,7 @@ html {
 body {
     height: 100%;
     /*font-family: 'EB Garamond', serif;*/
+    
     border-top-style: solid;
     background: rgb(254, 255, 233);
     border-top-color: rgba(146, 0, 0, 0.11);
@@ -40,7 +41,8 @@ a:hover {
     padding-bottom: 3px;
     border-bottom-color: rgb(94, 113, 151);
     border-bottom-style: solid;
-    border-bottom-width: 1px;;
+    border-bottom-width: 1px;
+    ;
 }
 .navbar-default .navbar-nav>li>a:hover {
     color: rgb(94, 113, 151);
@@ -55,6 +57,8 @@ a:hover {
     padding-top: 64px;
     font-size: 1.3em;
     text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 .logo {
     font-size: 4em;

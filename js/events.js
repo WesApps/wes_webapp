@@ -4,7 +4,7 @@ var event_data = {}
 var previous_selection;
 var filter = {};
 filter.today = false;
-filter.past = false;
+filter.past = true;
 filter.query = "";
 
 function initialize_events() {

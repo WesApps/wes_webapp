@@ -93,10 +93,10 @@ textarea:focus, input[type="search"]:focus {
 #event-display-title {
     font-size: 1.3em;
     font-style: italic;
-    font-family: Josefin Sans;
-    font-weight: 800;
     padding-top: 19px;
     padding-bottom: 10px;
+    font-family: Josefin Sans;
+    font-weight: 800;
 }
 #event-display-link {
     font-size: 0.7em;
@@ -121,39 +121,53 @@ textarea:focus, input[type="search"]:focus {
 }
 #show-div {
     text-align: left;
+    padding-bottom: 20px;
+}
+input {
+    outline: 0;
 }
 #show-today {
     background: rgba(250, 250, 102, 0.15);
-    border: solid;
     border-width: 1px;
-    padding: 7px;
+    padding: 10px;
     color: red;
     font-size: 24px;
     font-variant: small-caps;
+    margin-left: 10px;
+    border-radius: 60px;
+    padding-bottom: 3px;
+    padding-top: 4px;
+    border-style: solid;
+    border-color: red;
 }
 #show-past {
     background: rgba(250, 250, 102, 0.15);
     border: solid;
     border-width: 1px;
-    padding: 7px;
+    padding: 10px;
     color: red;
     font-size: 24px;
     font-variant: small-caps;
+    margin-left: 10px;
+    border-radius: 60px;
+    padding-bottom: 3px;
+    padding-top: 4px;
 }
 .btn-active {
-    background: pink !important;
+    background: red !important;
     color: white !important;
 }
 #events-search-holder {
     text-align: left;
     padding-top: 13px;
+    padding-bottom: 12px;
 }
 #events-display-container > h1, b {
     font-variant: small-caps;
     color: rgba(216, 98, 98, 0.86);
 }
 .event-display-heading {
-	font-size: 1em;
-	margin-bottom: 10px;
-	margin-top: 4px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    margin-top: 4px;
 }
