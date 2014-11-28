@@ -125,6 +125,15 @@ function populate_list(events) {
             }
         }
 
+        if (current_sort == "category") {
+            var curr_category = curr_event["category"];
+            if (!(prev_header) || (prev_header != curr_category)) {
+                //Display new header if appropriate
+                prev_header = curr_category
+                events_list.appendChild(create_header(prev_header));
+            }
+        }
+
 
         var tr = document.createElement("tr");
         tr.setAttribute("class", "event-tr");
@@ -368,17 +377,12 @@ function filter_headers() {
             }
         }
         curr_header.hidden = hide;
-        // var next = curr_header.nextElementSibling;
-        // console.log(next.getElementsByClassName('event-entry-container'))
-        // if (next.getElementsByClassName('event-entry-container')[0].hidden) {
-        // console.log("hello")
     }
 }
 
 function sort_entries(type) {
     //sorts entries by:
     //'category' or 'date'
-
     if (type == "category") {
         event_data.sort(function(a, b) {
             var textA = a.category.toUpperCase();
@@ -396,12 +400,13 @@ function sort_entries(type) {
     //Remove old events list 
     $("#events-list")[0].innerHTML = "";
 
-    //populate
+    //populate table
     populate_list(event_data);
 
+    //set table row listeners
     set_row_click()
 
-    //filter
+    //re-apply filter
     filter_entries();
 
 }
