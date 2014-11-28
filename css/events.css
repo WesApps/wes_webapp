@@ -11,13 +11,12 @@
     font-size: 0.8em;
     width: 55%;
     max-width: 650px;
-    background: rgb(255, 249, 232);
-    border-radius: 0px;
     font-weight: 300;
     font-family: Josefin Sans;
-    margin-left: auto;
     margin-right: auto;
     display: inline;
+    background: rgb(255, 249, 232);
+    border-radius: 0px;
     ;
 }
 textarea:focus, input[type="search"]:focus {
@@ -83,12 +82,12 @@ textarea:focus, input[type="search"]:focus {
     height: 673px;
 }
 #events-table {
-    width: 100%;
     border-width: 1px;
     margin-bottom: 30px;
     border-right-styletyle: solid;
     border-left-style: solid;
     border-top-style: solid;
+    width: 100%;
 }
 #event-display-title {
     font-size: 1.3em;
@@ -120,42 +119,51 @@ textarea:focus, input[type="search"]:focus {
     line-height: 1.4em;
 }
 #show-div {
+    padding-bottom: 20px;
+    text-align: left;
+}
+#sort-div {
     text-align: left;
     padding-bottom: 20px;
 }
 input {
     outline: 0;
 }
-#show-today {
-    background: rgba(250, 250, 102, 0.15);
+.btn-inactive:hover {
+    background: rgba(255, 229, 0, 0.49);
+}
+
+/*rder-bottom-color: rgb(94, 113, 151);*/
+.btn-inactive {
     border-width: 1px;
     padding: 10px;
-    color: red;
-    font-size: 24px;
-    font-variant: small-caps;
-    margin-left: 10px;
-    border-radius: 60px;
-    padding-bottom: 3px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 17px;
     padding-top: 4px;
     border-style: solid;
-    border-color: red;
-}
-#show-past {
-    background: rgba(250, 250, 102, 0.15);
-    border: solid;
-    border-width: 1px;
-    padding: 10px;
-    color: red;
-    font-size: 24px;
-    font-variant: small-caps;
-    margin-left: 10px;
-    border-radius: 60px;
+    border-color: black;
+    background: none;
+    font-style: oblique;
+    text-transform: uppercase;
+    font-weight: 700;
     padding-bottom: 3px;
-    padding-top: 4px;
+    margin-left: 10px;
 }
 .btn-active {
-    background: red !important;
-    color: white !important;
+    background: rgba(255, 0, 0, 0.51) !important;
+    color: black !important;
+    border-width: 1px;
+    padding: 10px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 17px;
+    padding-top: 4px;
+    border-style: solid;
+    border-color: black;
+    font-style: oblique;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-bottom: 3px;
+    margin-left: 10px;
 }
 #events-search-holder {
     text-align: left;
@@ -170,4 +178,7 @@ input {
     font-size: 1em;
     margin-bottom: 10px;
     margin-top: 4px;
+}
+.cat_color {
+    width: 12px;
 }

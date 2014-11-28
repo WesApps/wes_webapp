@@ -1,11 +1,15 @@
 $(document).ready(initialize_events);
 
-var event_data = {}
+var event_data = [];
+var categories = [];
+var color_array = [];
 var previous_selection;
-var filter = {};
-filter.today = false;
-filter.past = true;
-filter.query = "";
+var display_event;
+var current_sort = "date";
+var filters = {};
+filters.today = false;
+filters.past = true;
+filters.query = "";
 
 function initialize_events() {
     get_events();
@@ -38,6 +42,12 @@ function events_callback(res) {
         var time = results[i]["time"];
         var location = results[i]["location"];
 
+        //Add category to set of categories
+        if (categories.indexOf(category) == -1) {
+            categories.push(category);
+        }
+
+        //Process time/date
         time = time.replace("T", " ");
         var date = new Date(Date.parse(time));
         var curr_day = date.toString().split(" ")[0];
@@ -52,7 +62,7 @@ function events_callback(res) {
         time = curr_day + ", " + m_names[curr_month] + " " +
             curr_date + ", " + time_str.join(" ");
         date_tomorrow = new Date(date);
-        date_tomorrow.setDate(date.getDate()+1);
+        date_tomorrow.setDate(date.getDate() + 1);
 
         event_data[i] = {
             "name": name,
@@ -62,11 +72,19 @@ function events_callback(res) {
             "source": source,
             "time": time,
             "date": date,
-            "date_tomorrow":date_tomorrow,
+            "date_tomorrow": date_tomorrow,
             "location": location
         };
     }
+    color_array = coloring(categories.length).sort();
     populate_list(event_data);
+    // set listeners
+    set_listeners();
+
+
+    //populate event display with either today's event or if not
+    //today's then the closest event to today (looking forwards)
+    populate_event_display(display_event);
 }
 
 function populate_list(events) {
@@ -77,11 +95,25 @@ function populate_list(events) {
     var day = dateObj.getDate();
     var month = dateObj.getMonth();
     var today = new Date(dateObj.getFullYear(), month, day);
-    var display_event;
 
     for (i in events) {
+
         var curr_event = events[i];
         var tr = document.createElement("tr");
+        var cat_td = document.createElement("td");
+
+        cat_td.setAttribute("class", "cat_color");
+        tr.appendChild(cat_td);
+        // Set color by category
+        var cat_index = categories.indexOf(curr_event["category"]);
+        var b_color;
+        if (cat_index == -1) {
+            b_color = color_array[0];
+        } else {
+            b_color = color_array[cat_index];
+        }
+        cat_td.style.background = "#" + b_color;
+
         var entry = document.createElement("td");
         entry.setAttribute("class", "event-entry-container");
         entry.setAttribute("id", "event_" + i);
@@ -98,6 +130,8 @@ function populate_list(events) {
         time.setAttribute("class", "event-entry-time");
         time.innerHTML = curr_event["time"];
         entry.appendChild(time);
+
+
 
         //Grab first event
         if (!(display_event)) {
@@ -120,19 +154,8 @@ function populate_list(events) {
                 display_event = curr_event;
             }
         }
-
-
-        //Add an id to event-entry-time to indicate
-        //if today, previous, or upcoming. This will
-        //be used to toggle hidden status
     }
-    // set listeners
-    set_listeners();
 
-
-    //populate event display with either today's event or if not
-    //today's then the closest event to today (looking forwards)
-    populate_event_display(display_event);
 }
 
 function populate_event_display(d_event) {
@@ -149,6 +172,7 @@ function populate_event_display(d_event) {
         $("#event-display-link")[0].innerHTML = "";
     }
     $("#event-display-category")[0].innerHTML = "<b>Category: </b>" + d_event["category"];
+
     if (d_event["location"]) {
         $("#event-display-location")[0].hidden = false;
         $("#event-display-location")[0].innerHTML = "<b>Where: </b>" + d_event["location"];
@@ -173,35 +197,70 @@ function populate_event_display(d_event) {
     previous_selection = current_event_element;
 }
 
-function set_listeners() {
+function get_event_by_id(id) {
+    //returns an event by it's event id
+    for (i in event_data) {
+        if (event_data[i]["id"] == id) {
+            return event_data[i];
+        }
+    }
+}
+
+function set_row_click() {
+
     $(".event-entry-container").click(function(ev) {
-        var lookup_id = ev.currentTarget.id.split("event_")[1];
-        var current_event = event_data[lookup_id];
+        var lookup_id = ev.currentTarget.id;
+        var current_event = get_event_by_id(lookup_id);
         populate_event_display(current_event);
     })
+}
+
+function set_listeners() {
+    set_row_click();
 
     //on click for only today button
     $("#show-today").click(function(ev) {
-        filter.today = !(filter.today);
-        if (filter.today) {
+        filters.today = !(filters.today);
+        if (filters.today) {
             $("#show-today")[0].className = "btn-active";
         } else {
-            $("#show-today")[0].className = "";
+            $("#show-today")[0].className = "btn-inactive";
         }
-        console.log($("#show-today")[0].className);
         filterEntries();
     })
 
-    //on click for show pas button
+    //on click for show past button
     $("#show-past").click(function(ev) {
-        filter.past = !(filter.past);
-        if (!(filter.past)) {
+        filters.past = !(filters.past);
+        if (!(filters.past)) {
             $("#show-past")[0].className = "btn-active";
         } else {
-            $("#show-past")[0].className = "";
+            $("#show-past")[0].className = "btn-inactive";
         }
-        console.log($("#show-past")[0].className);
         filterEntries();
+    })
+
+    //on click for sort date button
+    $("#sort-date").click(function(ev) {
+        if (current_sort == 'date') {
+            return;
+        }
+        current_sort = 'date';
+        $("#sort-date")[0].className = "btn-active";
+        $("#sort-category")[0].className = "btn-inactive";
+        sort_entries('date');
+    })
+
+    //on click for sort category button
+    $("#sort-category").click(function(ev) {
+        console.log("?")
+        if (current_sort == 'category') {
+            return;
+        }
+        current_sort = 'category';
+        $("#sort-category")[0].className = "btn-active";
+        $("#sort-date")[0].className = "btn-inactive";
+        sort_entries('category');
     })
 
     // set listener for search
@@ -209,7 +268,7 @@ function set_listeners() {
         if ($(this).data("lastval") != $(this).val()) {
             $(this).data("lastval", $(this).val());
             //change action
-            filter.query = $(this).val()
+            filters.query = $(this).val()
             filterEntries()
         };
     });
@@ -226,18 +285,15 @@ function filterToday() {
             continue;
         }
         var ev_id = curr_entries[i].id.split("event_")[1];
-        // console.log(ev_id, event_data[ev_id]);
-        curr_event = event_data[ev_id];
+        curr_event = get_event_by_id(ev_id);
         if (curr_event["date"].toDateString() != today.toDateString()) {
             curr_entries[i].hidden = true;
         }
     }
-
 }
 
 function filterEntries() {
-    console.log(filter)
-        // Hides entries iff !(query subset of entry name)
+    // Hides entries iff !(query subset of entry name)
     var curr_entries = document.getElementsByClassName("event-entry-container");
     var dateObj = new Date();
     var day = dateObj.getDate();
@@ -248,11 +304,11 @@ function filterEntries() {
             continue;
         }
         var name = curr_entries[i].children[0].innerHTML.toLocaleLowerCase();
-        var ev_id = curr_entries[i].id.split("event_")[1];
-        curr_event = event_data[ev_id];
-        //if filter.today, check if event time is today, else if hidden show it.
-        //this may be overridden by the query filter
-        if (filter.today) {
+        var ev_id = curr_entries[i].id;
+        curr_event = get_event_by_id(ev_id);
+        //if filters.today, check if event time is today, else if hidden show it.
+        //this may be overridden by the query filters
+        if (filters.today) {
             if (curr_event["date"].toDateString() != today.toDateString()) {
                 curr_entries[i].hidden = true;
                 continue;
@@ -261,9 +317,9 @@ function filterEntries() {
             curr_entries[i].hidden = false;
         }
 
-        //if filter.past, check if event time + 24 hours is < today, else if hidden show it.
-        //this may be overridden by the query filter
-        if (filter.past) {
+        //if filters.past, check if event time + 24 hours is < today, else if hidden show it.
+        //this may be overridden by the query filters
+        if (filters.past) {
             if (curr_event["date_tomorrow"] < today) {
                 curr_entries[i].hidden = true;
                 continue;
@@ -272,13 +328,79 @@ function filterEntries() {
             curr_entries[i].hidden = false;
         }
 
-        if (filter.query) {
+        if (filters.query) {
             //if query not in entry, hide this li element.
-            if (name.indexOf(filter.query.toLocaleLowerCase()) == -1) {
+            if (name.indexOf(filters.query.toLocaleLowerCase()) == -1) {
                 curr_entries[i].hidden = true;
             } else {
                 curr_entries[i].hidden = false;
             }
         }
     }
+}
+
+function sort_entries(type) {
+    //sorts entries by:
+    //'category' or 'date'
+
+    if (type == "category") {
+        event_data.sort(function(a, b) {
+            var textA = a.category.toUpperCase();
+            var textB = b.category.toUpperCase();
+            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+        });
+
+    } else if (type == "date") {
+        event_data.sort(function(a, b) {
+            var textA = a.date;
+            var textB = b.date
+            return (textA > textB) ? -1 : (textA < textB) ? 1 : 0;
+        });
+    }
+    //Remove old events list 
+    $("#events-list")[0].innerHTML = "";
+
+    //populate
+    populate_list(event_data);
+
+    set_row_click()
+
+    //filter
+    filterEntries();
+
+}
+
+function coloring(num_colors) {
+    // Uses color-scheme.js to output a color scheme of length
+    // num_colors to color-code categories.
+    // Since we have an arbitrary number of categories but are limited to 16 colors 
+    // by the ColorScheme lib, we'll assume we only have <= 16 categories,
+    // which is a fair assumption. 
+    // Constraint: want to match num_colors with color scheme closest in size.
+
+    var starting_hue = 50;
+    var scheme;
+    var variation = 'soft';
+
+    if (num_colors <= 4) {
+        num_colors <= 4;
+        scheme = 'mono';
+    } else if (num_colors <= 12) {
+        scheme = 'triade';
+    } else {
+        num_colors <= 16;
+        scheme = 'tetrade';
+    }
+
+
+    scm = new ColorScheme;
+    scm.from_hue(starting_hue)
+        .scheme(scheme)
+        .distance(0.5)
+        .add_complement(false)
+        .variation(variation)
+        .web_safe(true);
+
+    var colors = scm.colors();
+    return colors;
 }

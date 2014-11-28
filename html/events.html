@@ -19,6 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <script src="../js/events.js"></script>
+    <script src="../js/color-scheme.min.js"></script>
 
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/events.css">
@@ -79,9 +80,15 @@
                     <input type="search" id="events-search" class="form-control" placeholder="Search..." autofocus="autofocus">
                 </div>
                 <div id="show-div">
-                    <!-- <span>Show:w</span> -->
-                    <input type="button" name="display-checkbox" value="Only Today" id="show-today" class="event-btn">
-                    <input type="button" name="display-checkbox" value="Show Past Events" id="show-past" class="event-btn">
+                    <span> Show: </span>
+                    <input type="button" value="Only Today" id="show-today" class="btn-inactive">
+                    <input type="button" value="Past Events" id="show-past" class="btn-inactive">
+                    <br>
+                </div>
+                <div id="sort-div">
+                    <span>Sort by: </span>
+                    <input type="button" value="Date" id="sort-date" class="btn-active">
+                    <input type="button" value="Category" id="sort-category" class="btn-inactive">
                     <br>
                 </div>
                 <div id="events-table-scroll">
