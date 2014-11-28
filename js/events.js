@@ -87,6 +87,16 @@ function events_callback(res) {
     populate_event_display(display_event);
 }
 
+function create_header(inner) {
+    var hdr_tr = document.createElement("tr");
+    hdr_tr.setAttribute("class", "header-tr");
+    var hdr_td = document.createElement("td");
+    hdr_td.setAttribute("colspan", 2);
+    hdr_td.innerHTML = inner;
+    hdr_tr.appendChild(hdr_td);
+    return hdr_tr
+}
+
 function populate_list(events) {
     //Populates list with events and initializes
     //events display with an event
@@ -95,11 +105,29 @@ function populate_list(events) {
     var day = dateObj.getDate();
     var month = dateObj.getMonth();
     var today = new Date(dateObj.getFullYear(), month, day);
+    var prev_header;
 
     for (i in events) {
 
         var curr_event = events[i];
+
+        //set category/date header
+        if (current_sort == "date") {
+            var tmp = curr_event["date"]
+            var day = tmp.getDate();
+            var month = tmp.getMonth();
+            var year = tmp.getFullYear();
+            var tmpDate = new Date(year, month, day);
+            if (!(prev_header) || (prev_header.toString() != tmpDate.toString())) {
+                //Display new header if appropriate
+                prev_header = tmpDate
+                events_list.appendChild(create_header(prev_header.toString().split(" ").splice(0, 3).join(" ")));
+            }
+        }
+
+
         var tr = document.createElement("tr");
+        tr.setAttribute("class", "event-tr");
         var cat_td = document.createElement("td");
 
         cat_td.setAttribute("class", "cat_color");
@@ -155,7 +183,7 @@ function populate_list(events) {
             }
         }
     }
-
+    filter_headers();
 }
 
 function populate_event_display(d_event) {
@@ -226,7 +254,7 @@ function set_listeners() {
         } else {
             $("#show-today")[0].className = "btn-inactive";
         }
-        filterEntries();
+        filter_entries();
     })
 
     //on click for show past button
@@ -237,7 +265,7 @@ function set_listeners() {
         } else {
             $("#show-past")[0].className = "btn-inactive";
         }
-        filterEntries();
+        filter_entries();
     })
 
     //on click for sort date button
@@ -253,7 +281,6 @@ function set_listeners() {
 
     //on click for sort category button
     $("#sort-category").click(function(ev) {
-        console.log("?")
         if (current_sort == 'category') {
             return;
         }
@@ -269,30 +296,12 @@ function set_listeners() {
             $(this).data("lastval", $(this).val());
             //change action
             filters.query = $(this).val()
-            filterEntries()
+            filter_entries()
         };
     });
 }
 
-function filterToday() {
-    var curr_entries = document.getElementsByClassName("event-entry-container");
-    var dateObj = new Date();
-    var day = dateObj.getDate();
-    var month = dateObj.getMonth();
-    var today = new Date(dateObj.getFullYear(), month, day);
-    for (i in curr_entries) {
-        if (!(curr_entries[i].children)) {
-            continue;
-        }
-        var ev_id = curr_entries[i].id.split("event_")[1];
-        curr_event = get_event_by_id(ev_id);
-        if (curr_event["date"].toDateString() != today.toDateString()) {
-            curr_entries[i].hidden = true;
-        }
-    }
-}
-
-function filterEntries() {
+function filter_entries() {
     // Hides entries iff !(query subset of entry name)
     var curr_entries = document.getElementsByClassName("event-entry-container");
     var dateObj = new Date();
@@ -337,6 +346,33 @@ function filterEntries() {
             }
         }
     }
+    filter_headers();
+}
+
+function filter_headers() {
+    //Now filter out any section headers that have no real rows in them
+    var headers = document.getElementsByClassName("header-tr");
+    for (i = 0; i < headers.length; i++) {
+        var curr_header = headers[i];
+        var next = curr_header.nextElementSibling;
+        //go through all next siblings until they are no longer
+        //events or one of them is not hidden 
+        var hide = true;
+        while (next.className == "event-tr") {
+            if (!(next.getElementsByClassName('event-entry-container')[0].hidden)) {
+                hide = false;
+            }
+            next = next.nextElementSibling;
+            if (!(next)) {
+                break;
+            }
+        }
+        curr_header.hidden = hide;
+        // var next = curr_header.nextElementSibling;
+        // console.log(next.getElementsByClassName('event-entry-container'))
+        // if (next.getElementsByClassName('event-entry-container')[0].hidden) {
+        // console.log("hello")
+    }
 }
 
 function sort_entries(type) {
@@ -366,7 +402,7 @@ function sort_entries(type) {
     set_row_click()
 
     //filter
-    filterEntries();
+    filter_entries();
 
 }
 
@@ -380,7 +416,7 @@ function coloring(num_colors) {
 
     var starting_hue = 50;
     var scheme;
-    var variation = 'soft';
+    var variation = 'pastel';
 
     if (num_colors <= 4) {
         num_colors <= 4;
@@ -396,7 +432,7 @@ function coloring(num_colors) {
     scm = new ColorScheme;
     scm.from_hue(starting_hue)
         .scheme(scheme)
-        .distance(0.5)
+        .distance(0.2)
         .add_complement(false)
         .variation(variation)
         .web_safe(true);

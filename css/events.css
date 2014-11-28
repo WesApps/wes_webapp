@@ -84,7 +84,7 @@ textarea:focus, input[type="search"]:focus {
 #events-table {
     border-width: 1px;
     margin-bottom: 30px;
-    border-right-styletyle: solid;
+    border-right-style: solid;
     border-left-style: solid;
     border-top-style: solid;
     width: 100%;
@@ -103,7 +103,6 @@ textarea:focus, input[type="search"]:focus {
     font-weight: 400;
     word-wrap: break-word;
     font-family: Alegreya sans;
-    border-radius: 5px;
     border-style: solid;
     padding: 6px;
     border-width: 1.6px;
@@ -180,5 +179,18 @@ input {
     margin-top: 4px;
 }
 .cat_color {
-    width: 12px;
+    width: 11px;
+}
+.header-tr {
+    background:rgb(38, 49, 71);
+    text-transform:uppercase;
+    font-weight:600;
+    font-size:0.8em;
+    font-style:oblique;
+    border:black 1px solid;
+    color:white;
+}
+.header-tr > td {
+    padding: 4px;
+    padding-left: 12px;
 }
