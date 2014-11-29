@@ -5,6 +5,7 @@
     font-variant: small-caps;
     font-size: 1.8em;
     display: inline;
+    font-style: oblique;
 }
 #events-search {
     height: 40px !important;
@@ -37,13 +38,12 @@ textarea:focus, input[type="search"]:focus {
 #events-list-container {
     background: rgba(255, 216, 109, 0.1);
     border-style: solid;
-    border-color: black;
     border-width: 1px;
     padding-right: 30px;
     padding-left: 30px;
+    border-color: black;
 }
 #event-display-container {
-    height: 854px;
     text-align: left;
     border-width: 1px;
     border-color: rgb(228, 220, 220);
@@ -53,6 +53,7 @@ textarea:focus, input[type="search"]:focus {
     border-top-style: solid;
     overflow-y: auto !important;
     margin-left: 50px;
+    height: 789px;
 }
 #events-list {
     text-align: left;
@@ -83,7 +84,7 @@ textarea:focus, input[type="search"]:focus {
 }
 #events-table-scroll {
     overflow: auto;
-    height: 673px;
+    height: 573px;
 }
 #events-table {
     border-width: 1px;
@@ -199,6 +200,7 @@ input {
 .header-tr > td {
     padding: 4px;
     padding-left: 12px;
+    letter-spacing: 0.05em;
 }
 .event-tr {
 }

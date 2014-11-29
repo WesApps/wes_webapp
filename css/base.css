@@ -86,10 +86,10 @@ a:hover {
 }
 .title {
     font-variant: small-caps;
-    letter-spacing: 15px;
+    letter-spacing: 5px;
     padding-top: -10px;
     color: rgba(20, 20, 20, 0.7);
-    font-size: 3em;
+    font-size: 5em;
     font-family: Josefin Sans;
     font-style: oblique;
     font-weight: 900;

@@ -1,0 +1,27 @@
+#campus-map {
+    width: 80%;
+}
+#campus-map:hover {
+    opacity: .40;
+    transition: 0.2s;
+}
+.title {
+    text-align: center;
+    font-size: 4em;
+}
+.container {
+    width: 90%;
+}
+#img-section {
+    margin-bottom: 10px;
+    text-align: center;
+}
+#links-holder {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+#links-holder > a {
+    font-size: 2em;
+    display: table;
+}
