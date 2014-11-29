@@ -13,11 +13,15 @@
     max-width: 650px;
     font-weight: 300;
     font-family: Josefin Sans;
-    margin-right: auto;
     display: inline;
-    background: rgb(255, 249, 232);
     border-radius: 0px;
-    ;
+    margin-left: 10px;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    box-shadow: none;
+    color: black;
+    border-bottom: black 1px solid;
+    padding-left: 2px;
 }
 textarea:focus, input[type="search"]:focus {
     border-color: rgba(255, 83, 83, 0.48039);
@@ -25,8 +29,8 @@ textarea:focus, input[type="search"]:focus {
     outline: 0 none;
 }
 #events-row {
-    text-align: center;
     font-size: 2em;
+    text-align: center;
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -35,8 +39,8 @@ textarea:focus, input[type="search"]:focus {
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    padding-left: 30px;
     padding-right: 30px;
+    padding-left: 30px;
 }
 #event-display-container {
     height: 854px;
@@ -44,11 +48,11 @@ textarea:focus, input[type="search"]:focus {
     border-width: 1px;
     border-color: rgb(228, 220, 220);
     padding-left: 50px;
-    margin-left: 50px;
     border-left-style: solid;
     border-right-style: solid;
     border-top-style: solid;
     overflow-y: auto !important;
+    margin-left: 50px;
 }
 #events-list {
     text-align: left;
@@ -131,8 +135,8 @@ input {
 .btn-inactive:hover {
     background: rgba(255, 229, 0, 0.49);
 }
-
 /*rder-bottom-color: rgb(94, 113, 151);*/
+
 .btn-inactive {
     border-width: 1px;
     padding: 10px;
@@ -180,17 +184,21 @@ input {
 }
 .cat_color {
     width: 11px;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
 }
 .header-tr {
-    background:rgb(38, 49, 71);
-    text-transform:uppercase;
-    font-weight:600;
-    font-size:0.8em;
-    font-style:oblique;
-    border:black 1px solid;
-    color:white;
+    background: rgb(38, 49, 71);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8em;
+    font-style: oblique;
+    border: black 1px solid;
+    color: white;
 }
 .header-tr > td {
     padding: 4px;
     padding-left: 12px;
+}
+.event-tr {
 }

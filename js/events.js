@@ -177,7 +177,7 @@ function populate_list(events) {
 
         //If curr event is more than a day old, hide it.
         if (curr_event["date_tomorrow"] < today) {
-            entry.hidden = true;
+            entry.parentElement.hidden = true;
         }
 
         //if curr event is ever today, it wins!
@@ -328,18 +328,18 @@ function filter_entries() {
         //this may be overridden by the query filters
         if (filters.today) {
             if (curr_event["date"].toDateString() != today.toDateString()) {
-                curr_entries[i].hidden = true;
+                curr_entries[i].parentElement.hidden = true;
                 continue;
             }
         } else {
-            curr_entries[i].hidden = false;
+            curr_entries[i].parentElement.hidden = false;
         }
 
         //if filters.past, check if event time + 24 hours is < today, else if hidden show it.
         //this may be overridden by the query filters
         if (filters.past) {
             if (curr_event["date_tomorrow"] < today) {
-                curr_entries[i].hidden = true;
+                curr_entries[i].parentElement.hidden = true;
                 continue;
             }
         } else {
@@ -349,9 +349,9 @@ function filter_entries() {
         if (filters.query) {
             //if query not in entry, hide this li element.
             if (name.indexOf(filters.query.toLocaleLowerCase()) == -1) {
-                curr_entries[i].hidden = true;
+                curr_entries[i].parentElement.hidden = true;
             } else {
-                curr_entries[i].hidden = false;
+                curr_entries[i].parentElement.hidden = false;
             }
         }
     }
@@ -368,7 +368,7 @@ function filter_headers() {
         //events or one of them is not hidden 
         var hide = true;
         while (next.className == "event-tr") {
-            if (!(next.getElementsByClassName('event-entry-container')[0].hidden)) {
+            if (!(next.getElementsByClassName('event-entry-container')[0].parentElement.hidden)) {
                 hide = false;
             }
             next = next.nextElementSibling;
