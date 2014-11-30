@@ -195,26 +195,64 @@ function populate_list(events) {
     filter_headers();
 }
 
+function makeCal(title, start, duration, end, address, description) {
+    var myCalendar = createCalendar({
+            options: {
+                class: 'my-class',
+                id: 'my-id' // You need to pass an ID. If you don't, one will be generated for you.
+            },
+            data: {
+                title: title, // Event title
+                start: start, // Event start date
+                duration: duration, // Event duration (IN MINUTES)
+                end: end, // You can also choose to set an end time.
+                // If an end time is set, this will take precedence over duration
+                address: address,
+                description: description
+            }
+        });
+    // if old cal, remove.
+    if (document.querySelector('.new-cal')) {
+        document.querySelector('.new-cal').innerHTML="" ;
+    }
+    document.querySelector('.new-cal').appendChild(myCalendar);
+}
+
 function populate_event_display(d_event) {
+    //init cal data
+    var cal_title;
+    var cal_start;
+    var cal_end;
+    var cal_duration;
+    var cal_address;
+    var cal_description;
+
     //populates the event display area with the event data given
     $("#event-display-title")[0].innerHTML = d_event["name"];
+    cal_title = d_event["name"];
     $("#event-display-time")[0].innerHTML = "<b>When: </b>" + d_event["time"];
+    cal_start = d_event["date"];
+    cal_duration = 120;
     if (d_event["link"]) {
         $("#event-display-link")[0].hidden = false;
         $("#event-display-link")[0].innerHTML = "Read on " + d_event["source"];
         $("#event-display-link")[0].href = d_event["link"];
+        cal_description = d_event["source"] + ": " + d_event["link"];
     } else {
         $("#event-display-link")[0].hidden = true;
         $("#event-display-link")[0].href = "";
         $("#event-display-link")[0].innerHTML = "";
+        cal_description = d_event["source"];
     }
     $("#event-display-category")[0].innerHTML = "<b>Category: </b>" + d_event["category"];
 
     if (d_event["location"]) {
         $("#event-display-location")[0].hidden = false;
         $("#event-display-location")[0].innerHTML = "<b>Where: </b>" + d_event["location"];
+        cal_address = d_event["location"];
     } else {
         $("#event-display-location")[0].hidden = true;
+        cal_address = "";
     }
     $("#event-display-description")[0].innerHTML = d_event["description"];
 
@@ -231,7 +269,9 @@ function populate_event_display(d_event) {
     //scroll to event element in table
     current_event_element.scrollIntoViewIfNeeded();
 
-    previous_selection = current_event_element;
+    previous_selection = current_event_element
+
+    makeCal(cal_title,cal_start,cal_duration,cal_end,cal_address,cal_description);
 }
 
 function get_event_by_id(id) {
