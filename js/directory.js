@@ -27,6 +27,13 @@ function directory_callback(res) {
 
     var dirlist = $("#directory-list")[0]
 
+    //sort results by name
+    results.sort(function(a, b) {
+        var textA = a.name;
+        var textB = b.name;
+        return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    });
+
     //display results
     for (i in results) {
         var name = results[i]["name"];

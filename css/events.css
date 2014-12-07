@@ -119,8 +119,8 @@ textarea:focus, input[type="search"]:focus {
 #event-display-description {
     font-weight: 300;
     font-family: Alegreya sans;
-    font-size: 1em;
-    line-height: 1.4em;
+    font-size: 0.85em;
+    line-height: 1.35em;
 }
 #show-div {
     padding-bottom: 20px;
