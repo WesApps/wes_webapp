@@ -168,6 +168,13 @@ function populate_list(events) {
         time.innerHTML = curr_event["time"];
         entry.appendChild(time);
 
+        //if we're date sorted, need to display the categories in the table
+        if (current_sort == "date") {
+            var category = document.createElement("div");
+            category.setAttribute("class", "event-entry-category");
+            category.innerHTML = curr_event["category"];
+            entry.appendChild(category);
+        }
 
 
         //Grab first event
@@ -197,23 +204,23 @@ function populate_list(events) {
 
 function makeCal(title, start, duration, end, address, description) {
     var myCalendar = createCalendar({
-            options: {
-                class: 'my-class',
-                id: 'my-id' // You need to pass an ID. If you don't, one will be generated for you.
-            },
-            data: {
-                title: title, // Event title
-                start: start, // Event start date
-                duration: duration, // Event duration (IN MINUTES)
-                end: end, // You can also choose to set an end time.
-                // If an end time is set, this will take precedence over duration
-                address: address,
-                description: description
-            }
-        });
+        options: {
+            class: 'my-class',
+            id: 'my-id' // You need to pass an ID. If you don't, one will be generated for you.
+        },
+        data: {
+            title: title, // Event title
+            start: start, // Event start date
+            duration: duration, // Event duration (IN MINUTES)
+            end: end, // You can also choose to set an end time.
+            // If an end time is set, this will take precedence over duration
+            address: address,
+            description: description
+        }
+    });
     // if old cal, remove.
     if (document.querySelector('.new-cal')) {
-        document.querySelector('.new-cal').innerHTML="" ;
+        document.querySelector('.new-cal').innerHTML = "";
     }
     document.querySelector('.new-cal').appendChild(myCalendar);
 }
@@ -271,7 +278,7 @@ function populate_event_display(d_event) {
 
     previous_selection = current_event_element
 
-    makeCal(cal_title,cal_start,cal_duration,cal_end,cal_address,cal_description);
+    makeCal(cal_title, cal_start, cal_duration, cal_end, cal_address, cal_description);
 }
 
 function get_event_by_id(id) {
@@ -284,7 +291,6 @@ function get_event_by_id(id) {
 }
 
 function set_row_click() {
-
     $(".event-entry-container").click(function(ev) {
         var lookup_id = ev.currentTarget.id;
         var current_event = get_event_by_id(lookup_id);
