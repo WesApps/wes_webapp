@@ -23,13 +23,17 @@ function menu_callback(res){
 	var result_count = res["Result Count"];
 	var results = res["Results"];
 
-	var menulist = $("#menu-list")[0]
+	var menlist = $("#menu-list")[0]
 
 	for (i in results){
 		var name = results[i]["name"];
 		var raw_data = results[i]["data"];
-		var data_ul = document.createElement("ul");
-        for (d in raw_data) {
+		var filter = raw_data["filter"] ? raw_data["filter"][0] : "";
+		var price = raw_data["price"] ? raw_data["price"][0] : "";
+		var description = raw_data["description"] ? raw_data["description"][0] : "";
+		var title = raw_data["title"] ? raw_data["title"][0] : "";
+		//var data_ul = document.createElement("ul");
+        /*for (d in raw_data) {
             var data = raw_data[d];
             var field_li = document.createElement("li");
             var field_title = document.createElement("div");
@@ -66,10 +70,10 @@ function menu_callback(res){
     entryData.appendChild(data_ul);
     newEntry.appendChild(entryName);
     newEntry.appendChild(entryData);
-    menulist.appendChild(newEntry);
+    menlist.appendChild(newEntry);
 
 	//set 'all_entries'
-        all_entries = menulist;
+        all_entries = menlist;
 
         //set listener for searching
         $("#menu-search").on("input", function(e) {
@@ -83,8 +87,24 @@ function menu_callback(res){
 }
 
 
+function filterEntries(query) {
+    // Hides entries iff !(query subset of entry name)
+    curr_entries = all_entries.getElementsByClassName("entry-li");
+    for (i in curr_entries) {
+        if (!(curr_entries[i].children)) {
+            continue;
+        }
+        var name = curr_entries[i].children[0].innerHTML.toLocaleLowerCase();
+        //if query not in entry, hide this li element.
+        if (name.indexOf(query.toLocaleLowerCase()) == -1) {
+            curr_entries[i].hidden = true;
+        } else {
+            curr_entries[i].hidden = false;
+        }
+    }
+}
 
 
 
 
-
+*/
