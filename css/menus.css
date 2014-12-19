@@ -1,5 +1,30 @@
-.soon {
+.menus {
 	font-size:10em;
 	text-align: center;
 	font-weight: 900;
+}
+#menu-search {
+    margin-left: auto;
+    margin-right: auto;
+    height: 55px !important;
+    font-size: 1em;
+    background: rgb(255, 249, 232);
+    padding-left: 15px;
+    max-width: 650px;
+    margin-top: 20px;
+    border-radius: 0px;
+}
+textarea:focus, input[type="search"]:focus {
+    outline: 0 none;
+    border-color: rgb(250, 132, 132);
+    box-shadow: none;
+}
+li {
+    list-style: none;
+}
+#menu-container {
+    text-align: center;
+    font-size: 2em;
+    padding-left: 0px;
+    padding-right: 0px;
 }
