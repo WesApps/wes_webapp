@@ -9,7 +9,7 @@ function initialize_directory() {
 
 //ajax request to api to get json
 function get_directory() {
-    var data = $.getJSON("http://104.131.29.221/api/directory", function(res) {
+    var data = $.getJSON("http://wesapi.org/api/directory", function(res) {
         if (!(res)) {
             return {};
         } else {

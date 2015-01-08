@@ -9,7 +9,7 @@ function initialize_filmseries() {
 }
 
 function get_films() {
-    var data = $.getJSON("http://104.131.29.221/api/filmseries/all", function(res) {
+    var data = $.getJSON("http://wesapi.org/api/filmseries/all", function(res) {
         if (!(res)) {
             return {};
         } else {

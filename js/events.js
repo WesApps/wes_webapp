@@ -16,7 +16,7 @@ function initialize_events() {
 }
 
 function get_events() {
-    var data = $.getJSON("http://104.131.29.221/api/events/latest", function(res) {
+    var data = $.getJSON("http://wesapi.org/api/events/latest", function(res) {
         if (!(res)) {
             return {};
         } else {
