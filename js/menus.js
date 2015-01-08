@@ -1,39 +1,55 @@
-$(document).ready(initialize_menus)
+$(document).ready(intialize_menus)
 
 var all_entries;
 
-function intialize_menus (){
-	get_menus();
+function intialize_menus() {
+    get_menus();
 }
 
-function get_menus () {
-	var data = $.getJSON("http://104.131.29.221/api/menus/all?maxresults=", function(res){
-		if (!(res)) {
-			return {}
-		} else {
-			 //once we get the data, call the callback
+function get_menus() {
+    var data = $.getJSON("http://wesapi.org/api/menus/all?maxresults=", function(res) {
+        if (!(res)) {
+            return {}
+        } else {
+            //once we get the data, call the callback
             //function to put it into the html page.
             return menu_callback(res);
-		}
-	})
+        }
+    })
 }
 
 //handles fetch of menus
-function menu_callback(res){
-	var result_count = res["Result Count"];
-	var results = res["Results"];
+function menu_callback(res) {
+    console.log(res)
+        var result_count = res["Result Count"];
+        var results = res["Results"];
 
-	var menlist = $("#menu-list")[0]
+        var latenight = res["latenight"];
+        var redandblack = res["redandblack"];
+        var starandcrescent = res["starandcrescent"];
+        var summerfields = res["summerfields"];
+        var usdan = res["usdan"];
 
-	for (i in results){
-		var name = results[i]["name"];
-		var raw_data = results[i]["data"];
-		var filter = raw_data["filter"] ? raw_data["filter"][0] : "";
-		var price = raw_data["price"] ? raw_data["price"][0] : "";
-		var description = raw_data["description"] ? raw_data["description"][0] : "";
-		var title = raw_data["title"] ? raw_data["title"][0] : "";
-		//var data_ul = document.createElement("ul");
-        /*for (d in raw_data) {
+        // usdan, summies, weswings, latenight, red and black
+        process_usdan(usdan);
+        process_summerfields(usdan);
+        process_weswings(weswings);
+        process_latenight(usdan);
+        process_redandblack(redandblack);
+
+
+
+        // for (i in results) {
+        //     var name = results[i]["name"];
+        //     var raw_data = results[i]["data"];
+        //     var filter = raw_data["filter"] ? raw_data["filter"][0] : "";
+        //     var price = raw_data["price"] ? raw_data["price"][0] : "";
+        //     var description = raw_data["description"] ? raw_data["description"][0] : "";
+        //     var title = raw_data["title"] ? raw_data["title"][0] : "";
+        // }
+    }
+    //var data_ul = document.createElement("ul");
+    /*for (d in raw_data) {
             var data = raw_data[d];
             var field_li = document.createElement("li");
             var field_title = document.createElement("div");
@@ -52,11 +68,11 @@ function menu_callback(res){
                     field_data.innerHTML += tmp;
                 }
             } else 
-            	{
+                {
                 field_data.innerHTML = data;
-            	}
-		}
-	var newEntry = document.createElement("li");
+                }
+        }
+    var newEntry = document.createElement("li");
         newEntry.setAttribute("class", "entry-li")
 
     //name
@@ -72,7 +88,7 @@ function menu_callback(res){
     newEntry.appendChild(entryData);
     menlist.appendChild(newEntry);
 
-	//set 'all_entries'
+    //set 'all_entries'
         all_entries = menlist;
 
         //set listener for searching
