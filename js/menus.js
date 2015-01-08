@@ -1,8 +1,10 @@
-$(document).ready(intialize_menus)
+$(document).ready(intialize_menus);
 
 var all_entries;
+var menus_container;
 
 function intialize_menus() {
+    menus_container = $("#menu-list-container")[0];
     get_menus();
 }
 
@@ -21,35 +23,80 @@ function get_menus() {
 //handles fetch of menus
 function menu_callback(res) {
     console.log(res)
-        var result_count = res["Result Count"];
-        var results = res["Results"];
+    var result_count = res["Result Count"];
+    var results = res["Results"];
 
-        var latenight = res["latenight"];
-        var redandblack = res["redandblack"];
-        var starandcrescent = res["starandcrescent"];
-        var summerfields = res["summerfields"];
-        var usdan = res["usdan"];
+    var latenight = results["latenight"];
+    var redandblack = results["redandblack"];
+    var starandcrescent = results["starandcrescent"];
+    var summerfields = results["summerfields"];
+    var usdan = results["usdan"];
 
-        // usdan, summies, weswings, latenight, red and black
-        process_usdan(usdan);
-        process_summerfields(usdan);
-        process_weswings(weswings);
-        process_latenight(usdan);
-        process_redandblack(redandblack);
+    // usdan, summies, weswings, latenight, red and black
+    // process_usdan(usdan);
+    // process_summerfields(latenight);
+    // process_weswings(weswings);
+    process_latenight(latenight);
+    // process_redandblack(redandblack);
+}
 
+function process_type1(data,title,id){
+    // Processes Late Night and Summerfields data types.
+    var menu_element = document.createElement("div");
+    menu_element.setAttribute("id", "menu-"+id);
+    var title_element = document.createElement("div");
+    title_element.setAttribute("class", "title");
 
+    // append title to menu element
+    menu_element.appendChild(title_element);
+    menus_container.appendChild(menu_element);
 
-        // for (i in results) {
-        //     var name = results[i]["name"];
-        //     var raw_data = results[i]["data"];
-        //     var filter = raw_data["filter"] ? raw_data["filter"][0] : "";
-        //     var price = raw_data["price"] ? raw_data["price"][0] : "";
-        //     var description = raw_data["description"] ? raw_data["description"][0] : "";
-        //     var title = raw_data["title"] ? raw_data["title"][0] : "";
-        // }
+    var data_title = "Late Night";
+    title_element.innerHTML = data_title;
+    for (i in data) {
+        var item_title_element = document.createElement("div");
+        var title = data[i]["title"];
+        item_title_element.innerHTML = title;
+        menu_element.appendChild(item_title_element);
+
+        var item_description_element = document.createElement("div");
+        var description = data[i]["description"];
+        item_description_element.innerHTML = description;
+        menu_element.appendChild(item_description_element);
+
+        var item_filter_element = document.createElement("div");
+        var filter = data[i]["filter"];
+        item_filter_element.innerHTML = filter;
+        menu_element.appendChild(item_filter_element);
+
+        var item_price_element = document.createElement("div");
+        var price = data[i]["price"];
+        item_price_element.innerHTML = price;
+        menu_element.appendChild(item_price_element);
+        
     }
-    //var data_ul = document.createElement("ul");
-    /*for (d in raw_data) {
+}
+
+function process_latenight(data) {
+    process_type1(data,"Late Night","latenight")
+}
+
+function process_summerfields(data) {
+    process_type1(data,"Summerfields","summerfields")
+}
+
+function process_usdan() {};
+
+// for (i in results) {
+//     var name = results[i]["name"];
+//     var raw_data = results[i]["data"];
+//     var filter = raw_data["filter"] ? raw_data["filter"][0] : "";
+//     var price = raw_data["price"] ? raw_data["price"][0] : "";
+//     var description = raw_data["description"] ? raw_data["description"][0] : "";
+//     var title = raw_data["title"] ? raw_data["title"][0] : "";
+// }
+//var data_ul = document.createElement("ul");
+/*for (d in raw_data) {
             var data = raw_data[d];
             var field_li = document.createElement("li");
             var field_title = document.createElement("div");
