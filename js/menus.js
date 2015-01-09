@@ -93,9 +93,10 @@ function process_type2(data, title, id){
         menu_element.appendChild(item_name_element);
         
         var item_data = data[i]["data"];
-        // var category = item_data["category"][0];
-        // var info = item_data["info"][0];
-        // var price = item_data["price"][0];
+        console.log(item_data)
+        var category = item_data["category"];
+        var info = item_data["info"][0];
+        var price = item_data["price"][0];
     }
 
 }
