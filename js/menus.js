@@ -86,16 +86,25 @@ function process_type2(data, title, id){
     var data_name = title;
     name_element.innerHTML = data_name;
     for (i in data){
-        var item_name_element = document.createElement("div");
+        var item_name_element = document.createElement("span");
         var name = data[i]["name"];
         item_name_element.innerHTML = name;
         item_name_element.setAttribute("class", "name-description");
         menu_element.appendChild(item_name_element);
         
         var item_data = data[i]["data"];
-        // var category = item_data["category"][0];
-        // var info = item_data["info"][0];
-        // var price = item_data["price"][0];
+
+        var item_price_element = document.createElement("span");
+        var price = item_data["price"][0];
+        item_price_element.innerHTML = price;
+        menu_element.appendChild(item_price_element);
+
+        var item_info_element = document.createElement("div");
+        var info = item_data["info"] ? item_data["info"][0]: "";
+        item_info_element.innerHTML = info;
+        item_info_element.setAttribute("class", "item-description")
+        menu_element.appendChild(item_info_element);
+
     }
 
 }
