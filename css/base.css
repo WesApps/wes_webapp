@@ -1,14 +1,6 @@
 @font-face {
-    font-family: BearBold;
-    src: url(../fonts/BearBold.otf);
-}
-@font-face {
-    font-family: BearRegular;
-    src: url(../fonts/BearRegular.otf);
-}
-@font-face {
-    font-family: BearLight;
-    src: url(../fonts/BearLight.otf);
+    font-family: SUNN;
+    src: url(../fonts/SUNN.otf);
 }
 html {
     height: 100%;

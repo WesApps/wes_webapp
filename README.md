@@ -6,7 +6,7 @@ Web interface for Wesleyan related info
 TODO:
 
 -Menus
--Social
+-about
 -Miscellaneous
 -Make mobile friendly
 -General Styling
