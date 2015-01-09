@@ -18,7 +18,7 @@ textarea:focus, input[type="search"]:focus {
 li {
     list-style: none;
 }
-
+#980808
 #menu-container {
     text-align: center;
     font-size: 2em;
@@ -74,4 +74,9 @@ li {
 .item-title {
     font-weight: bold;
     padding-right: 15px;
+}
+
+.name-description{
+    font-weight: bold;
+    
 }
