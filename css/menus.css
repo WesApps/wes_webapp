@@ -60,3 +60,18 @@ li {
     display: inline;
     font-weight: 400;
 }
+.title {
+    color: green;
+}
+#menu-list-container {
+    text-align: left;
+}
+.item-description {
+    /*padding-top: 5px;*/
+    padding-bottom: 35px;
+    line-height: 1.25em;
+}
+.item-title {
+    font-weight: bold;
+    padding-right: 15px;
+}

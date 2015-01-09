@@ -51,29 +51,25 @@ function process_type1(data,title,id){
     menu_element.appendChild(title_element);
     menus_container.appendChild(menu_element);
 
-    var data_title = "Late Night";
+    var data_title = title;
     title_element.innerHTML = data_title;
     for (i in data) {
-        var item_title_element = document.createElement("div");
+        var item_title_element = document.createElement("span");
         var title = data[i]["title"];
         item_title_element.innerHTML = title;
+        item_title_element.setAttribute("class", "item-title");
         menu_element.appendChild(item_title_element);
+
+        var item_price_element = document.createElement("span");
+        var price = data[i]["price"];
+        item_price_element.innerHTML = price;
+        menu_element.appendChild(item_price_element);
 
         var item_description_element = document.createElement("div");
         var description = data[i]["description"];
         item_description_element.innerHTML = description;
+        item_description_element.setAttribute("class", "item-description");
         menu_element.appendChild(item_description_element);
-
-        var item_filter_element = document.createElement("div");
-        var filter = data[i]["filter"];
-        item_filter_element.innerHTML = filter;
-        menu_element.appendChild(item_filter_element);
-
-        var item_price_element = document.createElement("div");
-        var price = data[i]["price"];
-        item_price_element.innerHTML = price;
-        menu_element.appendChild(item_price_element);
-        
     }
 }
 
@@ -81,19 +77,24 @@ function process_type2(data, title, id){
     var menu_element = document.createElement("div");
     menu_element.setAttribute("id", "menu-"+id);
     var name_element = document.createElement("div");
-    name_element.setAttribute("class", "name");
+    name_element.setAttribute("class", "title");
 
     // append title to menu element
     menu_element.appendChild(name_element);
     menus_container.appendChild(menu_element);
 
-    var data_name = "Red and Black";
+    var data_name = title;
     name_element.innerHTML = data_name;
     for (i in data){
         var item_name_element = document.createElement("div");
         var name = data[i]["name"];
         item_name_element.innerHTML = name;
         menu_element.appendChild(item_name_element);
+        
+        var item_data = data[i]["data"];
+        // var category = item_data["category"][0];
+        // var info = item_data["info"][0];
+        // var price = item_data["price"][0];
     }
 
 }
