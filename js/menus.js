@@ -34,10 +34,10 @@ function menu_callback(res) {
 
     // usdan, summies, weswings, latenight, red and black
     // process_usdan(usdan);
-    // process_summerfields(latenight);
+    process_summerfields(summerfields);
     // process_weswings(weswings);
     process_latenight(latenight);
-    // process_redandblack(redandblack);
+    process_redandblack(redandblack);
 }
 
 function process_type1(data,title,id){
@@ -77,6 +77,28 @@ function process_type1(data,title,id){
     }
 }
 
+function process_type2(data, title, id){
+    var menu_element = document.createElement("div");
+    menu_element.setAttribute("id", "menu-"+id);
+    var name_element = document.createElement("div");
+    name_element.setAttribute("class", "name");
+
+    // append title to menu element
+    menu_element.appendChild(name_element);
+    menus_container.appendChild(menu_element);
+
+    var data_name = "Red and Black";
+    name_element.innerHTML = data_name;
+    for (i in data){
+        var item_name_element = document.createElement("div");
+        var name = data[i]["name"];
+        item_name_element.innerHTML = name;
+        menu_element.appendChild(item_name_element);
+    }
+
+}
+
+
 function process_latenight(data) {
     process_type1(data,"Late Night","latenight")
 }
@@ -86,6 +108,10 @@ function process_summerfields(data) {
 }
 
 function process_usdan() {};
+
+function process_redandblack(data) {
+    process_type2(data,"Red and Black","redandblack")
+}
 
 // for (i in results) {
 //     var name = results[i]["name"];
