@@ -29,4 +29,29 @@ hr {
     border: 0;
     width: 480px;
     border-top: 1px solid rgba(128, 128, 128, 0.33);
+    margin-left: auto;
+    margin-right: auto;
+}
+html, body, .body-container {
+    height: 100%;
+}
+body > .body-container {
+    height: auto;
+    min-height: 100%;
+}
+#footer {
+    clear: both;
+    position: relative;
+    text-align: center;
+    z-index: 10;
+    margin-top: -3em;
+}
+#footer > h4 {
+    color: rgba(74, 74, 74, 0.63);
+    font-size: 1em;
+    text-transform: uppercase;
+	
+}
+#content {
+    padding-bottom: 3em;
 }
