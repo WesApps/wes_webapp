@@ -1,43 +1,32 @@
+#films-list-container {
+    padding: 23px;
+    padding-top: 7px;
+}
 #films-list-heading {
     font-weight: 400;
-    padding-top: 11px;
-    color: rgba(255, 94, 94, 0.77);
-    font-family: Josefin sans;
-    font-variant: small-caps;
-    font-size: 1.8em;;
+    font-size: 1.8em;
+    text-align: left;
+    font-family: Roboto Slab;
+    color: rgb(226,93,64);
+    padding-top: 0px;;
 }
 #films-search {
-    margin-right: auto;
-    height: 41px !important;
-    padding-left: 11px;
+    height: 55px !important;
+    padding-left: 15px;
     font-size: 0.8em;
-    width: 80%;
-    margin-left: auto;
+    width: 69%;
     max-width: 650px;
-    background: rgb(255, 249, 232);
+    background: rgba(255, 249, 232, 0);
     border-radius: 0px;
     font-weight: 300;
     font-family: Josefin Sans;
     padding-top: 7px;
-}
-textarea:focus, input[type="search"]:focus {
-    border-color: rgba(255, 83, 83, 0.48039);
-    box-shadow: none;
-    outline: 0 none;
 }
 #film-row {
     text-align: center;
     font-size: 2em;
     padding-left: 0px;
     padding-right: 0px;
-}
-#films-list-container {
-    background: rgba(255, 216, 109, 0.1);
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    padding-left: 30px;
-    padding-right: 30px;
 }
 #film-display-container {
     height: 650px;
@@ -56,24 +45,24 @@ textarea:focus, input[type="search"]:focus {
     padding: 0px;
 }
 .film-entry-container {
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    padding-left: 23px;
-    padding-bottom: 5px;
-    background: rgb(253, 255, 212);
-    padding-top: 5px;
+    padding-left: 16px;
+    padding-bottom: 6px;
+    background: rgba(0, 0, 0, 0);
+    padding-top: 9px;
 }
 .film-entry-container:hover {
     background: rgba(255, 83, 83, 0.05);
     cursor: pointer;
 }
 .film-entry-name {
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 400;
-    font-family: Alegreya sans;
+    font-family: PT Sans;
+    margin-bottom: 0px;
+    line-height: 1em;
 }
 .film-entry-time {
-    font-size: 0.8em;
+    font-size: 0.7em;
     color: rgba(64, 63, 63, 0.86);
 }
 #films-table-scroll {
@@ -82,10 +71,6 @@ textarea:focus, input[type="search"]:focus {
 }
 #films-table {
     width: 100%;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    margin-bottom: 30px;
     margin-top: 10px;
 }
 #film-display-title {
@@ -107,5 +92,18 @@ textarea:focus, input[type="search"]:focus {
     font-family: Alegreya sans;
 }
 #films-search {
-    margin-bottom: 20px
+    border-color: rgb(226,93,64);
+    border-width: 3px !important;
+    margin-bottom: 20px;
+    box-shadow: none;
+    outline: 0 none;
+    margin-top: -11px;
+    color: rgb(226,93,64);
+    font-family: PT sans;
+    font-weight: 100;;
+}
+textarea:focus, input[type="search"]:focus { 
+    border-color: rgb(226,93,64) !important;
+    box-shadow: none;
+    outline: 0 none;
 }

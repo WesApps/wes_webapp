@@ -66,7 +66,7 @@ function populate_list(films) {
         var curr_film = films[i];
         var tr = document.createElement("tr");
         var entry = document.createElement("td");
-        entry.setAttribute("class", "film-entry-container");
+        entry.setAttribute("class", "film-entry-container box-container");
         entry.setAttribute("id", "film_" + i);
         curr_film["id"] = "film_" + i;
         tr.appendChild(entry);

@@ -9,7 +9,7 @@ body {
     height: 100%;
     border-width: 11px;
     font-family: 'PT Sans', sans-serif;
-    background: rgb(233,233,228);
+    background: rgb(233, 233, 228);
 }
 a {
     text-decoration: none;
@@ -27,14 +27,17 @@ a:hover {
         display: inline-block;
     }
 }
+.navbar {
+    margin-bottom: 0px !important;
+}
 .navbar-default .navbar-nav>li>a {
     margin-left: 20px;
     margin-right: 20px;
     text-decoration: none;
     text-transform: uppercase;
-    color: rgb(233,233,228);
+    color: rgb(233, 233, 228);
     transition: .15s ease-out;
-    font-size: 1.15em;
+    font-size: 1.05em;
     letter-spacing: 0.1em;
     font-family: Roboto Slab;
     font-weight: 500;
@@ -43,19 +46,18 @@ a:hover {
     padding: 0px 0px;
     border-bottom-color: rgb(209, 222, 230);
     border-bottom-style: double;
-    ;
 }
 .navbar-default .navbar-nav>li>a:hover {
-    border-bottom-color: rgb(87,105,118);
+    border-bottom-color: rgb(87, 105, 118);
     border-bottom-width: 10px;
-    color: rgb(87,105,118);
+    color: rgb(87, 105, 118);
 }
 .navbar-default {
     background: transparent;
     border: none;
 }
 .navbar-holder {
-    padding-top: 84px;
+    padding-top: 60px;
     font-size: 1.3em;
     text-align: center;
     padding-right: 5px;
@@ -74,7 +76,7 @@ a:hover {
     text-decoration: none;
     border: none !important;
     display: inline-block !important;
-    font-size: 1.8em !important;
+    font-size: 1.4em !important;
     font-weight: 300 !important;
     font-family: SUNN !important;
     text-transform: none !important;
@@ -88,9 +90,10 @@ a:hover {
 .active-nav {
     /*color: rgb(94, 113, 151) !important;*/
     /*border-bottom-color: rgba(94, 113, 151,0.7) !important;*/
-    
-    border-bottom-color: lightcoral !important;
+    /*border-bottom-color: lightcoral !important;    */
+    border-bottom-color: none !important;
     border-bottom-width: 10px !important;
+
 }
 .title {
     font-variant: small-caps;
@@ -104,4 +107,10 @@ a:hover {
     text-transform: lowercase;
     margin-top: -10px;
     padding-bottom: 15px !important;
+}
+.row {
+    padding-top: 30px;
+}
+.box-container {
+    border: rgb(226,93,64) solid 3px;
 }
