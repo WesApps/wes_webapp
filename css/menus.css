@@ -23,6 +23,14 @@ li {
     padding-left: 0px;
     padding-right: 0px;
 }
+
+.menunav {
+    padding: 10px;
+    text-align: center;
+    color: #49464b;
+    font-size: 40px;
+}
+
 .entry-name {
     font-size: 1.1em;
     max-width: 500px;
@@ -57,7 +65,10 @@ li {
     font-weight: 400;
 }
 .title {
-    color: green;
+    font-family: Roboto Slab;
+    color: rgb(238, 92, 92);
+    font-style: normal;
+    font-size: 80px;
 }
 #menu-list-container {
     text-align: left;
