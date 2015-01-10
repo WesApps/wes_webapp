@@ -14,11 +14,9 @@ textarea:focus, input[type="search"]:focus {
     border-color: rgb(250, 132, 132);
     box-shadow: none;
 }
-
 li {
     list-style: none;
 }
-#980808
 #menu-container {
     text-align: center;
     font-size: 2em;
@@ -36,7 +34,6 @@ li {
     font-weight: initial;
     font-family: Josefin sans;
 }
-
 .entry-data {
     display: inline;
     max-width: 500px;
@@ -52,7 +49,6 @@ li {
 .field-div {
     text-align: left;
     display: inline;
-    /* font-size: 1em; */;
     font-weight: 800;
     text-transform: capitalize;
 }
@@ -67,7 +63,6 @@ li {
     text-align: left;
 }
 .item-description {
-    /*padding-top: 5px;*/
     padding-bottom: 35px;
     line-height: 1.25em;
 }
@@ -75,8 +70,7 @@ li {
     font-weight: bold;
     padding-right: 15px;
 }
-
-.name-description{
+.name-description {
     font-weight: bold;
     padding-right: 15px;
 }

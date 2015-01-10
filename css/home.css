@@ -1,11 +1,32 @@
-
 #about-row {
     margin: auto;
-    padding-top: 200px;
+    padding-top: 149px;
 }
 .about {
     font-size: 3em;
 }
 p {
     color: rgb(65, 56, 56);
+}
+.greeting {
+    font-family: Roboto Slab, sans-serif;
+    font-size: 4.9em;
+    font-weight: 100;
+}
+.intro {
+    font-weight: 100;
+    font-size: 1.7em;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+.centered {
+    text-align: center;
+}
+hr {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border: 0;
+    width: 480px;
+    border-top: 1px solid rgba(128, 128, 128, 0.33);
 }

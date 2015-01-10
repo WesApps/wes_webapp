@@ -7,13 +7,9 @@ html {
 }
 body {
     height: 100%;
-    /*font-family: 'EB Garamond', serif;*/
-    
-    border-top-style: solid;
-    background: rgb(254, 255, 233);
-    border-top-color: rgba(146, 0, 0, 0.11);
     border-width: 11px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    background: rgb(233,233,228);
 }
 a {
     text-decoration: none;
@@ -32,54 +28,62 @@ a:hover {
     }
 }
 .navbar-default .navbar-nav>li>a {
-    padding: 0px 0px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     text-decoration: none;
-    color: black;
+    text-transform: uppercase;
+    color: rgb(233,233,228);
     transition: .15s ease-out;
-    font-size: 1.25em;
-    letter-spacing: 0.04em;
-    font-family: Josefin Sans;
-    font-weight: 300;
-    padding-bottom: 3px;
-    border-bottom-color: rgb(94, 113, 151);
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
+    font-size: 1.15em;
+    letter-spacing: 0.1em;
+    font-family: Roboto Slab;
+    font-weight: 500;
+    padding-bottom: 7px !important;
+    border-bottom-width: 4px;
+    padding: 0px 0px;
+    border-bottom-color: rgb(209, 222, 230);
+    border-bottom-style: double;
     ;
 }
 .navbar-default .navbar-nav>li>a:hover {
-    color: rgb(94, 113, 151);
-    border-bottom-color: rgba(94, 113, 151, 0.7);
+    border-bottom-color: rgb(87,105,118);
     border-bottom-width: 10px;
+    color: rgb(87,105,118);
 }
 .navbar-default {
     background: transparent;
     border: none;
 }
 .navbar-holder {
-    padding-top: 64px;
+    padding-top: 84px;
     font-size: 1.3em;
     text-align: center;
     padding-right: 5px;
     padding-left: 5px;
+    width: 100%;
+    background: rgb(136, 188, 215);
+    border-bottom: solid 3px;
+    border-bottom-color: rgb(65, 87, 97);
+    border-bottom-color: burlywood;
 }
 .logo {
     font-size: 4em;
-    margin-top: -53px;
+    margin-top: -41px;
 }
 .logo > a {
     text-decoration: none;
     border: none !important;
-    color: rgba(240, 128, 128, 0.75) !important;
-    font-variant: small-caps;
     display: inline-block !important;
-    font-size: 0.9em !important;
-    font-weight: 600 !important;
+    font-size: 1.8em !important;
+    font-weight: 300 !important;
+    font-family: SUNN !important;
+    text-transform: none !important;
+    font-variant: small-caps;
+    letter-spacing: 0.05em !important;
 }
 .logo > a:hover {
     text-decoration: none !important;
-    color: rgba(229, 111, 111, 0.4) !important;
+    color: rgba(255, 255, 255, 0.4) !important;
 }
 .active-nav {
     /*color: rgb(94, 113, 151) !important;*/
