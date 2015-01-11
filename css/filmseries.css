@@ -8,7 +8,8 @@
     text-align: left;
     font-family: Roboto Slab;
     color: rgb(226, 93, 64);
-    padding-top: 0px;;
+    padding-top: 0px;
+    ;
 }
 #films-search {
     height: 55px !important;
@@ -71,13 +72,14 @@
     margin-top: 10px;
 }
 #film-display-title {
-font-size: 1.4em;
+    font-size: 1.4em;
     font-family: Roboto slab;
     font-weight: 400;
     padding-top: 0px;
     margin-top: 0px;
     color: rgb(226, 93, 64);
-    font-style: italic;;
+    font-style: italic;
+    ;
 }
 #film-display-time {
     margin-top: -5px;
@@ -91,21 +93,26 @@ font-size: 1.4em;
     font-style: italic;
 }
 #film-display-short {
-    font-size: 0.7em;;
+    font-size: 0.7em;
+    ;
     font-weight: 300;
     margin-bottom: 4.2px;
     font-family: Roboto Slab;
     letter-spacing: 0.02em;
     color: rgba(89, 69, 69, 0.94);
-
 }
 #film-display-imdb {
-    font-size: 0.6em;
-    color: rgb(238, 92, 92);
-    font-weight: 200;
-    padding-left: 5px;
-    padding-right: 5px;
-    border: rgb(238, 92, 92) 1px solid;;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    font-weight: 600;
+    font-size: 0.55em;
+    padding: 3px;
+    background: rgb(218, 218, 218);
+    padding-right: 6px;
+    padding-left: 6px;
+}
+#film-display-imdb:hover {
+    color: black;
 }
 #film-display-long {
     font-weight: 300;
@@ -115,18 +122,19 @@ font-size: 1.4em;
     padding-top: 7px;
 }
 #films-search {
-    border-color: rgb(226,93,64);
+    border-color: rgb(226, 93, 64);
     border-width: 3px !important;
     margin-bottom: 20px;
     box-shadow: none;
     outline: 0 none;
     margin-top: -11px;
-    color: rgb(226,93,64);
+    color: rgb(226, 93, 64);
     font-family: PT sans;
-    font-weight: 100;;
+    font-weight: 100;
+    ;
 }
-textarea:focus, input[type="search"]:focus { 
-    border-color: rgb(226,93,64) !important;
+textarea:focus, input[type="search"]:focus {
+    border-color: rgb(226, 93, 64) !important;
     box-shadow: none;
     outline: 0 none;
 }
