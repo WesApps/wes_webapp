@@ -33,11 +33,36 @@ function menu_callback(res) {
     var usdan = results["usdan"];
 
     // usdan, summies, weswings, latenight, red and black
-    // process_usdan(usdan);
+    process_usdan(usdan);
     process_summerfields(summerfields);
     // process_weswings(weswings);
     process_latenight(latenight);
     process_redandblack(redandblack);
+}
+
+function process_type0(data, title, id)
+{
+    var menu_element = document.createElement("div");
+    menu_element.setAttribute("id", "menu-"+id);
+
+    menus_container.appendChild(menu_element);
+
+    for (i in data){
+        var breakfast_element = document.createElement("div");
+        
+    }
+    // var breakfast_element = document.createElement("div");
+    // breakfast_element.setAttribute("class", "category");
+
+    // menu_element.appendChild(category_element);
+
+    // var data_category = category;
+    // data_category.innerHTML = data_category;
+
+    // for (i in data){
+
+    // }
+
 }
 
 function process_type1(data,title,id){

@@ -28,7 +28,8 @@ li {
     padding: 10px;
     text-align: center;
     color: #49464b;
-    font-size: 40px;
+    font-size: 30px;
+    font-family: Roboto Slab, sans-serif;
 }
 
 .entry-name {
