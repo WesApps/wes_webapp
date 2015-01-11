@@ -22,8 +22,8 @@ li {
     font-size: 2em;
     padding-left: 0px;
     padding-right: 0px;
+    height: 700px;
 }
-
 .menunav {
     padding: 10px;
     text-align: center;
@@ -31,7 +31,6 @@ li {
     font-size: 30px;
     font-family: Roboto Slab, sans-serif;
 }
-
 .entry-name {
     font-size: 1.1em;
     max-width: 500px;
@@ -70,19 +69,70 @@ li {
     color: rgb(238, 92, 92);
     font-style: normal;
     font-size: 80px;
+    border-bottom: rgb(238, 92, 92) solid 6px;
+    display: table;
+    line-height: 1em;
+    margin-bottom: 15px !important;
+    padding-bottom: 3px !important;
 }
 #menu-list-container {
     text-align: left;
+    height: 100%;
+    overflow: auto;
 }
 .item-description {
-    padding-bottom: 35px;
+    padding-bottom: 10px;
     line-height: 1.25em;
+    font-size: 0.75em;
 }
 .item-title {
     font-weight: bold;
     padding-right: 15px;
+    display: inline-block;
+    font-size: 0.9em;
+}
+.item-price {
+    font-size: 0.9em;
 }
 .name-description {
     font-weight: bold;
     padding-right: 15px;
+}
+#menus-nav>li>a {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 3px;
+    background: rgb(218, 218, 218);
+    margin: 9px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+#menus-nav>li>a:hover {
+    color: black;
+}
+.active {
+    color: rgb(242, 242, 242);
+}
+.active>a {
+    background: rgb(238, 92, 92) !important;
+}
+#myNavbar {
+    padding-bottom: 10px;
+}
+.navbar-nav>li, .navbar-nav {
+    float: left !important;
+}
+.navbar-nav.navbar-right:last-child {
+    margin-right: 0px !important;
+}
+.navbar-right {
+    float: right!important;
+}
+.navbar-nav{
+    margin: 0 auto !important;
+    display: table !important;
+    table-layout: fixed !important;
+    float:none !important;
 }

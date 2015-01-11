@@ -25,7 +25,6 @@
     <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:400,700|Roboto+Slab:400,100,300,700|PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 
-
     <body>
         <!-- NAVBAR -->
         <div class="navbar-holder container">
@@ -68,36 +67,25 @@
             </nav>
         </div>
         <!-- END NAVBAR -->
-
-        <div class = "menunav">
-            <span class="link">
-                <a href="#Usdan">Usdan</a>
-            </span>
-            |
-            <span class="link">
-                <a href="#summerfields">Summerfields</a>
-            </span>
-            |
-            <span class= "link">
-                <a href="#weswings">WesWings</a>
-            </span>
-            |
-            <span class = "link">
-                <a href="#latenight">Late Night</a>
-            </span>
-            |
-            <span class = "link">
-                <a href="#redandblack">Red and Black</a>
-            </span>
-
-        </div>
-        
-        <div class = "row">
-            <div id="menu-container" class="col-md-8 col-md-offset-2">           
-                 <!-- Search Bar -->
-                <!-- <input type="search" id="menu-search" class="form-control" placeholder="Search..." autofocus="autofocus"> -->
-                 <!-- Content -->
-                <div id="menu-list-container">
+        <div class="row">
+            <div id="menu-area" class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                <nav id="myNavbar" class="navbar navbar-menus" role="navigation">
+                    <ul class="nav navbar-nav" id="menus-nav">
+                        <li class="active"><a href="#usdan">Usdan</a>
+                        </li>
+                        <li><a href="#summerfields">Summerfields</a>
+                        </li>
+                        <li><a href="#latenight">Late Night</a>
+                        </li>
+                        <li><a href="#weswings">WesWings</a>
+                        </li>
+                        <li><a href="#redandblack">Red & Black</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="menu-container">
+                    <div id="menu-list-container" class="col-md-8 col-md-offset-2 scroll-area" data-spy="scroll" data-target="#myNavbar" data-offset="0">
+                    </div>
                 </div>
             </div>
         </div>

@@ -71,7 +71,7 @@
     margin-top: 10px;
 }
 #film-display-title {
-    font-size: 1.4em;
+font-size: 1.4em;
     font-family: Roboto slab;
     font-weight: 400;
     padding-top: 0px;
@@ -106,7 +106,7 @@
 }
 #film-display-long {
     font-weight: 300;
-    font-size: 0.8em;
+    font-size: 0.75em;
     line-height: 1.405em;
     text-align: initial;
 }

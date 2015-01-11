@@ -10,6 +10,7 @@ body {
     border-width: 11px;
     font-family: 'PT Sans', sans-serif;
     background: rgb(233, 233, 228);
+    color: rgba(91, 91, 91, 0.95);
 }
 a {
     text-decoration: none;
@@ -48,7 +49,7 @@ a:hover {
     border-bottom-style: double;
 }
 .navbar-default .navbar-nav>li>a:hover {
-    border-bottom-color: rgb(87, 105, 118);
+    /*border-bottom-color: rgb(87, 105, 118);*/
     border-bottom-width: 10px;
     color: rgb(87, 105, 118);
 }
@@ -88,11 +89,10 @@ a:hover {
     color: rgba(255, 255, 255, 0.4) !important;
 }
 .active-nav {
-    /*color: rgb(94, 113, 151) !important;*/
-    /*border-bottom-color: rgba(94, 113, 151,0.7) !important;*/
-    /*border-bottom-color: lightcoral !important;    */
     border-bottom-color: none !important;
     border-bottom-width: 10px !important;
+    border-bottom-color: rgb(87, 105, 118) !important;
+    color: rgb(87, 105, 118) !important;
 
 }
 .title {
@@ -113,4 +113,10 @@ a:hover {
 }
 .box-container {
     border: rgb(226,93,64) solid 3px;
+}
+.navbar-nav{
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float:none;
 }

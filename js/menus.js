@@ -43,7 +43,7 @@ function menu_callback(res) {
 function process_type0(data, title, id)
 {
     var menu_element = document.createElement("div");
-    menu_element.setAttribute("id", "menu-"+id);
+    menu_element.setAttribute("id", id);
 
     menus_container.appendChild(menu_element);
 
@@ -68,8 +68,8 @@ function process_type0(data, title, id)
 function process_type1(data,title,id){
     // Processes Late Night and Summerfields data types.
     var menu_element = document.createElement("div");
-    menu_element.setAttribute("id", "menu-"+id);
-    var title_element = document.createElement("div");
+    menu_element.setAttribute("id", id);
+    var title_element = document.createElement("span");
     title_element.setAttribute("class", "title");
 
     // append title to menu element
@@ -88,6 +88,7 @@ function process_type1(data,title,id){
         var item_price_element = document.createElement("span");
         var price = data[i]["price"];
         item_price_element.innerHTML = price;
+        item_price_element.setAttribute("class", "item-price");
         menu_element.appendChild(item_price_element);
 
         var item_description_element = document.createElement("div");
@@ -100,8 +101,8 @@ function process_type1(data,title,id){
 
 function process_type2(data, title, id){
     var menu_element = document.createElement("div");
-    menu_element.setAttribute("id", "menu-"+id);
-    var name_element = document.createElement("div");
+    menu_element.setAttribute("id", id);
+    var name_element = document.createElement("span");
     name_element.setAttribute("class", "title");
 
     // append title to menu element
@@ -122,6 +123,7 @@ function process_type2(data, title, id){
         var item_price_element = document.createElement("span");
         var price = item_data["price"][0];
         item_price_element.innerHTML = price;
+        item_price_element.setAttribute("class", "item-price");
         menu_element.appendChild(item_price_element);
 
         var item_info_element = document.createElement("div");
