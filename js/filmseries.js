@@ -137,10 +137,18 @@ function populate_film_display(film) {
     //if previously selected element, clear
     if (previous_selection) {
         previous_selection.style.background = "";
+        for (i = 0; i < previous_selection.childNodes.length; i++) {
+            previous_selection.children[i].style.color = "inherit";
+        }
     }
 
     //set the class of the current film element in table to active
-    current_film_element.style.background = "rgba(255, 83, 83, 0.18)";
+    current_film_element.style.background = "rgb(226,93,64)";
+    console.log(current_film_element.childNodes.length, "!")
+    for (i = 0; i < current_film_element.childNodes.length; i++) {
+        current_film_element.children[i].style.color = "rgb(233, 233, 228)";
+    }
+
 
     //scroll to film element in table
     current_film_element.scrollIntoViewIfNeeded();

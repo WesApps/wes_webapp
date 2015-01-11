@@ -63,10 +63,10 @@ a:hover {
     padding-right: 5px;
     padding-left: 5px;
     width: 100%;
-    background: rgb(136, 188, 215);
     border-bottom: solid 3px;
     border-bottom-color: rgb(65, 87, 97);
     border-bottom-color: burlywood;
+    background: rgb(136, 188, 215);
 }
 .logo {
     font-size: 4em;

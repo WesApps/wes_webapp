@@ -7,7 +7,7 @@
     font-size: 1.8em;
     text-align: left;
     font-family: Roboto Slab;
-    color: rgb(226,93,64);
+    color: rgb(226, 93, 64);
     padding-top: 0px;;
 }
 #films-search {
@@ -31,14 +31,11 @@
 #film-display-container {
     height: 650px;
     text-align: left;
-    border-width: 1px;
-    border-color: rgb(228, 220, 220);
-    padding-left: 70px;
-    margin-left: 70px;
-    border-right-style: solid;
     border-left-style: solid;
-    border-top-style: solid;
     overflow-y: auto;
+    margin-left: 70px;
+    padding: 23px;
+    border-right-style: solid;
 }
 #films-list {
     text-align: left;
@@ -74,22 +71,44 @@
     margin-top: 10px;
 }
 #film-display-title {
-    font-size: 1.8em;
+    font-size: 1.4em;
+    font-family: Roboto slab;
+    font-weight: 400;
+    padding-top: 0px;
+    margin-top: 0px;
+    color: rgb(226, 93, 64);
+    font-style: italic;;
+}
+#film-display-time {
+    margin-top: -5px;
+    letter-spacing: 0.04em;
+    color: rgba(89, 69, 69, 0.94);
+    text-transform: uppercase;
+    font-family: Roboto Slab;
+    font-weight: 700;
+    font-size: 0.65em;
+    padding-top: 4px;
     font-style: italic;
-    font-family: Josefin Sans;
-    font-weight: 800;
-    padding-top: 19px;
-    ;
+}
+#film-display-short {
+    font-size: 0.7em;;
+    font-weight: 300;
+    margin-bottom: 4.2px;
+    font-family: Roboto Slab;
+    letter-spacing: 0.005em;
+    color: rgba(89, 69, 69, 0.94);
+
 }
 #film-display-imdb {
-    font-size: 0.8em;
+    font-size: 0.6em;
     color: rgb(238, 92, 92);
-    font-weight: 400;
-    font-family: Alegreya sans;
+    font-weight: 200;;
 }
 #film-display-long {
     font-weight: 300;
-    font-family: Alegreya sans;
+    font-size: 0.8em;
+    line-height: 1.405em;
+    text-align: initial;
 }
 #films-search {
     border-color: rgb(226,93,64);
