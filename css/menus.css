@@ -84,6 +84,7 @@ li {
     padding-bottom: 10px;
     line-height: 1.25em;
     font-size: 0.75em;
+    margin-top: -6px;
 }
 .item-title {
     font-weight: bold;

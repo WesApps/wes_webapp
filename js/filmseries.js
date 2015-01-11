@@ -123,12 +123,21 @@ function populate_list(films) {
     populate_film_display(display_film);
 }
 
+
+
+
+
 function populate_film_display(film) {
     //populates the film display area with the film data given
     $("#film-display-title")[0].innerHTML = film["name"];
     $("#film-display-time")[0].innerHTML = film["time"];
     $("#film-display-short")[0].innerHTML = film["short"];
-    $("#film-display-imdb")[0].innerHTML = film["imdb"];
+    if (!(film["imdb"])) {
+        $("#film-display-imdb").hide();
+    } else {
+        $("#film-display-imdb")[0].innerHTML = "View on IMDb";
+        $("#film-display-imdb").show();
+    }
     $("#film-display-imdb")[0].href = film["imdb"];
     $("#film-display-long")[0].innerHTML = film["long"];
 
