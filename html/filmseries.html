@@ -18,6 +18,7 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+    <script src="../js/ouical.js"></script>
     <script src="../js/filmseries.js"></script>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/filmseries.css">
@@ -70,26 +71,28 @@
         <!-- END NAVBAR -->
 
         <div class="row" id="film-row">
-            <!-- <h1 class="title">Film Series</h1> -->
             <div id="films-container">
                 <div id="films-list-container" class="col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2 box-container">
                     <!-- Search Bar -->
                     <div id="films-list-heading">Films</div>
-                    <input type="search" id="films-search" class="form-control" placeholder="Search..." autofocus="autofocus">
-                    <!-- <ul id="films-list"> -->
+                    <input type="search" id="films-search" class="form-control search" placeholder="Search..." autofocus="autofocus">
                     <div id="films-table-scroll">
                         <table id="films-table" class="box-container">
                             <tbody id="films-list">
                             </tbody>
                         </table>
                     </div>
-                    <!-- </ul> -->
                 </div>
                 <div id="film-display-container" class="col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2 box-container">
                     <h1 id="film-display-title"></h1>
                     <h2 id="film-display-time"></h2>
                     <h3 id="film-display-short"></h3>
-                    <a href="" target="_blank" id="film-display-imdb"></a>
+                    <div class="new-cal">
+                        <span class="calSpan noselect">Add to Calendar</span>
+                        <a href="" target="_blank" id="film-display-imdb" class="noselect"></a>
+                        <div class="cal-options-holder" hidden="true">
+                        </div>
+                    </div>
                     <p id="film-display-long"></p>
                 </div>
             </div>

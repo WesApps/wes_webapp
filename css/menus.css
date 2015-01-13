@@ -137,3 +137,6 @@ li {
     table-layout: fixed !important;
     float:none !important;
 }
+.menu-break {
+    height: 10px;
+}

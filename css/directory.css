@@ -1,3 +1,6 @@
+body{
+    overflow: scroll;
+}
 #directory-search {
     margin-left: auto;
     margin-right: auto;
@@ -28,36 +31,46 @@ li {
     padding-left: 0px;
 }
 .entry-name {
-    font-size: 1.1em;
     max-width: 500px;
     /* float: left; */
     
     text-align: left;
     display: inline;
     float: left;
-    font-weight: initial;
-    font-family: Josefin sans;
+    font-family: PT sans;
+    letter-spacing: 0.04em;
+    font-weight: 100;
+    font-size: 0.8em;
 }
 .entry-data {
     display: inline;
     max-width: 500px;
 }
 .entry-li {
+    border-bottom: rgb(226,93,64) solid 3px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
     text-align: right;
     font-family: Josefin sans;
+    border-bottom-style: solid;
 }
 .field-div {
     text-align: left;
     display: inline;
     /* font-size: 1em; */;
-    font-weight: 800;
-    text-transform: capitalize;
+    font-size: 0.9em;
+    font-family: PT sans;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.03em;
 }
 .field-data {
     display: inline;
     font-weight: 400;
+    font-family: PT sans;
+    font-size: 0.8em;
+}
+.data-hr {
+    visibility: hidden;
+    margin-top: -26px;;
 }

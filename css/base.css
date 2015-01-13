@@ -10,6 +10,7 @@ body {
     border-width: 11px;
     font-family: 'PT Sans', sans-serif;
     background: rgb(233, 233, 228);
+    background: rgb(255, 249, 232);
     color: rgba(91, 91, 91, 0.95);
 }
 a {
@@ -50,6 +51,7 @@ a:hover {
 }
 .navbar-default .navbar-nav>li>a:hover {
     /*border-bottom-color: rgb(87, 105, 118);*/
+    
     border-bottom-width: 10px;
     color: rgb(87, 105, 118);
 }
@@ -93,7 +95,6 @@ a:hover {
     border-bottom-width: 10px !important;
     border-bottom-color: rgb(87, 105, 118) !important;
     color: rgb(87, 105, 118) !important;
-
 }
 .title {
     font-variant: small-caps;
@@ -112,11 +113,100 @@ a:hover {
     padding-top: 30px;
 }
 .box-container {
-    border: rgb(226,93,64) solid 3px;
+    border: rgb(226, 93, 64) solid 3px;
 }
-.navbar-nav{
+.navbar-nav {
     margin: 0 auto;
     display: table;
     table-layout: fixed;
-    float:none;
+    float: none;
+}
+.search {
+    border-color: rgb(226, 93, 64);
+    border-width: 3px !important;
+    margin-bottom: 20px;
+    box-shadow: none;
+    outline: 0 none;
+    margin-top: -11px;
+    color: rgb(226, 93, 64);
+    font-family: PT sans;
+    font-weight: 100;
+}
+textarea:focus, input[type="search"]:focus {
+    border-color: rgb(226, 93, 64) !important;
+    box-shadow: none;
+    outline: 0 none;
+}
+::-webkit-input-placeholder {
+    color: rgb(226, 93, 64) !important;
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    
+    color: rgb(226, 93, 64) !important;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    
+    color: rgb(226, 93, 64) !important;
+}
+:-ms-input-placeholder {
+    color: rgb(226, 93, 64) !important;
+}
+.new-cal {
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    font-weight: 600;
+    font-size: 0.55em;
+    height: 60px;
+    margin-top: 6px;
+}
+.add-to-calendar-checkbox {
+    display: block;
+}
+.add-to-calendar-checkbox:checked~a {
+    display: inline !important;
+}
+.cal {
+    height: 50px;
+}
+.calSpan {
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 3px;
+    background: rgb(218, 218, 218);
+    padding-right: 6px;
+    padding-left: 6px;
+}
+.calSpan:hover {
+    color: black;
+}
+.cal-options {
+    padding-top: 11px;
+}
+.cal-options>a{
+    background: cadetblue;
+    color: rgb(255, 249, 232);
+    padding: 5px;
+    font-size: 0.85em;
+    font-weight: 100;
+    margin-left: 0px;
+    margin-right: 7px;
+}
+.cal-options>a:hover {
+    color: rgb(7, 65, 82);
+}
+.cal-options>a:focus {
+    text-decoration: none;
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

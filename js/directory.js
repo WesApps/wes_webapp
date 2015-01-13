@@ -52,7 +52,7 @@ function directory_callback(res) {
             field_title.innerHTML = d + ": ";
             if (typeof(data) == "object") {
                 for (j in data) {
-                    var tmp = data[j] + "<br>"
+                    var tmp = data[j] + "<hr class='data-hr'>"
                     field_data.innerHTML += tmp;
                 }
             } else {

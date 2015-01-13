@@ -20,7 +20,7 @@
     background: rgba(255, 249, 232, 0);
     border-radius: 0px;
     font-weight: 300;
-    font-family: Josefin Sans;
+    font-family: PT Sans;
     padding-top: 7px;
 }
 #film-row {
@@ -54,7 +54,7 @@
 }
 .film-entry-name {
     font-size: 0.8em;
-    font-weight: 400;
+    font-weight: 600;
     font-family: PT Sans;
     margin-bottom: 0px;
     line-height: 1em;
@@ -105,11 +105,11 @@
     text-transform: uppercase;
     letter-spacing: 0.075em;
     font-weight: 600;
-    font-size: 0.55em;
     padding: 3px;
     background: rgb(218, 218, 218);
     padding-right: 6px;
     padding-left: 6px;
+    margin-left: 9px;
 }
 #film-display-imdb:hover {
     color: black;
@@ -121,18 +121,7 @@
     text-align: initial;
     padding-top: 7px;
 }
-#films-search {
-    border-color: rgb(226, 93, 64);
-    border-width: 3px !important;
-    margin-bottom: 20px;
-    box-shadow: none;
-    outline: 0 none;
-    margin-top: -11px;
-    color: rgb(226, 93, 64);
-    font-family: PT sans;
-    font-weight: 100;
-    ;
-}
+
 textarea:focus, input[type="search"]:focus {
     border-color: rgb(226, 93, 64) !important;
     box-shadow: none;

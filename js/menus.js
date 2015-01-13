@@ -69,12 +69,14 @@ function process_type1(data,title,id){
     // Processes Late Night and Summerfields data types.
     var menu_element = document.createElement("div");
     menu_element.setAttribute("id", id);
+    var menu_break = document.createElement("br");
     var title_element = document.createElement("span");
     title_element.setAttribute("class", "title");
 
     // append title to menu element
     menu_element.appendChild(title_element);
     menus_container.appendChild(menu_element);
+    menus_container.appendChild(menu_break);
 
     var data_title = title;
     title_element.innerHTML = data_title;
@@ -102,12 +104,14 @@ function process_type1(data,title,id){
 function process_type2(data, title, id){
     var menu_element = document.createElement("div");
     menu_element.setAttribute("id", id);
+    var menu_break = document.createElement("br");
     var name_element = document.createElement("span");
     name_element.setAttribute("class", "title");
 
     // append title to menu element
     menu_element.appendChild(name_element);
     menus_container.appendChild(menu_element);
+    menus_container.appendChild(menu_break);
 
     var data_name = title;
     name_element.innerHTML = data_name;

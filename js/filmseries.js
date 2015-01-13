@@ -6,6 +6,11 @@ var previous_selection;
 
 function initialize_filmseries() {
     get_films();
+    document.querySelector(".calSpan").addEventListener("click", function() {
+        var c = document.querySelector('.cal-options-holder');
+        c.hidden = !(c.hidden);
+
+    });
 }
 
 function get_films() {
@@ -123,18 +128,54 @@ function populate_list(films) {
     populate_film_display(display_film);
 }
 
-
+function makeCal(title, start, duration, end, address, description) {
+    var myCalendar = createCalendar({
+        options: {
+            class: 'my-class',
+            id: 'my-id' // You need to pass an ID. If you don't, one will be generated for you.
+        },
+        data: {
+            title: title, // Event title
+            start: start, // Event start date
+            duration: duration, // Event duration (IN MINUTES)
+            end: end, // You can also choose to set an end time.
+            // If an end time is set, this will take precedence over duration
+            address: address,
+            description: description
+        }
+    });
+    // if old cal, remove.
+    var cal_options_holder = document.querySelector('.cal-options-holder');
+    if (document.querySelector('.cal-options')) {
+        cal_options_holder.innerHTML = "";
+    }
+    cal_options_holder.appendChild(myCalendar);
+    cal_options_holder.hidden = "true"
+}
 
 
 
 function populate_film_display(film) {
+    var cal_title;
+    var cal_start;
+    var cal_end;
+    var cal_duration;
+    var cal_address = "Center for Film Studies Wesleyan University Washington Terrace Middletown, CT 06457";
+    var cal_description;
+
     //populates the film display area with the film data given
     $("#film-display-title")[0].innerHTML = film["name"];
+    cal_title = "Film Series: " + film["name"]
     $("#film-display-time")[0].innerHTML = film["time"];
+    cal_start = film["date"];
+    cal_start.setHours(20); //set time to 8 o'clock
+    cal_duration = 150; //guestimate about 150 minutes avg film
     $("#film-display-short")[0].innerHTML = film["short"];
+    cal_description = film["short"];
     if (!(film["imdb"])) {
         $("#film-display-imdb").hide();
     } else {
+        cal_description += "\n" + film["imdb"];
         $("#film-display-imdb")[0].innerHTML = "View on IMDb";
         $("#film-display-imdb").show();
     }
@@ -153,9 +194,8 @@ function populate_film_display(film) {
 
     //set the class of the current film element in table to active
     current_film_element.style.background = "rgb(226,93,64)";
-    console.log(current_film_element.childNodes.length, "!")
     for (i = 0; i < current_film_element.childNodes.length; i++) {
-        current_film_element.children[i].style.color = "rgb(233, 233, 228)";
+        current_film_element.children[i].style.color = "rgb(255, 249, 232)";
     }
 
 
@@ -163,7 +203,11 @@ function populate_film_display(film) {
     current_film_element.scrollIntoViewIfNeeded();
 
     previous_selection = current_film_element;
+
+    //repopulate calendar
+    makeCal(cal_title, cal_start, cal_duration, cal_end, cal_address, cal_description);
 }
+
 
 function set_on_click() {
     $(".film-entry-container").click(function(ev) {
