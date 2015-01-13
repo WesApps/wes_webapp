@@ -159,7 +159,7 @@ textarea:focus, input[type="search"]:focus {
     font-weight: 600;
     font-size: 0.55em;
     height: 60px;
-    margin-top: 6px;
+    margin-top: 26px;
 }
 .add-to-calendar-checkbox {
     display: block;
@@ -186,6 +186,7 @@ textarea:focus, input[type="search"]:focus {
 }
 .cal-options {
     padding-top: 11px;
+    display: inline-block;
 }
 .cal-options>a{
     background: cadetblue;
