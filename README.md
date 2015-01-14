@@ -5,9 +5,15 @@ Web interface for Wesleyan related info
 
 TODO:
 
--Menus
+-Menus:
+	+usdan
 -about
+	+add content
 -Miscellaneous
+	+style
+-events
+	+style
+-favicon
 -Make mobile friendly
--General Styling
+-Test, add in low bandwidth/still loading data visuals
 -Deploy

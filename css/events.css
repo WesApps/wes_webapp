@@ -1,28 +1,10 @@
 #events-list-heading {
-    font-weight: 700;
-    color: rgba(255, 94, 94, 0.77);
-    font-family: Josefin sans;
-    font-variant: small-caps;
+    font-weight: 400;
     font-size: 1.8em;
-    display: inline;
-    font-style: oblique;
-}
-#events-search {
-    height: 40px !important;
-    font-size: 0.8em;
-    width: 55%;
-    max-width: 650px;
-    font-weight: 300;
-    font-family: Josefin Sans;
-    display: inline;
-    border-radius: 0px;
-    margin-left: 10px;
-    background: rgba(255, 255, 255, 0);
-    border: none;
-    box-shadow: none;
-    color: black;
-    border-bottom: black 1px solid;
-    padding-left: 2px;
+    text-align: left;
+    font-family: Roboto Slab;
+    color: rgb(226, 93, 64);
+    padding-top: 0px;
 }
 textarea:focus, input[type="search"]:focus {
     border-color: rgba(255, 83, 83, 0.48039);
@@ -37,23 +19,8 @@ textarea:focus, input[type="search"]:focus {
 }
 #events-list-container {
     background: rgba(255, 216, 109, 0.1);
-    border-style: solid;
-    border-width: 1px;
     padding-right: 30px;
     padding-left: 30px;
-    border-color: black;
-}
-#event-display-container {
-    text-align: left;
-    border-width: 1px;
-    border-color: rgb(228, 220, 220);
-    padding-left: 50px;
-    border-left-style: solid;
-    border-right-style: solid;
-    border-top-style: solid;
-    overflow-y: auto !important;
-    margin-left: 50px;
-    height: 789px;
 }
 #events-list {
     text-align: left;
@@ -102,15 +69,7 @@ textarea:focus, input[type="search"]:focus {
     border-top-style: solid;
     width: 100%;
 }
-#event-display-title {
-    font-size: 1.3em;
-    font-style: italic;
-    padding-top: 19px;
-    padding-bottom: 10px;
-    font-family: Josefin Sans;
-    font-weight: 800;
-}
-#event-display-link {
+    #event-display-link {
     font-size: 0.7em;
     color: rgba(238, 92, 92, 0.81);
     font-weight: 400;
@@ -266,7 +225,7 @@ input[type=checkbox].add-to-calendar-checkbox {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;   
+    user-select: none;
     cursor: pointer;
 }
 .add-to-calendar-checkbox:hover {

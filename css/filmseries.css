@@ -9,34 +9,12 @@
     font-family: Roboto Slab;
     color: rgb(226, 93, 64);
     padding-top: 0px;
-    ;
-}
-#films-search {
-    height: 55px !important;
-    padding-left: 15px;
-    font-size: 0.8em;
-    width: 69%;
-    max-width: 650px;
-    background: rgba(255, 249, 232, 0);
-    border-radius: 0px;
-    font-weight: 300;
-    font-family: PT Sans;
-    padding-top: 7px;
 }
 #film-row {
     text-align: center;
     font-size: 2em;
     padding-left: 0px;
     padding-right: 0px;
-}
-#film-display-container {
-    height: 650px;
-    text-align: left;
-    border-left-style: solid;
-    overflow-y: auto;
-    margin-left: 70px;
-    padding: 23px;
-    border-right-style: solid;
 }
 #films-list {
     text-align: left;
@@ -71,30 +49,8 @@
     width: 100%;
     margin-top: 10px;
 }
-#film-display-title {
-    font-size: 1.4em;
-    font-family: Roboto slab;
-    font-weight: 400;
-    padding-top: 0px;
-    margin-top: 0px;
-    color: rgb(226, 93, 64);
-    font-style: italic;
-    ;
-}
-#film-display-time {
-    margin-top: -5px;
-    letter-spacing: 0.04em;
-    color: rgba(89, 69, 69, 0.94);
-    text-transform: uppercase;
-    font-family: Roboto Slab;
-    font-weight: 700;
-    font-size: 0.65em;
-    padding-top: 4px;
-    font-style: italic;
-}
 #film-display-short {
     font-size: 0.7em;
-    ;
     font-weight: 300;
     margin-bottom: 4.2px;
     font-family: Roboto Slab;
@@ -114,14 +70,6 @@
 #film-display-imdb:hover {
     color: black;
 }
-#film-display-long {
-    font-weight: 300;
-    font-size: 0.75em;
-    line-height: 1.405em;
-    text-align: initial;
-    padding-top: 7px;
-}
-
 textarea:focus, input[type="search"]:focus {
     border-color: rgb(226, 93, 64) !important;
     box-shadow: none;

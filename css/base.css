@@ -86,7 +86,7 @@ a:hover {
     font-variant: small-caps;
     letter-spacing: 0.05em !important;
 }
-.logo > a:hover {
+.logo > a:hover, .logo > a:focus {
     text-decoration: none !important;
     color: rgba(255, 255, 255, 0.4) !important;
 }
@@ -122,6 +122,14 @@ a:hover {
     float: none;
 }
 .search {
+    height: 55px !important;
+    padding-left: 15px;
+    font-size: 0.8em;
+    width: 69%;
+    max-width: 650px;
+    background: rgba(255, 249, 232, 0);
+    padding-top: 7px;
+    border-radius: 0px;
     border-color: rgb(226, 93, 64);
     border-width: 3px !important;
     margin-bottom: 20px;
@@ -188,7 +196,7 @@ textarea:focus, input[type="search"]:focus {
     padding-top: 11px;
     display: inline-block;
 }
-.cal-options>a{
+.cal-options>a {
     background: cadetblue;
     color: rgb(255, 249, 232);
     padding: 5px;
@@ -210,4 +218,40 @@ textarea:focus, input[type="search"]:focus {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+.display-title {
+    font-size: 1.4em;
+    font-family: Roboto slab;
+    font-weight: 400;
+    padding-top: 0px;
+    margin-top: 0px;
+    color: rgb(226, 93, 64);
+    font-style: italic;
+}
+.display-caption {
+    margin-top: -5px;
+    letter-spacing: 0.04em;
+    color: rgba(89, 69, 69, 0.94);
+    text-transform: uppercase;
+    font-family: Roboto Slab;
+    font-weight: 700;
+    font-size: 0.65em;
+    padding-top: 4px;
+    font-style: italic;
+}
+.display-description {
+    font-weight: 300;
+    font-size: 0.75em;
+    line-height: 1.405em;
+    text-align: initial;
+    padding-top: 7px;
+}
+.display-container {
+    height: 650px;
+    text-align: left;
+    border-left-style: solid;
+    overflow-y: auto;
+    margin-left: 70px;
+    padding: 23px;
+    border-right-style: solid;
 }
