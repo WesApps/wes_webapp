@@ -47,7 +47,7 @@
                         <li>
                             <a href="menus.html">Menus</a>
                         </li>
-                        <li>
+                        <li class="active-li">
                             <a href="events.html" class="active-nav">Events</a>
                         </li>
                         <li>
@@ -82,15 +82,15 @@
                     <input type="search" id="events-search" class="form-control search" placeholder="Search by event name" autofocus="autofocus">
                 </div>
                 <div id="show-div">
-                    <span> Show: </span>
-                    <input type="button" value="Only Today" id="show-today" class="btn-inactive">
-                    <input type="button" value="Past Events" id="show-past" class="btn-inactive">
+                    <span class="filter-label"> show: </span>
+                    <input type="button" value="only today" id="show-today" class="btn btn-inactive">
+                    <input type="button" value="past events" id="show-past" class="btn btn-inactive">
                     <br>
                 </div>
                 <div id="sort-div">
-                    <span>Sort by: </span>
-                    <input type="button" value="Date" id="sort-date" class="btn-active">
-                    <input type="button" value="Category" id="sort-category" class="btn-inactive">
+                    <span class="filter-label">sort by: </span>
+                    <input type="button" value="date" id="sort-date" class="btn btn-active">
+                    <input type="button" value="category" id="sort-category" class="btn btn-inactive">
                     <br>
                 </div>
                 <div id="events-table-scroll">
@@ -102,12 +102,16 @@
             </div>
             <div id="event-display-container" class="col-md-5 col-lg-4 box-container display-container">
                 <h1 id="event-display-title" class="display-title"></h1>
-                <h2 class="display-caption" id="event-display-time"></h2>
-                <h2 class="display-caption" id="event-display-location"></h2>
-                <h2 class="display-caption" id="event-display-category"></h2>
+                <h2 class="display-caption light" id="event-display-time"></h2>
+                <h2 class="display-caption light" id="event-display-location"></h2>
+                <h2 class="display-caption light" id="event-display-category"></h2>
+                <div class="new-cal">
+                    <span class="calSpan noselect">Add to Calendar</span>
+                    <a href="" target="_blank" id="event-display-link" class="noselect"></a>
+                    <div class="cal-options-holder" hidden="true">
+                    </div>
+                </div>
                 <p id="event-display-description" class="display-description"></p>
-                <a href="" target="_blank" id="event-display-link"></a>
-                <div class="new-cal"></div>
             </div>
         </div>
 </body>

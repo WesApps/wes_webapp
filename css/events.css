@@ -18,9 +18,8 @@ textarea:focus, input[type="search"]:focus {
     padding-right: 0px;
 }
 #events-list-container {
-    background: rgba(255, 216, 109, 0.1);
-    padding-right: 30px;
-    padding-left: 30px;
+    padding: 23px;
+    padding-top: 7px;
 }
 #events-list {
     text-align: left;
@@ -28,75 +27,78 @@ textarea:focus, input[type="search"]:focus {
 }
 .event-entry-container {
     border-bottom-style: solid;
-    padding-left: 23px;
-    padding-bottom: 5px;
-    background: rgb(253, 255, 212);
-    padding-top: 5px;
+    padding-left: 17px;
+    padding-bottom: 9px;
+    padding-top: 11px;
     border-bottom-width: 1px;
-    border-right-width: 1px;
+    border-color: rgb(226, 93, 64);
+    border-width: 2px;
+    border-right-width: 4px;
     border-right-style: solid;
+    border-left-width: 4px;
+    border-left-style: solid;
 }
 .event-entry-container:hover {
     background: rgba(255, 83, 83, 0.05);
     cursor: pointer;
 }
 .event-entry-name {
-    font-size: 0.8em;
-    font-weight: 400;
-    font-family: Alegreya sans;
+    font-size: 0.7em;
+    font-weight: 100;
+    font-family: PT Sans;
+    margin-bottom: -7px;
+    line-height: 1em;
+    color: rgb(85, 80, 80);
 }
 .event-entry-time {
-    font-size: 0.75em;
+    font-size: 0.625em;
     color: rgba(64, 63, 63, 0.86);
     margin-bottom: -5px;
 }
 .event-entry-category {
-    font-size: 0.75em;
-    font-weight: bold;
-    color: rgba(64, 63, 63, 0.86);
-    font-variant: small-caps;
-    text-transform: lowercase;
+    font-size: 0.55em;
+    font-weight: 900;
+    color: rgb(255, 249, 232);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: PT sans narrow;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 14px;;
 }
 #events-table-scroll {
     overflow: auto;
-    height: 573px;
+    height: 553px;
 }
 #events-table {
-    border-width: 1px;
+    border-width: 0px;
     margin-bottom: 30px;
     border-right-style: solid;
     border-left-style: solid;
     border-top-style: solid;
     width: 100%;
 }
-    #event-display-link {
-    font-size: 0.7em;
-    color: rgba(238, 92, 92, 0.81);
-    font-weight: 400;
-    word-wrap: break-word;
-    font-family: Alegreya sans;
-    border-style: solid;
-    padding: 6px;
-    border-width: 1.6px;
+#event-display-link {
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    font-weight: 600;
+    padding: 3px;
+    background: rgb(218, 218, 218);
+    padding-right: 6px;
+    padding-left: 6px;
+    margin-left: 9px;
 }
 #event-display-link:hover {
     background: rgba(238, 92, 92, 0.81);
     color: white;
-}
-#event-display-description {
-    font-weight: 300;
-    font-family: Alegreya sans;
-    font-size: 0.85em;
-    line-height: 1.35em;
-}
-#show-div {
-    padding-bottom: 20px;
+}   
+#event-display-description {} #show-div {
     text-align: left;
 }
 #sort-div {
@@ -106,49 +108,37 @@ textarea:focus, input[type="search"]:focus {
 input {
     outline: 0;
 }
-.btn-inactive:hover {
-    background: rgba(255, 200, 123, 0.41);
+.btn:focus {; 
 }
-/*rder-bottom-color: rgb(94, 113, 151);*/
-
-.btn-inactive {
-    padding: 10px;
-    color: rgba(0, 0, 0, 1);
-    font-size: 17px;
-    padding-top: 4px;
+.btn {
+    color: rgba(89, 69, 69, 0.94);
+    font-size: 0.525em;
+    padding-top: 1px;
     font-weight: 700;
-    padding-bottom: 3px;
-    border-color: black;
+    padding-bottom: 1px;
+    border-color: rgb(226, 93, 64) !important;
     border-style: solid;
-    margin-left: 10px;
-    border-radius: 40px;
-    padding-left: 13px;
-    padding-right: 13px;
+    margin-left: 7px;
+    border-radius: 31px;
+    padding-left: 9px;
+    padding-right: 9px;
     background: none;
     border-width: 1px;
+    font-family: PT Sans Narrow;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: -1px;
+}
+.btn-inactive {
 }
 .btn-active {
-    border-width: 1px;
-    font-size: 17px;
-    padding-top: 4px;
-    border-style: solid;
-    font-weight: 700;
-    padding-bottom: 3px;
-    margin-left: 10px;
-    padding-left: 14px;
-    padding-right: 13px;
-    border-radius: 40px;
-    background: rgba(255, 25, 25, 0.53) !important;
-    border-color: black;
 }
 #events-search-holder {
     text-align: left;
-    padding-top: 13px;
-    padding-bottom: 12px;
 }
 #events-display-container > h1, b {
     font-variant: small-caps;
-    color: rgba(216, 98, 98, 0.86);
+    color: rgba(47, 48, 48, 0.87);
 }
 .event-display-heading {
     font-size: 1em;
@@ -156,23 +146,22 @@ input {
     margin-top: 4px;
 }
 .cat_color {
-    width: 11px;
-    border-top: black 1px solid;
-    border-bottom: black 1px solid;
+    border-top: rgb(226, 93, 64) 1px solid;
+    border-bottom: rgb(226, 93, 64) 1px solid;
 }
 .header-tr {
-    background: rgb(38, 49, 71);
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 0.8em;
-    font-style: oblique;
-    border: black 1px solid;
-    color: white;
+    font-size: 0.6em;
+    color: rgb(255, 249, 232);
+    font-family: PT Sans caption;
+    font-weight: 200;
+    background: rgb(226, 93, 64);
+    border-right: rgb(226, 93, 64) 2px solid;
 }
 .header-tr > td {
     padding: 4px;
     padding-left: 12px;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
 }
 #add-to-calendar-checkbox-label {
     cursor: pointer;

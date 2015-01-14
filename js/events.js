@@ -13,6 +13,11 @@ filters.query = "";
 
 function initialize_events() {
     get_events();
+    document.querySelector(".calSpan").addEventListener("click", function() {
+        var c = document.querySelector('.cal-options-holder');
+        c.hidden = !(c.hidden);
+
+    });
 }
 
 function get_events() {
@@ -137,19 +142,12 @@ function populate_list(events) {
 
         var tr = document.createElement("tr");
         tr.setAttribute("class", "event-tr");
-        var cat_td = document.createElement("td");
+        // var cat_td = document.createElement("td");
 
-        cat_td.setAttribute("class", "cat_color");
-        tr.appendChild(cat_td);
+        // cat_td.setAttribute("class", "cat_color");
+        // tr.appendChild(cat_td);
         // Set color by category
-        var cat_index = categories.indexOf(curr_event["category"]);
-        var b_color;
-        if (cat_index == -1) {
-            b_color = color_array[0];
-        } else {
-            b_color = color_array[cat_index];
-        }
-        cat_td.style.background = "#" + b_color;
+
 
         var entry = document.createElement("td");
         entry.setAttribute("class", "event-entry-container");
@@ -163,17 +161,27 @@ function populate_list(events) {
         name.innerHTML = curr_event["name"];
         entry.appendChild(name);
 
-        var time = document.createElement("div");
+        var time = document.createElement("span");
         time.setAttribute("class", "event-entry-time");
         time.innerHTML = curr_event["time"];
         entry.appendChild(time);
 
         //if we're date sorted, need to display the categories in the table
         if (current_sort == "date") {
-            var category = document.createElement("div");
+            var category = document.createElement("span");
             category.setAttribute("class", "event-entry-category");
             category.innerHTML = curr_event["category"];
             entry.appendChild(category);
+
+            // give it some color
+            var cat_index = categories.indexOf(curr_event["category"]);
+            var b_color;
+            if (cat_index == -1) {
+                b_color = color_array[0];
+            } else {
+                b_color = color_array[cat_index];
+            }
+            category.style.background = "#" + b_color;
         }
 
 
@@ -219,10 +227,12 @@ function makeCal(title, start, duration, end, address, description) {
         }
     });
     // if old cal, remove.
-    if (document.querySelector('.new-cal')) {
-        document.querySelector('.new-cal').innerHTML = "";
+    var cal_options_holder = document.querySelector('.cal-options-holder');
+    if (document.querySelector('.cal-options')) {
+        cal_options_holder.innerHTML = "";
     }
-    document.querySelector('.new-cal').appendChild(myCalendar);
+    cal_options_holder.appendChild(myCalendar);
+    cal_options_holder.hidden = "true"
 }
 
 function populate_event_display(d_event) {
@@ -305,9 +315,9 @@ function set_listeners() {
     $("#show-today").click(function(ev) {
         filters.today = !(filters.today);
         if (filters.today) {
-            $("#show-today")[0].className = "btn-active";
+            $("#show-today")[0].className = "btn btn-active";
         } else {
-            $("#show-today")[0].className = "btn-inactive";
+            $("#show-today")[0].className = "btn btn-inactive";
         }
         filter_entries();
     })
@@ -316,9 +326,9 @@ function set_listeners() {
     $("#show-past").click(function(ev) {
         filters.past = !(filters.past);
         if (!(filters.past)) {
-            $("#show-past")[0].className = "btn-active";
+            $("#show-past")[0].className = "btn btn-active";
         } else {
-            $("#show-past")[0].className = "btn-inactive";
+            $("#show-past")[0].className = "btn btn-inactive";
         }
         filter_entries();
     })
@@ -329,8 +339,8 @@ function set_listeners() {
             return;
         }
         current_sort = 'date';
-        $("#sort-date")[0].className = "btn-active";
-        $("#sort-category")[0].className = "btn-inactive";
+        $("#sort-date")[0].className = "btn btn-active";
+        $("#sort-category")[0].className = "btn btn-inactive";
         sort_entries('date');
     })
 
@@ -340,8 +350,8 @@ function set_listeners() {
             return;
         }
         current_sort = 'category';
-        $("#sort-category")[0].className = "btn-active";
-        $("#sort-date")[0].className = "btn-inactive";
+        $("#sort-category")[0].className = "btn btn-active";
+        $("#sort-date")[0].className = "btn btn-inactive";
         sort_entries('category');
     })
 

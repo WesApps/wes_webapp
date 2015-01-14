@@ -32,22 +32,19 @@ a:hover {
 .navbar {
     margin-bottom: 0px !important;
 }
+.navbar-nav>li {}
 .navbar-default .navbar-nav>li>a {
     margin-left: 20px;
     margin-right: 20px;
     text-decoration: none;
     text-transform: uppercase;
-    color: rgb(233, 233, 228);
+    color: rgb(86, 96, 99);
     transition: .15s ease-out;
-    font-size: 1.05em;
-    letter-spacing: 0.1em;
-    font-family: Roboto Slab;
-    font-weight: 500;
-    padding-bottom: 7px !important;
-    border-bottom-width: 4px;
+    font-weight: 900;
     padding: 0px 0px;
-    border-bottom-color: rgb(209, 222, 230);
-    border-bottom-style: double;
+    font-size: 1.05em;
+    letter-spacing: 0.04em;
+    font-family: Roboto Slab;
 }
 .navbar-default .navbar-nav>li>a:hover {
     /*border-bottom-color: rgb(87, 105, 118);*/
@@ -63,13 +60,13 @@ a:hover {
     padding-top: 60px;
     font-size: 1.3em;
     text-align: center;
-    padding-right: 5px;
-    padding-left: 5px;
-    width: 100%;
     border-bottom: solid 3px;
     border-bottom-color: rgb(65, 87, 97);
     border-bottom-color: burlywood;
     background: rgb(136, 188, 215);
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .logo {
     font-size: 4em;
@@ -85,6 +82,7 @@ a:hover {
     text-transform: none !important;
     font-variant: small-caps;
     letter-spacing: 0.05em !important;
+    color: rgb(255, 249, 232) !important;
 }
 .logo > a:hover, .logo > a:focus {
     text-decoration: none !important;
@@ -94,7 +92,8 @@ a:hover {
     border-bottom-color: none !important;
     border-bottom-width: 10px !important;
     border-bottom-color: rgb(87, 105, 118) !important;
-    color: rgb(87, 105, 118) !important;
+    /*color: rgb(87, 105, 118) !important;*/
+    color: rgb(255, 249, 232) !important;
 }
 .title {
     font-variant: small-caps;
@@ -140,7 +139,7 @@ a:hover {
     font-family: PT sans;
     font-weight: 100;
 }
-textarea:focus, input[type="search"]:focus {
+textarea:focus, input[type="search"]:focus,input[type="button"]:focus {
     border-color: rgb(226, 93, 64) !important;
     box-shadow: none;
     outline: 0 none;
@@ -206,7 +205,7 @@ textarea:focus, input[type="search"]:focus {
     margin-right: 7px;
 }
 .cal-options>a:hover {
-    color: rgb(7, 65, 82);
+    color: black;
 }
 .cal-options>a:focus {
     text-decoration: none;
@@ -220,9 +219,9 @@ textarea:focus, input[type="search"]:focus {
     user-select: none;
 }
 .display-title {
-    font-size: 1.4em;
+    font-size: 1em;
     font-family: Roboto slab;
-    font-weight: 400;
+    font-weight: 500;
     padding-top: 0px;
     margin-top: 0px;
     color: rgb(226, 93, 64);
@@ -230,14 +229,14 @@ textarea:focus, input[type="search"]:focus {
 }
 .display-caption {
     margin-top: -5px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     color: rgba(89, 69, 69, 0.94);
     text-transform: uppercase;
     font-family: Roboto Slab;
-    font-weight: 700;
-    font-size: 0.65em;
+    font-size: 0.6em;
     padding-top: 4px;
     font-style: italic;
+    font-weight: 600;
 }
 .display-description {
     font-weight: 300;
@@ -254,4 +253,25 @@ textarea:focus, input[type="search"]:focus {
     margin-left: 70px;
     padding: 23px;
     border-right-style: solid;
+}
+.light {
+    font-weight: 500;
+}
+.filter-label {
+    margin-top: -5px;
+    letter-spacing: 0.04em;
+    color: rgba(89, 69, 69, 0.94);
+    text-transform: uppercase;
+    font-size: 0.65em;
+    padding-top: 4px;
+    font-family: Roboto Slab;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.active-li {
+    margin-top: -6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background: rgba(57, 64, 68, 0.88);
 }
