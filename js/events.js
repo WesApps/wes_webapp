@@ -281,7 +281,7 @@ function populate_event_display(d_event) {
     }
 
     //set the class of the current event element in table to active
-    current_event_element.style.background = "rgba(255, 83, 83, 0.18)";
+    current_event_element.style.background = "rgba(255, 198, 108, 0.51)";
 
     //scroll to event element in table
     current_event_element.scrollIntoViewIfNeeded();

@@ -43,14 +43,14 @@ a:hover {
     font-weight: 900;
     padding: 0px 0px;
     font-size: 1.05em;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     font-family: Roboto Slab;
 }
 .navbar-default .navbar-nav>li>a:hover {
     /*border-bottom-color: rgb(87, 105, 118);*/
     
     border-bottom-width: 10px;
-    color: rgb(87, 105, 118);
+    color: rgba(255, 249, 232, 0.9) !important;
 }
 .navbar-default {
     background: transparent;
@@ -92,8 +92,7 @@ a:hover {
     border-bottom-color: none !important;
     border-bottom-width: 10px !important;
     border-bottom-color: rgb(87, 105, 118) !important;
-    /*color: rgb(87, 105, 118) !important;*/
-    color: rgb(255, 249, 232) !important;
+    color: rgba(255, 249, 232, 0.9) !important;
 }
 .title {
     font-variant: small-caps;
@@ -121,20 +120,20 @@ a:hover {
     float: none;
 }
 .search {
-    height: 55px !important;
-    padding-left: 15px;
-    font-size: 0.8em;
-    width: 69%;
+    height: 44px !important;
+    padding-left: 10px;
+    font-size: 0.65em;
+    width: 75%;
     max-width: 650px;
     background: rgba(255, 249, 232, 0);
-    padding-top: 7px;
+    padding-top: 5px;
     border-radius: 0px;
     border-color: rgb(226, 93, 64);
     border-width: 3px !important;
     margin-bottom: 20px;
     box-shadow: none;
     outline: 0 none;
-    margin-top: -11px;
+    margin-top: -9px;
     color: rgb(226, 93, 64);
     font-family: PT sans;
     font-weight: 100;
@@ -262,7 +261,7 @@ textarea:focus, input[type="search"]:focus,input[type="button"]:focus {
     letter-spacing: 0.04em;
     color: rgba(89, 69, 69, 0.94);
     text-transform: uppercase;
-    font-size: 0.65em;
+    font-size: 0.6em;
     padding-top: 4px;
     font-family: Roboto Slab;
     font-style: italic;

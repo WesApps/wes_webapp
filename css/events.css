@@ -1,6 +1,6 @@
 #events-list-heading {
     font-weight: 400;
-    font-size: 1.8em;
+    font-size: 1.4em;
     text-align: left;
     font-family: Roboto Slab;
     color: rgb(226, 93, 64);
@@ -30,16 +30,16 @@ textarea:focus, input[type="search"]:focus {
     padding-left: 17px;
     padding-bottom: 9px;
     padding-top: 11px;
-    border-bottom-width: 1px;
     border-color: rgb(226, 93, 64);
     border-width: 2px;
-    border-right-width: 4px;
     border-right-style: solid;
-    border-left-width: 4px;
     border-left-style: solid;
+    border-bottom-width: 1px;
+    border-right-width: 4px;
+    border-left-width: 4px;
 }
 .event-entry-container:hover {
-    background: rgba(255, 83, 83, 0.05);
+    background: rgba(255, 236, 175, 0.31);
     cursor: pointer;
 }
 .event-entry-name {
@@ -100,6 +100,7 @@ textarea:focus, input[type="search"]:focus {
 }   
 #event-display-description {} #show-div {
     text-align: left;
+    margin-top: -18px;
 }
 #sort-div {
     text-align: left;
@@ -108,14 +109,13 @@ textarea:focus, input[type="search"]:focus {
 input {
     outline: 0;
 }
-.btn:focus {; 
+.btn-active:focus {
+    color: rgb(255, 249, 232) !important;
 }
 .btn {
     color: rgba(89, 69, 69, 0.94);
     font-size: 0.525em;
-    padding-top: 1px;
     font-weight: 700;
-    padding-bottom: 1px;
     border-color: rgb(226, 93, 64) !important;
     border-style: solid;
     margin-left: 7px;
@@ -128,10 +128,19 @@ input {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: -1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
-.btn-inactive {
+.btn-inactive:hover {
+}
+.btn-active:hover {
+    color: rgba(242, 238, 212, 0.78);
+    background: rgba(95, 158, 160, 0.67);
 }
 .btn-active {
+    background: rgb(95, 158, 160);
+    color: rgb(255, 249, 232);
+    border-color: rgb(74, 68, 68) !important;;
 }
 #events-search-holder {
     text-align: left;
@@ -221,3 +230,4 @@ input[type=checkbox].add-to-calendar-checkbox {
     background: rgba(238, 92, 92, 0.81);
     color: white;
 }
+
