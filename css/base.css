@@ -50,7 +50,7 @@ a:hover {
     /*border-bottom-color: rgb(87, 105, 118);*/
     
     border-bottom-width: 10px;
-    color: rgba(255, 249, 232, 0.9) !important;
+    color: rgba(255, 249, 232, 0.9);
 }
 .navbar-default {
     background: transparent;
@@ -65,8 +65,6 @@ a:hover {
     border-bottom-color: burlywood;
     background: rgb(136, 188, 215);
     width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 .logo {
     font-size: 4em;
@@ -95,17 +93,16 @@ a:hover {
     color: rgba(255, 249, 232, 0.9) !important;
 }
 .title {
-    font-variant: small-caps;
     letter-spacing: 5px;
     padding-top: -10px;
     color: rgba(20, 20, 20, 0.7);
     font-size: 5em;
-    font-family: Josefin Sans;
-    font-style: oblique;
-    font-weight: 900;
-    text-transform: lowercase;
+    font-weight: 200;
     margin-top: -10px;
     padding-bottom: 15px !important;
+    font-family: Roboto Slab;
+    text-transform: uppercase;
+    Font-weight: 200;
 }
 .row {
     padding-top: 30px;
@@ -245,7 +242,7 @@ textarea:focus, input[type="search"]:focus,input[type="button"]:focus {
     padding-top: 7px;
 }
 .display-container {
-    height: 650px;
+    height: 781px;
     text-align: left;
     border-left-style: solid;
     overflow-y: auto;

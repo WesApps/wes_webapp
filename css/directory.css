@@ -58,17 +58,17 @@ li {
     text-align: left;
     display: inline;
     /* font-size: 1em; */;
-    font-size: 0.9em;
+    font-size: 0.75em;
     font-family: PT sans;
-    font-variant: small-caps;
     font-weight: 600;
     letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
 .field-data {
     display: inline;
     font-weight: 400;
     font-family: PT sans;
-    font-size: 0.8em;
+    font-size: 0.75em;
 }
 .data-hr {
     visibility: hidden;
