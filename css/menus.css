@@ -74,6 +74,7 @@ li {
     line-height: 1em;
     margin-bottom: 15px !important;
     padding-bottom: 3px !important;
+    font-weight: bold;
 }
 #menu-list-container {
     text-align: left;
