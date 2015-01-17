@@ -36,8 +36,8 @@ function menu_callback(res) {
     // usdan, summies, weswings, latenight, red and black
     process_usdan(usdan);
     process_summerfields(summerfields);
-    process_weswings(weswings);
     process_latenight(latenight);
+    process_weswings(weswings);
     process_redandblack(redandblack);
 }
 
