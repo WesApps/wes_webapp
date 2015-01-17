@@ -15,19 +15,17 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-    <!-- FONT -->
+    <script src="js/menus.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/menus.css">
+
+    <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:400,700|Roboto+Slab:400,100,300,700|PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 
-    <!-- Custom Files -->
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/home.css">
-    <script src="../js/home.js"></script>
-</head>
-
-<body>
-    <div class="body-container">
+    <body>
         <!-- NAVBAR -->
         <div class="navbar-holder container">
             <nav class="navbar navbar-default" role="navigation">
@@ -43,7 +41,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="menus.html">Menus</a>
+                                <a href="menus.html" class="active-nav">Menus</a>
                             </li>
                             <li>
                                 <a href="events.html">Events</a>
@@ -52,7 +50,7 @@
                                 <a href="filmseries.html">Film Series</a>
                             </li>
                             <li class="logo">
-                                <a href="#">Wes App</a>
+                                <a href="index.html">Wes App</a>
                             </li>
                             <li>
                                 <a href="directory.html">Directory</a>
@@ -69,21 +67,28 @@
             </nav>
         </div>
         <!-- END NAVBAR -->
-        <div class="row" id="about-row">
-            <div class="col-md-10 col-md-offset-1 centered">
-                <h1 class="greeting">Welcome to Wes App!</h1>
-                <hr>
-                <h1 class="intro">
-            All the Wesleyan information you need just a few clicks away.
-            </h1>
+        <div class="row">
+            <div id="menu-area" class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                <nav id="myNavbar" class="navbar navbar-menus" role="navigation">
+                    <ul class="nav navbar-nav" id="menus-nav">
+                        <li class="active"><a href="#usdan">Usdan</a>
+                        </li>
+                        <li><a href="#summerfields">Summerfields</a>
+                        </li>
+                        <li><a href="#latenight">Late Night</a>
+                        </li>
+                        <li><a href="#weswings">WesWings</a>
+                        </li>
+                        <li><a href="#redandblack">Red & Black</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="menu-container">
+                    <div id="menu-list-container" class="col-md-8 col-md-offset-2 scroll-area" data-spy="scroll" data-target="#myNavbar" data-offset="0">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="footer">
-        <h4>Powered by <a href="http://wesapi.org/" target="_blank">wesapi.org</a>
-            </h4>
-    </div>
-
-</body>
+    </body>
 
 </html>

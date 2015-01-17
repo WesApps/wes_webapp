@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta property="og:title" content="Wes App" />
-    <!-- <meta property="og:url" content="http://???????/" /> -->
+    <!-- <meta property="og:url" content="http://????????/" /> -->
     <!-- <meta property="og:image" content="/static/bunchie.jpg" /> -->
     <meta property="og:description" content="Wesleyan Web App" />
     <meta property="og:site_name" content="Wes App" />
@@ -17,15 +17,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-    <script src="../js/miscellaneous.js"></script>
-    <script src="../js/color-scheme.min.js"></script>
-
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/miscellaneous.css">
-
-   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:400,700|Roboto+Slab:400,100,300,700|PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/directory.css">
+    <script src="js/directory.js"></script>
+    
+    <!-- FONT -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:400,700|Roboto+Slab:400,100,300,700|PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -53,13 +50,13 @@
                             <a href="filmseries.html">Film Series</a>
                         </li>
                         <li class="logo">
-                            <a href="home.html">Wes App</a>
+                            <a href="index.html">Wes App</a>
                         </li>
                         <li>
-                            <a href="directory.html">Directory</a>
+                            <a href="directory.html" class="active-nav">Directory</a>
                         </li>
                         <li>
-                            <a href="miscellaneous.html" class="active-nav">Miscellaneous</a>
+                            <a href="miscellaneous.html">Miscellaneous</a>
                         </li>
                         <li>
                             <a href="about.html">About</a>
@@ -71,23 +68,17 @@
     </div>
     <!-- END NAVBAR -->
     <div class="row">
-        <div class="col-md-5 col-md-offset-1" id="img-section">
-            <h1 class="title">Campus Map</h1>
-            <a target="_blank" href="../img/campus_map_08-27-2013.jpg"><img id="campus-map" src="../img/campus_map_08-27-2013.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-md-5" id="links-section">
-            <h1 class="title">Links</h1>
-            <div id="links-holder">
-                <!-- Academic Calendar -->
-                <a target="_blank" href="http://events.wesleyan.edu/f?p=173:4:0::NO:::#Addendum 2014-2015">Academic Calendar</a>
-                <!-- Current Final Exam Schedule -->
-                <a target="_blank" href="https://wesfiles.wesleyan.edu/departments/Reg/Exams/Public/FinalExaminationSchedule%2CCurrentSemester.pdf">Current Final Exam Schedule</a>
-                <a target="_blank" href="https://wesfiles.wesleyan.edu/departments/Reg/Exams/Public/WesleyanRegistrarScheduledExam,FALL2014.pdf">Generic Fall Exam Schedule</a>
-                <a target="_blank" href="https://wesfiles.wesleyan.edu/departments/Reg/Exams/Public/WesleyanRegistrarScheduledExam,SPRING2015.pdf">Generic Spring Exam Schedule</a>
+        <div id="directory-container" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <!-- <h1 class="title">Directory</h1> -->
+            <!-- Search Bar -->
+            <input type="search" id="directory-search" class="form-control search" placeholder="Search..." autofocus="autofocus">
+
+            <!-- Content -->
+            <div ul="directory-list-container">
+                <ul id="directory-list">
+                </ul>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
