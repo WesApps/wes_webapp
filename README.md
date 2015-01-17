@@ -9,10 +9,6 @@ TODO:
 	+usdan
 -about
 	+add content
--Miscellaneous
-	+style
--events
-	+style
 -favicon	
 -Make mobile friendly
 -Test, add in low bandwidth/still loading data visuals
