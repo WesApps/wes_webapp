@@ -28,6 +28,7 @@ function menu_callback(res) {
 
     var latenight = results["latenight"];
     var redandblack = results["redandblack"];
+    var weswings = results["weswings"];
     var starandcrescent = results["starandcrescent"];
     var summerfields = results["summerfields"];
     var usdan = results["usdan"];
@@ -35,7 +36,7 @@ function menu_callback(res) {
     // usdan, summies, weswings, latenight, red and black
     process_usdan(usdan);
     process_summerfields(summerfields);
-    // process_weswings(weswings);
+    process_weswings(weswings);
     process_latenight(latenight);
     process_redandblack(redandblack);
 }
@@ -153,5 +154,8 @@ function process_usdan() {};
 
 function process_redandblack(data) {
     process_type2(data,"Red and Black","redandblack")
+}
+function process_weswings(data) {
+    process_type2(data,"Wes Wings","weswings")
 }
 
