@@ -12,4 +12,4 @@ TODO:
 -favicon	
 -Make mobile friendly
 -Test, add in low bandwidth/still loading data visuals
--Deploy
+-Deploy!
