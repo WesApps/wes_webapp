@@ -35,7 +35,7 @@ function is_mobile() {
         g = d.getElementsByTagName('body')[0],
         x = w.innerWidth || e.clientWidth || g.clientWidth,
         y = w.innerHeight || e.clientHeight || g.clientHeight;
-    return (x < 875 || y < 875);
+    return (x < 875);
 }
 
 function adjust_table_heights() {
@@ -50,7 +50,6 @@ function adjust_table_heights() {
 
 function initialize_filmseries() {
     //adjust table heights
-    adjust_table_heights();
     mobile = is_mobile();
     get_films();
     document.querySelector(".calSpan").addEventListener("click", function() {
@@ -67,7 +66,6 @@ function initialize_filmseries() {
     } else {
         $(".back-btn").hide();
     }
-
 }
 
 function get_films() {
@@ -188,6 +186,7 @@ function populate_list(films) {
     if (!mobile) {
         populate_film_display(display_film);
     }
+    adjust_table_heights();
 }
 
 function makeCal(title, start, duration, end, address, description) {

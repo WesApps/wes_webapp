@@ -273,7 +273,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     font-weight: 100;
     font-family: PT Sans;
     margin-bottom: -7px;
-    line-height: 1em;
+    line-height: 1.2em;
     color: rgb(85, 80, 80);
 }
 .event-entry-time {
@@ -298,6 +298,10 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background: none !important;
+}
+.title-and-search {
+    margin-bottom: 10px;
+    
 }
 /*add 'screen and'*/
 

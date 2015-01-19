@@ -35,7 +35,7 @@ textarea:focus, input[type="search"]:focus {
     border-right-style: solid;
     border-left-style: solid;
     border-bottom-width: 1px;
-    border-right-width: 4px;
+    border-right-width: 2px;
     border-left-width: 4px;
 }
 .event-entry-container:hover {
@@ -60,7 +60,6 @@ textarea:focus, input[type="search"]:focus {
 }
 #events-table {
     border-width: 0px;
-    margin-bottom: 30px;
     border-right-style: solid;
     border-left-style: solid;
     border-top-style: solid;
@@ -131,6 +130,7 @@ input {
 }
 #events-search-holder {
     text-align: left;
+    margin-bottom: 20px;
 }
 #events-display-container > h1, b {
     font-variant: small-caps;
