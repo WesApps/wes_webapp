@@ -1,16 +1,73 @@
-$(document).ready(initialize_filmseries)
-
+$(document).ready(initialize_filmseries);
+$(window).resize(on_resize);
 
 var film_data = {}
 var previous_selection;
+var mobile = false;
+
+
+function on_resize() {
+    mobile = is_mobile();
+    // hide the film display if mobile
+    if (mobile) {
+        $('#film-display-container').hide();
+        $(".back-btn").show();
+    } else {
+        $(".back-btn").hide();
+        $('#film-display-container').show();
+    }
+    adjust_table_heights();
+
+    //if mobile display, hide the list, create the back button, show the film display
+    if (mobile) {
+        $("#films-list-container").show();
+        $("#film-display-container").hide();
+    } else {
+        //if mobile display, hide the list, create the back button, show the film display
+        $("#films-list-container").show();
+    }
+}
+
+function is_mobile() {
+    var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth,
+        y = w.innerHeight || e.clientHeight || g.clientHeight;
+    return (x < 875 || y < 875);
+}
+
+function adjust_table_heights() {
+    var viewport_height = $(window).height();
+    var element_top = $("#films-list")[0].getBoundingClientRect().top;
+    var new_height = viewport_height - element_top - 50;
+    $("#films-table-scroll").height(new_height);
+
+    var target_height = $("#films-list-container").height();
+    $("#film-display-container").height(target_height);
+}
 
 function initialize_filmseries() {
+    //adjust table heights
+    adjust_table_heights();
+    mobile = is_mobile();
     get_films();
     document.querySelector(".calSpan").addEventListener("click", function() {
         var c = document.querySelector('.cal-options-holder');
         c.hidden = !(c.hidden);
-
     });
+    document.querySelector(".back-btn").addEventListener("click", function() {
+        $('#film-display-container').hide();
+        $('#films-list-container').show();
+    });
+    // hide the film display if mobile
+    if (mobile) {
+        $('#film-display-container').hide();
+    } else {
+        $(".back-btn").hide();
+    }
+
 }
 
 function get_films() {
@@ -78,12 +135,12 @@ function populate_list(films) {
         films_list.appendChild(tr);
 
         var name = document.createElement("div");
-        name.setAttribute("class", "film-entry-name");
+        name.setAttribute("class", "event-entry-name");
         name.innerHTML = curr_film["name"];
         entry.appendChild(name);
 
         var time = document.createElement("div");
-        time.setAttribute("class", "film-entry-time");
+        time.setAttribute("class", "event-entry-time");
         time.innerHTML = curr_film["time"];
         entry.appendChild(time);
 
@@ -125,7 +182,9 @@ function populate_list(films) {
 
     //populate film display with either today's film or if not
     //today's then the closest film to today (looking forwards)
-    populate_film_display(display_film);
+    if (!mobile) {
+        populate_film_display(display_film);
+    }
 }
 
 function makeCal(title, start, duration, end, address, description) {
@@ -206,6 +265,12 @@ function populate_film_display(film) {
 
     //repopulate calendar
     makeCal(cal_title, cal_start, cal_duration, cal_end, cal_address, cal_description);
+
+    //if mobile display, hide the list, create the back button, show the film display
+    if (mobile) {
+        $("#films-list-container").hide();
+        $("#film-display-container").show();
+    }
 }
 
 

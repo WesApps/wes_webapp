@@ -1,7 +1,3 @@
-#films-list-container {
-    padding: 23px;
-    padding-top: 7px;
-}
 #films-list-heading {
     font-weight: 400;
     font-size: 1.4em;
@@ -9,12 +5,6 @@
     font-family: Roboto Slab;
     color: rgb(226, 93, 64);
     padding-top: 0px;
-}
-#film-row {
-    text-align: center;
-    font-size: 2em;
-    padding-left: 0px;
-    padding-right: 0px;
 }
 #films-list {
     text-align: left;
@@ -42,8 +32,8 @@
     color: rgba(64, 63, 63, 0.86);
 }
 #films-table-scroll {
+    height: 50px;
     overflow: auto;
-    height: 500px;
 }
 #films-table {
     width: 100%;
@@ -74,4 +64,16 @@ textarea:focus, input[type="search"]:focus {
     border-color: rgb(226, 93, 64) !important;
     box-shadow: none;
     outline: 0 none;
+}
+.event-entry-time {
+    margin-bottom: 0px;
+    padding-top: 6px;
+}
+
+
+#film-row {
+    font-size: 2em;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
 }

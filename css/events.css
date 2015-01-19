@@ -42,19 +42,6 @@ textarea:focus, input[type="search"]:focus {
     background: rgba(255, 236, 175, 0.31);
     cursor: pointer;
 }
-.event-entry-name {
-    font-size: 0.7em;
-    font-weight: 100;
-    font-family: PT Sans;
-    margin-bottom: -7px;
-    line-height: 1em;
-    color: rgb(85, 80, 80);
-}
-.event-entry-time {
-    font-size: 0.625em;
-    color: rgba(64, 63, 63, 0.86);
-    margin-bottom: -5px;
-}
 .event-entry-category {
     font-size: 0.55em;
     font-weight: 900;

@@ -32,8 +32,7 @@ a:hover {
 .navbar {
     margin-bottom: 0px !important;
 }
-.navbar-nav>li {}
-.navbar-default .navbar-nav>li>a {
+.navbar-nav>li {} .navbar-default .navbar-nav>li>a {
     margin-left: 20px;
     margin-right: 20px;
     text-decoration: none;
@@ -57,7 +56,6 @@ a:hover {
     border: none;
 }
 .navbar-holder {
-    padding-top: 60px;
     font-size: 1.3em;
     text-align: center;
     border-bottom: solid 3px;
@@ -65,10 +63,11 @@ a:hover {
     border-bottom-color: burlywood;
     background: rgb(136, 188, 215);
     width: 100%;
+    padding-top: 60px;
 }
 .logo {
-    font-size: 4em;
     margin-top: -41px;
+    font-size: 4em;
 }
 .logo > a {
     text-decoration: none;
@@ -135,7 +134,7 @@ a:hover {
     font-family: PT sans;
     font-weight: 100;
 }
-textarea:focus, input[type="search"]:focus,input[type="button"]:focus {
+textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     border-color: rgb(226, 93, 64) !important;
     box-shadow: none;
     outline: 0 none;
@@ -222,6 +221,7 @@ textarea:focus, input[type="search"]:focus,input[type="button"]:focus {
     margin-top: 0px;
     color: rgb(226, 93, 64);
     font-style: italic;
+    display: inline;
 }
 .display-caption {
     margin-top: -5px;
@@ -264,10 +264,89 @@ textarea:focus, input[type="search"]:focus,input[type="button"]:focus {
     font-style: italic;
     font-weight: 700;
 }
-
 .active-li {
     margin-top: -6px;
     padding-top: 6px;
     padding-bottom: 6px;
     background: rgba(57, 64, 68, 0.88);
+}
+.event-entry-name {
+    font-size: 0.7em;
+    font-weight: 100;
+    font-family: PT Sans;
+    margin-bottom: -7px;
+    line-height: 1em;
+    color: rgb(85, 80, 80);
+}
+.event-entry-time {
+    font-size: 0.625em;
+    color: rgba(64, 63, 63, 0.86);
+    margin-bottom: -5px;
+}
+.list-container {
+    padding: 23px;
+    padding-top: 0px;
+}
+.display-container {
+    padding: 23px;
+    padding-bottom: 0px;
+    padding-top: 23px;
+}
+/*add 'screen and'*/
+
+@media (max-width: 875px) {
+    .navbar-holder {
+        padding-top: 0px;
+    }
+    #film-row {
+        margin-right: 0px !important;
+        padding-top: 0px;
+    }
+    .box-container {
+        border: none !important;
+    }
+    .list-container {
+        padding: 0px !important;
+    }
+    .row {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+    .display-container {
+        padding: 0px;
+        margin: 25px;
+    }
+    .table-scroll {
+        overflow: auto;
+        max-height: 410px !important;
+        border-top: 1px rgba(255, 100, 0, 0.57) solid;
+    }
+    .list-heading {
+        text-align: center !important;
+        font-size: 1.1em !important;
+        display: inline;
+    }
+    .search {
+        height: 36px !important;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 8px;
+        border-width: 1px !important;
+        font-size: 0.55em;
+        width: 140px;
+        display: inline;
+    }
+    .back-btn {
+        padding: 0px 8px 0px 8px;
+        border: rgba(54, 56, 60, 0.58) solid 2px;
+        font-style: normal;
+        font-weight: 900;
+        border-radius: 200px;
+        font-family: PT Sans;
+        font-size: 0.8em;
+        color: rgba(54, 56, 60, 0.58);
+        cursor: pointer;
+        float: right;
+    }
 }
