@@ -4,7 +4,6 @@ body{
 #directory-search {
     margin-left: auto;
     margin-right: auto;
-    height: 55px !important;
     font-size: 1em;
     background: rgb(255, 249, 232);
     padding-left: 15px;
@@ -50,19 +49,19 @@ li {
     border-bottom: rgb(226,93,64) solid 3px;
     padding-top: 20px;
     padding-bottom: 20px;
-    text-align: right;
     font-family: Josefin sans;
     border-bottom-style: solid;
+    text-align: right;
 }
 .field-div {
-    text-align: left;
-    display: inline;
     /* font-size: 1em; */;
     font-size: 0.75em;
     font-family: PT sans;
     font-weight: 600;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    text-align: left;
+    display: inline;
 }
 .field-data {
     display: inline;

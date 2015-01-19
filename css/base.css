@@ -319,7 +319,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     .row {
         width: 100%;
         margin: 0px;
-        padding: 0px;
+        padding: 0px !important;
     }
     .display-container {
         padding: 0px;
@@ -427,7 +427,8 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     .title {
         font-size: 2em !important;
         margin: 0px;
-        margin-top: 14px;   
+        margin-top: 14px;
+        font-weight: 400 !important;   
     }
     #links-section {
         padding-top: 10px;
@@ -435,6 +436,43 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     #links-holder {
         font-size: 0.6em;
         line-height: 3.3em;
-        
+    }
+    .greeting {
+        font-size: 1.7em !important;
+        font-weight: 400 !important;
+        padding-top: 25%;
+    }
+    hr {
+        width: 81% !important;
+    }
+    .intro {
+        font-size: 1.3em !important;
+        width: 81%;
+    }
+    #footer {
+        font-size: 0.8em;
+    }
+    #directory-container {
+        text-align: left !important;
+    }
+    #directory-search {
+        height: 40px !important;
+        font-size: 0.7em !important;
+        margin-left: 15px !important;
+        width: 91%;
+        margin-top: 11px !important;;
+
+    }
+    #directory-list {
+        padding-top: 0px !important;
+    }
+    #directory-list-container {
+        border-top: rgb(226,93,64) solid 3px;
+        margin-top: 11px;
+    }
+    .entry-li {
+        font-size: 0.8em;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
