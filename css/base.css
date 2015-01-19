@@ -117,22 +117,21 @@ a:hover {
 }
 .search {
     height: 44px !important;
-    padding-left: 10px;
     font-size: 0.65em;
     width: 75%;
     max-width: 650px;
     background: rgba(255, 249, 232, 0);
-    padding-top: 5px;
     border-radius: 0px;
     border-color: rgb(226, 93, 64);
     border-width: 3px !important;
-    margin-bottom: 20px;
     box-shadow: none;
     outline: 0 none;
     margin-top: -9px;
     color: rgb(226, 93, 64);
     font-family: PT sans;
     font-weight: 100;
+    padding: 0px;
+    padding-left: 10px;
 }
 textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     border-color: rgb(226, 93, 64) !important;
@@ -224,7 +223,6 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     display: inline;
 }
 .display-caption {
-    margin-top: -5px;
     letter-spacing: 0.08em;
     color: rgba(89, 69, 69, 0.94);
     text-transform: uppercase;
@@ -233,6 +231,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     padding-top: 4px;
     font-style: italic;
     font-weight: 600;
+    margin-top: 0px;
 }
 .display-description {
     font-weight: 300;
@@ -304,9 +303,10 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .box-container {
         border: none !important;
+        border-bottom: 1px rgb(226, 93, 64) solid !important;
     }
     .list-container {
-        padding: 0px !important;
+        padding: 0px;
     }
     .row {
         width: 100%;
@@ -315,38 +315,79 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .display-container {
         padding: 0px;
-        margin: 25px;
+        margin: 14px;
+        margin-top: 6px;
+        line-height: 0.8em;
+        border-bottom: none !important;
     }
     .table-scroll {
         overflow: auto;
         max-height: 410px !important;
-        border-top: 1px rgba(255, 100, 0, 0.57) solid;
+        border-top: 3px rgb(226, 93, 64) solid;
     }
     .list-heading {
         text-align: center !important;
         font-size: 1.1em !important;
+        margin-top: 11px !important;
         display: inline;
     }
     .search {
-        height: 36px !important;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 8px;
         border-width: 1px !important;
         font-size: 0.55em;
         width: 140px;
         display: inline;
+        height: 29px !important;;
     }
     .back-btn {
-        padding: 0px 8px 0px 8px;
-        border: rgba(54, 56, 60, 0.58) solid 2px;
+        padding: 0px 5px 0px 5px;
+        border: rgba(54, 56, 60, 0.58) solid 1px;
         font-style: normal;
-        font-weight: 900;
+        font-weight: 100;
         border-radius: 200px;
         font-family: PT Sans;
-        font-size: 0.8em;
+        font-size: 0.5em;
         color: rgba(54, 56, 60, 0.58);
         cursor: pointer;
+        margin-top: 6px;
         float: right;
+        margin-right: 1px;
+        line-height: 1.3em;;
+    }
+    .display-title {
+        font-size: 0.65em !important;
+
+    }
+    .display-caption {
+        font-size: 0.5em;
+
+    }
+    #film-display-short {
+        font-size: 0.55em !important;
+
+    }
+    .new-cal {
+        font-size: 0.45em;
+        margin-top: 16px;
+    }
+    /*.calSpan {
+
+    }
+    #film-display-imdb {
+
+    }*/
+    .display-description {
+        padding-top: 7px !important;
+        font-size: 0.6em !important;
+        
+    }
+    #films-table {
+        margin-top: 0px !important;
+    }
+    .title-and-search {
+        text-align: left;
+        margin-bottom: 11px;
+        padding-left: 16px;
+        margin-top: 0px;
+        
     }
 }
