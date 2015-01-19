@@ -40,7 +40,7 @@ function is_mobile() {
 
 function adjust_table_heights() {
     var viewport_height = $(window).height();
-    var element_top = $("#films-list")[0].getBoundingClientRect().top;
+    var element_top = $("#films-table-scroll")[0].getBoundingClientRect().top;
     var new_height = viewport_height - element_top - 50;
     $("#films-table-scroll").height(new_height);
 
@@ -95,8 +95,11 @@ function films_callback(res) {
         var long_info = raw_data["long"] ? raw_data["long"][0] : "";
         var imdb = raw_data["imdb"] ? raw_data["imdb"][0] : "";
         var time = raw_data["time"] ? raw_data["time"][0] : "";
-        time = time.replace("T", " ");
         var date = new Date(Date.parse(time));
+        if (!(date)){
+            time = time.replace("T", " ");
+            var date = new Date(Date.parse(time));
+        }
         var curr_day = date.toString().split(" ")[0];
         var curr_date = date.getDate();
         var curr_month = date.getMonth();
@@ -259,7 +262,7 @@ function populate_film_display(film) {
 
 
     //scroll to film element in table
-    current_film_element.scrollIntoViewIfNeeded();
+    // current_film_element.scrollIntoViewIfNeeded();
 
     previous_selection = current_film_element;
 
