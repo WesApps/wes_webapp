@@ -59,15 +59,14 @@ a:hover {
     font-size: 1.3em;
     text-align: center;
     border-bottom: solid 3px;
-    border-bottom-color: rgb(65, 87, 97);
-    border-bottom-color: burlywood;
-    background: rgb(136, 188, 215);
     width: 100%;
     padding-top: 60px;
+    /*border-bottom-color: burlywood;*/
+    background: rgb(136, 188, 215);
 }
 .logo {
-    margin-top: -41px;
     font-size: 4em;
+    margin-top: -41px;
 }
 .logo > a {
     text-decoration: none;
@@ -291,11 +290,20 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     padding-bottom: 0px;
     padding-top: 23px;
 }
+.navbar-default .navbar-toggle {
+    border: none;
+}
+.icon-bar {
+    background-color: rgba(255, 249, 232, 0.9) !important;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background: none !important;
+}
 /*add 'screen and'*/
 
 @media (max-width: 875px) {
     .navbar-holder {
-        padding-top: 0px;
+        padding: 0px;
     }
     #film-row {
         margin-right: 0px !important;
@@ -319,6 +327,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         margin-top: 6px;
         line-height: 0.8em;
         border-bottom: none !important;
+        margin-left: 12px;
     }
     .table-scroll {
         overflow: auto;
@@ -336,7 +345,8 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         font-size: 0.55em;
         width: 140px;
         display: inline;
-        height: 29px !important;;
+        height: 29px !important;
+        ;
     }
     .back-btn {
         padding: 0px 5px 0px 5px;
@@ -351,19 +361,17 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         margin-top: 6px;
         float: right;
         margin-right: 1px;
-        line-height: 1.3em;;
+        line-height: 1.3em;
+        ;
     }
     .display-title {
         font-size: 0.65em !important;
-
     }
     .display-caption {
         font-size: 0.5em;
-
     }
     #film-display-short {
         font-size: 0.55em !important;
-
     }
     .new-cal {
         font-size: 0.45em;
@@ -375,10 +383,10 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     #film-display-imdb {
 
     }*/
+    
     .display-description {
         padding-top: 7px !important;
         font-size: 0.6em !important;
-        
     }
     #films-table {
         margin-top: 0px !important;
@@ -388,6 +396,45 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         margin-bottom: 11px;
         padding-left: 16px;
         margin-top: 0px;
+    }
+    .logo {
+        margin: 0px;
+        font-size: 1em;
+        display: none !important;
+        ;
+    }
+    .logo>a {
+        font-family: PT Sans Narrow !important;
+        text-transform: lowercase !important;
+        color: rgb(226, 93, 64) !important;
+        font-weight: 900 !important;
+    }
+    .navbar-nav>li {
+        padding-top: 4px;
+        padding-bottom: 5px;
+        font-size: 0.9em;
+    }
+    .active-li {
+        background: none;
+        margin: 0px;
+    }
+    #bs-example-navbar-collapse-1 {
+        border: none;
+    }
+    .container-fluid {
+        overflow: hidden;
+    }
+    .title {
+        font-size: 2em !important;
+        margin: 0px;
+        margin-top: 14px;   
+    }
+    #links-section {
+        padding-top: 10px;
+    }
+    #links-holder {
+        font-size: 0.6em;
+        line-height: 3.3em;
         
     }
 }
