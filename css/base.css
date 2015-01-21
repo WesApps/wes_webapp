@@ -336,7 +336,6 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     .table-scroll {
         overflow: auto;
         border-top: 3px rgb(226, 93, 64) solid;
-        max-height: 410px !important;
     }
     .list-heading {
         text-align: center !important;

@@ -39,13 +39,18 @@ function is_mobile() {
 }
 
 function adjust_table_heights() {
-    var viewport_height = $(window).height();
-    var element_top = $("#events-table-scroll")[0].getBoundingClientRect().top;
-    var new_height = viewport_height - element_top - 50;
-    $("#events-table-scroll").height(new_height);
+    if (mobile) {
+        $("#events-table-scroll").height("100%");
+        $("#event-display-container").height("100%");
+    } else {
+        var viewport_height = $(window).height();
+        var element_top = $("#events-table-scroll")[0].getBoundingClientRect().top;
+        var new_height = viewport_height - element_top - 50;
+        $("#events-table-scroll").height(new_height);
 
-    var target_height = $("#events-list-container").height();
-    $("#event-display-container").height(target_height);
+        var target_height = $("#events-list-container").height();
+        $("#event-display-container").height(target_height);
+    }
 }
 
 function initialize_events() {
@@ -63,8 +68,10 @@ function initialize_events() {
     // hide the event display if mobile
     if (mobile) {
         $('#event-display-container').hide();
+        $('.search')[0].autofocus = false;
     } else {
         $(".back-btn").hide();
+        $('.search')[0].autofocus = true;
     }
 }
 
@@ -110,7 +117,7 @@ function events_callback(res) {
         var curr_day = date.toString().split(" ")[0];
         var curr_date = date.getDate();
         var curr_month = date.getMonth();
-        console.log(curr_day,curr_date,curr_month)
+        console.log(curr_day, curr_date, curr_month)
         var time_str = date.toLocaleString().split(" ");
         time_str.splice(0, 1);
         tmp_time = time_str[0];

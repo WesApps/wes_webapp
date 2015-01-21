@@ -32,13 +32,18 @@ function is_mobile() {
 }
 
 function adjust_table_heights() {
-    var viewport_height = $(window).height();
-    var element_top = $("#films-table-scroll")[0].getBoundingClientRect().top;
-    var new_height = viewport_height - element_top - 50;
-    $("#films-table-scroll").height(new_height);
+    if (mobile) {
+        $("#films-table-scroll").height("100%");
+        $("#film-display-container").height("100%");
+    } else {
+        var viewport_height = $(window).height();
+        var element_top = $("#films-table-scroll")[0].getBoundingClientRect().top;
+        var new_height = viewport_height - element_top - 50;
+        $("#films-table-scroll").height(new_height);
 
-    var target_height = $("#films-list-container").height();
-    $("#film-display-container").height(target_height);
+        var target_height = $("#films-list-container").height();
+        $("#film-display-container").height(target_height);
+    }
 }
 
 function initialize_filmseries() {
@@ -55,7 +60,9 @@ function initialize_filmseries() {
     // hide the film display if mobile
     if (mobile) {
         $('#film-display-container').hide();
+        $('.search')[0].autofocus = false;
     } else {
+        $('.search')[0].autofocus = true;
         $(".back-btn").hide();
     }
 }
