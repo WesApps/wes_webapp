@@ -9,23 +9,16 @@ var mobile = false;
 function on_resize() {
     mobile = is_mobile();
     // hide the film display if mobile
+    // if mobile display, hide the list, create the back button, show the film display
     if (mobile) {
         $('#film-display-container').hide();
+        $("#films-list-container").show();
         $(".back-btn").show();
     } else {
         $(".back-btn").hide();
         $('#film-display-container').show();
     }
     adjust_table_heights();
-
-    //if mobile display, hide the list, create the back button, show the film display
-    if (mobile) {
-        $("#films-list-container").show();
-        $("#film-display-container").hide();
-    } else {
-        //if mobile display, hide the list, create the back button, show the film display
-        $("#films-list-container").show();
-    }
 }
 
 function is_mobile() {
@@ -49,7 +42,6 @@ function adjust_table_heights() {
 }
 
 function initialize_filmseries() {
-    //adjust table heights
     mobile = is_mobile();
     get_films();
     document.querySelector(".calSpan").addEventListener("click", function() {
@@ -258,10 +250,6 @@ function populate_film_display(film) {
     for (i = 0; i < current_film_element.childNodes.length; i++) {
         current_film_element.children[i].style.color = "rgb(255, 249, 232)";
     }
-
-
-    //scroll to film element in table
-    // current_film_element.scrollIntoViewIfNeeded();
 
     previous_selection = current_film_element;
 

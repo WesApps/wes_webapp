@@ -227,9 +227,9 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     text-transform: uppercase;
     font-family: Roboto Slab;
     font-size: 0.6em;
-    padding-top: 4px;
     font-style: italic;
     font-weight: 600;
+    padding-top: 4px;
     margin-top: 0px;
 }
 .display-description {
@@ -309,16 +309,16 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     .navbar-holder {
         padding: 0px;
     }
-    #film-row {
+    #film-row, #events-row {
         margin-right: 0px !important;
-        padding-top: 0px;
+        padding-top: 0px !important;
     }
     .box-container {
         border: none !important;
         border-bottom: 1px rgb(226, 93, 64) solid !important;
     }
     .list-container {
-        padding: 0px;
+        padding: 0px !important;
     }
     .row {
         width: 100%;
@@ -335,8 +335,8 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .table-scroll {
         overflow: auto;
-        max-height: 410px !important;
         border-top: 3px rgb(226, 93, 64) solid;
+        max-height: 410px !important;
     }
     .list-heading {
         text-align: center !important;
@@ -373,6 +373,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .display-caption {
         font-size: 0.5em;
+        margin-bottom: 0px;
     }
     #film-display-short {
         font-size: 0.55em !important;
@@ -380,19 +381,12 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     .new-cal {
         font-size: 0.45em;
         margin-top: 16px;
-    }
-    /*.calSpan {
-
-    }
-    #film-display-imdb {
-
-    }*/
-    
+    }   
     .display-description {
         padding-top: 7px !important;
         font-size: 0.6em !important;
     }
-    #films-table {
+    #films-table,#events-table {
         margin-top: 0px !important;
     }
     .title-and-search {
@@ -478,5 +472,43 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         font-size: 0.8em;
         padding-left: 16px;
         padding-right: 16px;
+    }
+    .filter-label {
+        font-size: 0.55em;
+
+    }
+    #show-div {
+        margin-left: 15px;
+
+    }
+    #sort-div {
+        margin-left: 15px;
+
+    }
+    .btn {
+        font-size: 0.5em !important;
+
+    }
+    .event-entry-container {
+        border-left: none !important;
+        border-right: none !important;
+    }
+    .event-entry-name {
+        font-size: 0.6em;
+    }
+    .event-entry-time {
+        font-size: 0.6em;
+    }
+    .event-entry-category {
+        font-size: 0.5em !important;
+    }
+    .header-tr {
+        font-size: 0.53em !important;
+
+    }
+    .header-tr > td {
+        padding: 0px 1px 1px 10px !important;
+        letter-spacing: 0.1em !important;
+
     }
 }

@@ -1,4 +1,5 @@
 $(document).ready(initialize_events);
+$(window).resize(on_resize);
 
 var event_data = [];
 var categories = [];
@@ -10,14 +11,61 @@ var filters = {};
 filters.today = false;
 filters.past = true;
 filters.query = "";
+mobile = false;
+
+function on_resize() {
+    mobile = is_mobile();
+    // hide the event display if mobile
+    // if mobile display, hide the list, create the back button, show the event display
+    if (mobile) {
+        $('#event-display-container').hide();
+        $("#events-list-container").show();
+        $(".back-btn").show();
+    } else {
+        $(".back-btn").hide();
+        $('#event-display-container').show();
+    }
+    adjust_table_heights();
+}
+
+function is_mobile() {
+    var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth,
+        y = w.innerHeight || e.clientHeight || g.clientHeight;
+    return (x < 875);
+}
+
+function adjust_table_heights() {
+    var viewport_height = $(window).height();
+    var element_top = $("#events-table-scroll")[0].getBoundingClientRect().top;
+    var new_height = viewport_height - element_top - 50;
+    $("#events-table-scroll").height(new_height);
+
+    var target_height = $("#events-list-container").height();
+    $("#event-display-container").height(target_height);
+}
 
 function initialize_events() {
+    mobile = is_mobile();
     get_events();
     document.querySelector(".calSpan").addEventListener("click", function() {
         var c = document.querySelector('.cal-options-holder');
         c.hidden = !(c.hidden);
 
     });
+    document.querySelector(".back-btn").addEventListener("click", function() {
+        $('#event-display-container').hide();
+        $('#events-list-container').show();
+    });
+    // hide the event display if mobile
+    if (mobile) {
+        $('#event-display-container').hide();
+    } else {
+        $(".back-btn").hide();
+    }
 }
 
 function get_events() {
@@ -89,7 +137,9 @@ function events_callback(res) {
 
     //populate event display with either today's event or if not
     //today's then the closest event to today (looking forwards)
-    populate_event_display(display_event);
+    if (!mobile) {
+        populate_event_display(display_event);
+    }
 }
 
 function create_header(inner) {
@@ -208,6 +258,7 @@ function populate_list(events) {
         }
     }
     filter_headers();
+    adjust_table_heights();
 }
 
 function makeCal(title, start, duration, end, address, description) {
@@ -288,7 +339,14 @@ function populate_event_display(d_event) {
 
     previous_selection = current_event_element
 
+    //repopulate calendar
     makeCal(cal_title, cal_start, cal_duration, cal_end, cal_address, cal_description);
+
+    //if mobile display, hide the list, create the back button, show the event display
+    if (mobile) {
+        $("#events-list-container").hide();
+        $("#event-display-container").show();
+    }
 }
 
 function get_event_by_id(id) {

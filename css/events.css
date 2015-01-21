@@ -31,12 +31,13 @@ textarea:focus, input[type="search"]:focus {
     padding-bottom: 9px;
     padding-top: 11px;
     border-color: rgb(226, 93, 64);
-    border-width: 2px;
     border-right-style: solid;
     border-left-style: solid;
     border-bottom-width: 1px;
     border-right-width: 2px;
     border-left-width: 4px;
+    border-width: 2px;
+    overflow-y: hidden;
 }
 .event-entry-container:hover {
     background: rgba(255, 236, 175, 0.31);
@@ -44,7 +45,6 @@ textarea:focus, input[type="search"]:focus {
 }
 .event-entry-category {
     font-size: 0.55em;
-    font-weight: 900;
     color: rgb(255, 249, 232);
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -52,11 +52,12 @@ textarea:focus, input[type="search"]:focus {
     margin-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    margin-left: 14px;;
+    margin-left: 14px;
+    font-weight: bold;;
 }
 #events-table-scroll {
-    overflow: auto;
     height: 553px;
+    overflow: auto;
 }
 #events-table {
     border-width: 0px;
@@ -118,6 +119,7 @@ input {
     padding-bottom: 1px;
 }
 .btn-inactive:hover {
+    
 }
 .btn-active:hover {
     color: rgba(242, 238, 212, 0.78);
@@ -151,8 +153,8 @@ input {
     color: rgb(255, 249, 232);
     font-family: PT Sans caption;
     font-weight: 200;
-    background: rgb(226, 93, 64);
     border-right: rgb(226, 93, 64) 2px solid;
+    background: rgb(226, 93, 64);
 }
 .header-tr > td {
     padding: 4px;

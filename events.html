@@ -91,11 +91,11 @@
     <div class="row" id="events-row">
         <!-- <h1 class="title">Events</h1> -->
         <div id="events-container">
-            <div id="events-list-container" class="col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2 box-container list-container">
+            <div id="events-list-container" class="col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2 col-sm-5 col-sm-offset-1 box-container list-container">
                 <!-- Search Bar -->
-                <div id="events-search-holder">
+                <div id="events-search-holder" class="title-and-search">
                     <div id="events-list-heading" class="list-heading">Events</div>
-                    <input type="search" id="events-search" class="form-control search" placeholder="Search by event name..." autofocus="autofocus">
+                    <input type="search" id="events-search" class="form-control search" placeholder="Search..." autofocus="autofocus">
                 </div>
                 <div id="show-div">
                     <span class="filter-label"> show: </span>
@@ -116,17 +116,18 @@
                     </table>
                 </div>
             </div>
-            <div id="event-display-container" class="col-md-5 col-lg-4 box-container display-container">
+            <div id="event-display-container" class="col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2 col-sm-5 col-sm-offset-1 box-container display-container">
                 <h1 id="event-display-title" class="display-title"></h1>
+                <span class="back-btn">X</span>
                 <h2 class="display-caption light" id="event-display-time"></h2>
                 <h2 class="display-caption light" id="event-display-location"></h2>
                 <h2 class="display-caption light" id="event-display-category"></h2>
                 <div class="new-cal">
-                    <span class="calSpan noselect">Add to Calendar</span>
-                    <a href="" target="_blank" id="event-display-link" class="noselect"></a>
-                    <div class="cal-options-holder" hidden="true">
+                        <span class="calSpan noselect">Add to Calendar</span>
+                        <a href="" target="_blank" id="event-display-link" class="noselect"></a>
+                        <div class="cal-options-holder" hidden="true">
+                        </div>
                     </div>
-                </div>
                 <p id="event-display-description" class="display-description"></p>
             </div>
         </div>
