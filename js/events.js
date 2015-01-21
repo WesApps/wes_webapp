@@ -101,8 +101,11 @@ function events_callback(res) {
         }
 
         //Process time/date
-        time = time.replace("T", " ");
         var date = new Date(Date.parse(time));
+        if (!(date)){
+            time = time.replace("T", " ");
+            var date = new Date(Date.parse(time));
+        }
         var curr_day = date.toString().split(" ")[0];
         var curr_date = date.getDate();
         var curr_month = date.getMonth();
