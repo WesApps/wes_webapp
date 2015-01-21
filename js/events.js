@@ -101,14 +101,16 @@ function events_callback(res) {
         }
 
         //Process time/date
-        var date = new Date(Date.parse(time));
-        if (!(date)){
-            time = time.replace("T", " ");
-            var date = new Date(Date.parse(time));
-        }
+        var tmp_date = new Date(Date.parse(time));
+        var date = new Date(tmp_date.getUTCFullYear(),
+            tmp_date.getUTCMonth(), tmp_date.getUTCDate(),
+            tmp_date.getUTCHours(), tmp_date.getUTCMinutes(),
+            tmp_date.getUTCSeconds());
+
         var curr_day = date.toString().split(" ")[0];
         var curr_date = date.getDate();
         var curr_month = date.getMonth();
+        console.log(curr_day,curr_date,curr_month)
         var time_str = date.toLocaleString().split(" ");
         time_str.splice(0, 1);
         tmp_time = time_str[0];

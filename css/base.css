@@ -340,7 +340,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .list-heading {
         text-align: center !important;
-        font-size: 1.1em !important;
+        font-size: 0.8em !important;
         margin-top: 11px !important;
         display: inline;
     }
@@ -349,7 +349,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         font-size: 0.55em;
         width: 140px;
         display: inline;
-        height: 29px !important;
+        height: 24px !important;
         ;
     }
     .back-btn {
@@ -391,9 +391,9 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .title-and-search {
         text-align: left;
-        margin-bottom: 11px;
+        margin-bottom: 6px;
         padding-left: 16px;
-        margin-top: 0px;
+        margin-top: -4px;
     }
     .logo {
         margin: 0px;
@@ -479,10 +479,13 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     #show-div {
         margin-left: 15px;
+        margin-top: -26px !important;
 
     }
     #sort-div {
         margin-left: 15px;
+        margin-top: -8px !important;
+        padding-bottom: 5px !important;
 
     }
     .btn {

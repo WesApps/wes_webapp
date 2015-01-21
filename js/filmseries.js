@@ -85,11 +85,12 @@ function films_callback(res) {
         var long_info = raw_data["long"] ? raw_data["long"][0] : "";
         var imdb = raw_data["imdb"] ? raw_data["imdb"][0] : "";
         var time = raw_data["time"] ? raw_data["time"][0] : "";
-        var date = new Date(Date.parse(time));
-        if (!(date)){
-            time = time.replace("T", " ");
-            var date = new Date(Date.parse(time));
-        }
+        var tmp_date = new Date(Date.parse(time));
+        var date = new Date(tmp_date.getUTCFullYear(),
+            tmp_date.getUTCMonth(), tmp_date.getUTCDate(),
+            tmp_date.getUTCHours(), tmp_date.getUTCMinutes(),
+            tmp_date.getUTCSeconds());
+
         var curr_day = date.toString().split(" ")[0];
         var curr_date = date.getDate();
         var curr_month = date.getMonth();
