@@ -355,7 +355,7 @@ function populate_event_display(d_event) {
     current_event_element.style.background = "rgba(255, 198, 108, 0.51)";
 
     //scroll to event element in table
-    current_event_element.scrollIntoViewIfNeeded();
+    current_event_element.scrollIntoView();
 
     previous_selection = current_event_element
 
