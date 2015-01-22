@@ -62,6 +62,9 @@ function initialize_filmseries() {
     document.querySelector(".back-btn").addEventListener("click", function() {
         $('#film-display-container').hide();
         $('#films-list-container').show();
+        if (previous_selection) {
+            previous_selection.scrollIntoView();
+        }
     });
     width = $(window).width();
     // hide the film display if mobile
