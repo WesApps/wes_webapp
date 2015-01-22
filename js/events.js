@@ -128,7 +128,6 @@ function events_callback(res) {
         var curr_day = date.toString().split(" ")[0];
         var curr_date = date.getDate();
         var curr_month = date.getMonth();
-        console.log(curr_day, curr_date, curr_month)
         var time_str = date.toLocaleString().split(" ");
         time_str.splice(0, 1);
         tmp_time = time_str[0];
@@ -326,7 +325,7 @@ function populate_event_display(d_event) {
     cal_duration = 120;
     if (d_event["link"]) {
         $("#event-display-link")[0].hidden = false;
-        $("#event-display-link")[0].innerHTML = "Read on " + d_event["source"];
+        $("#event-display-link")[0].innerHTML = "Read original";
         $("#event-display-link")[0].href = d_event["link"];
         cal_description = d_event["source"] + ": " + d_event["link"];
     } else {
@@ -356,9 +355,6 @@ function populate_event_display(d_event) {
 
     //set the class of the current event element in table to active
     current_event_element.style.background = "rgba(255, 198, 108, 0.51)";
-
-    //scroll to event element in table
-    current_event_element.scrollIntoView();
 
     previous_selection = current_event_element
 

@@ -42,8 +42,8 @@ a:hover {
     font-weight: 900;
     padding: 0px 0px;
     font-size: 1.05em;
-    letter-spacing: 0.06em;
     font-family: Roboto Slab;
+    letter-spacing: 0.1em;
 }
 .navbar-default .navbar-nav>li>a:hover {
     /*border-bottom-color: rgb(87, 105, 118);*/
@@ -56,13 +56,14 @@ a:hover {
     border: none;
 }
 .navbar-holder {
-    font-size: 1.3em;
-    text-align: center;
     border-bottom: solid 3px;
+    /*border-bottom-color: burlywood;*/
+    
+    background: rgb(136, 188, 215);
     width: 100%;
     padding-top: 60px;
-    /*border-bottom-color: burlywood;*/
-    background: rgb(136, 188, 215);
+    text-align: center;
+    font-size: 1.3em;
 }
 .logo {
     font-size: 4em;
@@ -85,10 +86,9 @@ a:hover {
     color: rgba(255, 255, 255, 0.4) !important;
 }
 .active-nav {
-    border-bottom-color: none !important;
+    color: rgba(255, 249, 232, 0.9) !important;
     border-bottom-width: 10px !important;
     border-bottom-color: rgb(87, 105, 118) !important;
-    color: rgba(255, 249, 232, 0.9) !important;
 }
 .title {
     letter-spacing: 5px;
@@ -262,13 +262,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     font-style: italic;
     font-weight: 700;
 }
-.active-li {
-    margin-top: -6px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    background: rgba(57, 64, 68, 0.88);
-}
-.event-entry-name {
+.active-li {} .event-entry-name {
     font-size: 0.7em;
     font-weight: 100;
     font-family: PT Sans;
@@ -301,10 +295,24 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
 }
 .title-and-search {
     margin-bottom: 10px;
-    
 }
 /*add 'screen and'*/
 
+@media (max-width: 1250px) {
+    .navbar-holder {
+        font-size: 1.1em;
+    }
+}
+@media (max-width: 1100px) {
+    .navbar-holder {
+        font-size: 1em;
+    }
+    .navbar-default .navbar-nav>li>a {
+        margin-left: 12px !important;
+        margin-right: 12px !important
+        ;
+    }
+}
 @media (max-width: 875px) {
     .navbar-holder {
         padding: 0px;
@@ -380,12 +388,12 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     .new-cal {
         font-size: 0.45em;
         margin-top: 16px;
-    }   
+    }
     .display-description {
         padding-top: 7px !important;
         font-size: 0.6em !important;
     }
-    #films-table,#events-table {
+    #films-table, #events-table {
         margin-top: 0px !important;
     }
     .title-and-search {
@@ -425,7 +433,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         font-size: 2em !important;
         margin: 0px;
         margin-top: 14px;
-        font-weight: 400 !important;   
+        font-weight: 400 !important;
     }
     #links-section {
         padding-top: 10px;
@@ -457,14 +465,14 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         font-size: 0.7em !important;
         margin-left: 15px !important;
         width: 91%;
-        margin-top: 11px !important;;
-
+        margin-top: 11px !important;
+        ;
     }
     #directory-list {
         padding-top: 0px !important;
     }
     #directory-list-container {
-        border-top: rgb(226,93,64) solid 3px;
+        border-top: rgb(226, 93, 64) solid 3px;
         margin-top: 11px;
     }
     .entry-li {
@@ -474,22 +482,18 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .filter-label {
         font-size: 0.55em;
-
     }
     #show-div {
         margin-left: 15px;
         margin-top: -26px !important;
-
     }
     #sort-div {
         margin-left: 15px;
         margin-top: -8px !important;
         padding-bottom: 5px !important;
-
     }
     .btn {
         font-size: 0.5em !important;
-
     }
     .event-entry-container {
         border-left: none !important;
@@ -506,11 +510,9 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .header-tr {
         font-size: 0.53em !important;
-
     }
     .header-tr > td {
         padding: 0px 1px 1px 10px !important;
         letter-spacing: 0.1em !important;
-
     }
 }

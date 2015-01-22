@@ -6,7 +6,7 @@ Web interface for Wesleyan related info
 TODO:
 
 -Menus:
-	+usdan
+	+do something about the broken scrollspy
 -about
 	+add content
 -favicon	
