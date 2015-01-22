@@ -4,13 +4,19 @@ $(window).resize(on_resize);
 var film_data = {}
 var previous_selection;
 var mobile = false;
-
+var width;
 
 function on_resize() {
+    width = $(window).width();
     mobile = is_mobile();
     // hide the film display if mobile
     // if mobile display, hide the list, create the back button, show the film display
     if (mobile) {
+        // prevents things from resetting during transition
+        // from iOS safari full screen row click -> display
+        if ($(window).width() == width) {
+            return;
+        }
         $('#film-display-container').hide();
         $("#films-list-container").show();
         $(".back-btn").show();
@@ -57,6 +63,7 @@ function initialize_filmseries() {
         $('#film-display-container').hide();
         $('#films-list-container').show();
     });
+    width = $(window).width();
     // hide the film display if mobile
     if (mobile) {
         $('#film-display-container').hide();
