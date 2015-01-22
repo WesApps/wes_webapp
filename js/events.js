@@ -11,13 +11,20 @@ var filters = {};
 filters.today = false;
 filters.past = true;
 filters.query = "";
-mobile = false;
+var mobile = false;
+var width;
+
 
 function on_resize() {
     mobile = is_mobile();
     // hide the event display if mobile
     // if mobile display, hide the list, create the back button, show the event display
     if (mobile) {
+        // prevents things from resetting during transition
+        // from iOS safari full screen row click -> display
+        if ($(window).width() == width) {
+            return;
+        }
         $('#event-display-container').hide();
         $("#events-list-container").show();
         $(".back-btn").show();
@@ -65,6 +72,7 @@ function initialize_events() {
         $('#event-display-container').hide();
         $('#events-list-container').show();
     });
+    width = $(window).width();
     // hide the event display if mobile
     if (mobile) {
         $('#event-display-container').hide();
