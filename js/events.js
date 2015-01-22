@@ -71,6 +71,9 @@ function initialize_events() {
     document.querySelector(".back-btn").addEventListener("click", function() {
         $('#event-display-container').hide();
         $('#events-list-container').show();
+        if (display_event) {
+            display_event.scrollIntoView();
+        }
     });
     width = $(window).width();
     // hide the event display if mobile

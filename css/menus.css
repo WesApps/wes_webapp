@@ -68,7 +68,7 @@ li {
     font-family: Roboto Slab;
     color: rgb(238, 92, 92);
     font-style: normal;
-    font-size: 80px;
+    font-size: 1.7em;
     border-bottom: rgb(238, 92, 92) solid 6px;
     display: table;
     line-height: 1em;
@@ -80,6 +80,7 @@ li {
     text-align: left;
     height: 100%;
     overflow: auto;
+    padding-top: 20px;
 }
 .item-description {
     padding-bottom: 10px;
@@ -140,4 +141,13 @@ li {
 }
 .menu-break {
     height: 10px;
+}
+.meal-title {
+    font-weight: 700;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.category-title {
+    
 }
