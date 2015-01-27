@@ -1,6 +1,5 @@
 $(document).ready(intialize_menus);
 
-var all_entries;
 var menus_container;
 
 function intialize_menus() {
@@ -9,27 +8,25 @@ function intialize_menus() {
 }
 
 function get_menus() {
-    var data = $.getJSON("http://wesapi.org/api/menus/all?maxresults=", function(res) {
+    $.getJSON("http://wesapi.org/api/menus/all?maxresults=", function(res) {
         if (!(res)) {
-            return {}
+            return {};
         } else {
             //once we get the data, call the callback
             //function to put it into the html page.
             return menu_callback(res);
         }
-    })
+    });
 }
 
 //handles fetch of menus
 function menu_callback(res) {
-    console.log(res)
-    var result_count = res["Result Count"];
     var results = res["Results"];
 
     var latenight = results["latenight"];
     var redandblack = results["redandblack"];
     var weswings = results["weswings"];
-    var starandcrescent = results["starandcrescent"];
+    // var starandcrescent = results["starandcrescent"];
     var summerfields = results["summerfields"];
     var usdan = results["usdan"];
 
@@ -69,7 +66,7 @@ function process_type0(data, title, id) {
         menu_element.appendChild(item_title_element);
         return;
     }
-    for (i in usdan_day) {
+    for (var i in usdan_day) {
         if (!(usdan_day[i])) {
             continue;
         }
@@ -79,16 +76,15 @@ function process_type0(data, title, id) {
         meal_title_element.setAttribute("class", "meal-title");
         menu_element.appendChild(meal_title_element);
 
-        for (j in usdan_day[i]) {
+        for (var j in usdan_day[i]) {
             var category_title_element = document.createElement("div");
             category_title_element.innerHTML = j;
             category_title_element.setAttribute("class", "category-title");
             menu_element.appendChild(category_title_element);
-            var category_items = usdan_day[i][j]
-
-            for (k in category_items) {
+            var category_items = usdan_day[i][j];
+            for (var k = 0; k < category_items.length; k++) {
                 var item_title_element = document.createElement("div");
-                var item_title = category_items[k]["title"].replace(";","");
+                var item_title = category_items[k]["title"].replace(";", "");
                 item_title_element.innerHTML = item_title;
                 item_title_element.setAttribute("class", "item-title");
                 menu_element.appendChild(item_title_element);
@@ -119,7 +115,7 @@ function process_type1(data, title, id) {
 
     var data_title = title;
     title_element.innerHTML = data_title;
-    for (i in data) {
+    for (var i in data) {
         var item_title_element = document.createElement("span");
         var title = data[i]["title"];
         item_title_element.innerHTML = title;
@@ -154,7 +150,7 @@ function process_type2(data, title, id) {
 
     var data_name = title;
     name_element.innerHTML = data_name;
-    for (i in data) {
+    for (var i in data) {
         var item_name_element = document.createElement("span");
         var name = data[i]["name"];
         item_name_element.innerHTML = name;
@@ -172,30 +168,28 @@ function process_type2(data, title, id) {
         var item_info_element = document.createElement("div");
         var info = item_data["info"] ? item_data["info"][0] : "";
         item_info_element.innerHTML = info;
-        item_info_element.setAttribute("class", "item-description")
+        item_info_element.setAttribute("class", "item-description");
         menu_element.appendChild(item_info_element);
-
     }
-
 }
 
 
 function process_latenight(data) {
-    process_type1(data, "Late Night", "latenight")
+    process_type1(data, "Late Night", "latenight");
 }
 
 function process_summerfields(data) {
-    process_type1(data, "Summerfields", "summerfields")
+    process_type1(data, "Summerfields", "summerfields");
 }
 
 function process_usdan(data) {
-    process_type0(data, "Usdan Daily Menu", "usdan")
-};
+    process_type0(data, "Usdan Daily Menu", "usdan");
+}
 
 function process_redandblack(data) {
-    process_type2(data, "Red and Black", "redandblack")
+    process_type2(data, "Red and Black", "redandblack");
 }
 
 function process_weswings(data) {
-    process_type2(data, "Wes Wings", "weswings")
+    process_type2(data, "Wes Wings", "weswings");
 }

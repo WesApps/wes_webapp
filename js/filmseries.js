@@ -1,7 +1,7 @@
 $(document).ready(initialize_filmseries);
 $(window).resize(on_resize);
 
-var film_data = {}
+var film_data = {};
 var previous_selection;
 var mobile = false;
 var width;
@@ -14,7 +14,7 @@ function on_resize() {
     if (mobile) {
         // prevents things from resetting during transition
         // from iOS safari full screen row click -> display
-        if ($(window).width() == width) {
+        if ($(window).width() === width) {
             return;
         }
         $('#film-display-container').hide();
@@ -32,8 +32,7 @@ function is_mobile() {
         d = document,
         e = d.documentElement,
         g = d.getElementsByTagName('body')[0],
-        x = w.innerWidth || e.clientWidth || g.clientWidth,
-        y = w.innerHeight || e.clientHeight || g.clientHeight;
+        x = w.innerWidth || e.clientWidth || g.clientWidth;
     return (x < 875);
 }
 
@@ -78,24 +77,23 @@ function initialize_filmseries() {
 }
 
 function get_films() {
-    var data = $.getJSON("http://wesapi.org/api/filmseries/all", function(res) {
+    $.getJSON("http://wesapi.org/api/filmseries/all", function(res) {
         if (!(res)) {
             return {};
         } else {
             return films_callback(res);
         }
-    })
+    });
 }
 
 //handles successful fetch of films
 function films_callback(res) {
-    var result_count = res["Result Count"];
     var results = res["Results"];
     var m_names = new Array("January", "February", "March",
         "April", "May", "June", "July", "August", "September",
         "October", "November", "December");
     //display results
-    for (i in results) {
+    for (var i in results) {
         var name = results[i]["name"];
         var raw_data = results[i]["data"];
         var short_info = raw_data["short"] ? raw_data["short"][0] : "";
@@ -119,7 +117,7 @@ function films_callback(res) {
             "imdb": imdb,
             "time": time,
             "date": date
-        }
+        };
     }
     populate_list(film_data);
 }
@@ -135,7 +133,7 @@ function populate_list(films) {
     // console.log(current_date);
     var display_film;
 
-    for (i in films) {
+    for (var i in films) {
         var curr_film = films[i];
         var tr = document.createElement("tr");
         var entry = document.createElement("td");
@@ -164,7 +162,7 @@ function populate_list(films) {
             continue;
         }
         //if curr film is ever today, it wins!
-        if (curr_film["date"].toISOString() == today.toISOString()) {
+        if (curr_film["date"].toISOString() === today.toISOString()) {
             display_film = curr_film;
             continue;
         }
@@ -183,12 +181,12 @@ function populate_list(films) {
     set_on_click();
 
     // set listener for search
-    $("#films-search").on("input", function(e) {
-        if ($(this).data("lastval") != $(this).val()) {
+    $("#films-search").on("input", function() {
+        if ($(this).data("lastval") !== $(this).val()) {
             $(this).data("lastval", $(this).val());
             //change action
-            filterEntries($(this).val())
-        };
+            filterEntries($(this).val());
+        }
     });
 
     //populate film display with either today's film or if not
@@ -221,7 +219,7 @@ function makeCal(title, start, duration, end, address, description) {
         cal_options_holder.innerHTML = "";
     }
     cal_options_holder.appendChild(myCalendar);
-    cal_options_holder.hidden = "true"
+    cal_options_holder.hidden = "true";
 }
 
 
@@ -236,7 +234,7 @@ function populate_film_display(film) {
 
     //populates the film display area with the film data given
     $("#film-display-title")[0].innerHTML = film["name"];
-    cal_title = "Film Series: " + film["name"]
+    cal_title = "Film Series: " + film["name"];
     $("#film-display-time")[0].innerHTML = film["time"];
     cal_start = film["date"];
     cal_start.setHours(20); //set time to 8 o'clock
@@ -258,14 +256,14 @@ function populate_film_display(film) {
     //if previously selected element, clear
     if (previous_selection) {
         previous_selection.style.background = "";
-        for (i = 0; i < previous_selection.childNodes.length; i++) {
+        for (var i = 0; i < previous_selection.childNodes.length; i++) {
             previous_selection.children[i].style.color = "inherit";
         }
     }
 
     //set the class of the current film element in table to active
     current_film_element.style.background = "rgb(226,93,64)";
-    for (i = 0; i < current_film_element.childNodes.length; i++) {
+    for (var i = 0; i < current_film_element.childNodes.length; i++) {
         current_film_element.children[i].style.color = "rgb(255, 249, 232)";
     }
 
@@ -287,19 +285,19 @@ function set_on_click() {
         var lookup_id = ev.currentTarget.id.split("film_")[1];
         var current_film = film_data[lookup_id];
         populate_film_display(current_film);
-    })
+    });
 }
 
 function filterEntries(query) {
     // Hides entries iff !(query subset of entry name)
     var curr_entries = document.getElementsByClassName("film-entry-container");
-    for (i in curr_entries) {
+    for (var i in curr_entries) {
         if (!(curr_entries[i].children)) {
             continue;
         }
         var name = curr_entries[i].children[0].innerHTML.toLocaleLowerCase();
         //if query not in entry, hide this li element.
-        if (name.indexOf(query.toLocaleLowerCase()) == -1) {
+        if (name.indexOf(query.toLocaleLowerCase()) === -1) {
             curr_entries[i].hidden = true;
         } else {
             curr_entries[i].hidden = false;

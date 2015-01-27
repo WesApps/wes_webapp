@@ -22,7 +22,7 @@ function on_resize() {
     if (mobile) {
         // prevents things from resetting during transition
         // from iOS safari full screen row click -> display
-        if ($(window).width() == width) {
+        if ($(window).width() === width) {
             return;
         }
         $('#event-display-container').hide();
@@ -40,8 +40,7 @@ function is_mobile() {
         d = document,
         e = d.documentElement,
         g = d.getElementsByTagName('body')[0],
-        x = w.innerWidth || e.clientWidth || g.clientWidth,
-        y = w.innerHeight || e.clientHeight || g.clientHeight;
+        x = w.innerWidth || e.clientWidth || g.clientWidth;
     return (x < 875);
 }
 
@@ -87,24 +86,23 @@ function initialize_events() {
 }
 
 function get_events() {
-    var data = $.getJSON("http://wesapi.org/api/events/latest", function(res) {
+    $.getJSON("http://wesapi.org/api/events/latest", function(res) {
         if (!(res)) {
             return {};
         } else {
             return events_callback(res);
         }
-    })
+    });
 }
 
 //handles successful fetch of events
 function events_callback(res) {
-    var result_count = res["Result Count"];
     var results = res["Results"];
     var m_names = new Array("January", "February", "March",
         "April", "May", "June", "July", "August", "September",
         "October", "November", "December");
     //display results
-    for (i in results) {
+    for (var i in results) {
         var name = results[i]["name"];
         var category = results[i]["category"];
         var description = results[i]["description"];
@@ -114,7 +112,7 @@ function events_callback(res) {
         var location = results[i]["location"];
 
         //Add category to set of categories
-        if (categories.indexOf(category) == -1) {
+        if (categories.indexOf(category) === -1) {
             categories.push(category);
         }
 
@@ -130,13 +128,13 @@ function events_callback(res) {
         var curr_month = date.getMonth();
         var time_str = date.toLocaleString().split(" ");
         time_str.splice(0, 1);
-        tmp_time = time_str[0];
-        tmp_time = tmp_time.split(":")
+        var tmp_time = time_str[0];
+        tmp_time = tmp_time.split(":");
         tmp_time.splice(2, 1);
         time_str[0] = tmp_time.join(":");
         time = curr_day + ", " + m_names[curr_month] + " " +
             curr_date + ", " + time_str.join(" ");
-        date_tomorrow = new Date(date);
+        var date_tomorrow = new Date(date);
         date_tomorrow.setDate(date.getDate() + 1);
 
         event_data[i] = {
@@ -171,7 +169,7 @@ function create_header(inner) {
     hdr_td.setAttribute("colspan", 2);
     hdr_td.innerHTML = inner;
     hdr_tr.appendChild(hdr_td);
-    return hdr_tr
+    return hdr_tr;
 }
 
 function populate_list(events) {
@@ -184,29 +182,29 @@ function populate_list(events) {
     var today = new Date(dateObj.getFullYear(), month, day);
     var prev_header;
 
-    for (i in events) {
+    for (var i in events) {
 
         var curr_event = events[i];
 
         //set category/date header
-        if (current_sort == "date") {
-            var tmp = curr_event["date"]
+        if (current_sort === "date") {
+            var tmp = curr_event["date"];
             var day = tmp.getDate();
             var month = tmp.getMonth();
             var year = tmp.getFullYear();
             var tmpDate = new Date(year, month, day);
-            if (!(prev_header) || (prev_header.toString() != tmpDate.toString())) {
+            if (!(prev_header) || (prev_header.toString() !== tmpDate.toString())) {
                 //Display new header if appropriate
-                prev_header = tmpDate
+                prev_header = tmpDate;
                 events_list.appendChild(create_header(prev_header.toString().split(" ").splice(0, 3).join(" ")));
             }
         }
 
-        if (current_sort == "category") {
+        if (current_sort === "category") {
             var curr_category = curr_event["category"];
-            if (!(prev_header) || (prev_header != curr_category)) {
+            if (!(prev_header) || (prev_header !== curr_category)) {
                 //Display new header if appropriate
-                prev_header = curr_category
+                prev_header = curr_category;
                 events_list.appendChild(create_header(prev_header));
             }
         }
@@ -239,7 +237,7 @@ function populate_list(events) {
         entry.appendChild(time);
 
         //if we're date sorted, need to display the categories in the table
-        if (current_sort == "date") {
+        if (current_sort === "date") {
             var category = document.createElement("span");
             category.setAttribute("class", "event-entry-category");
             category.innerHTML = curr_event["category"];
@@ -248,7 +246,7 @@ function populate_list(events) {
             // give it some color
             var cat_index = categories.indexOf(curr_event["category"]);
             var b_color;
-            if (cat_index == -1) {
+            if (cat_index === -1) {
                 b_color = color_array[0];
             } else {
                 b_color = color_array[cat_index];
@@ -268,7 +266,7 @@ function populate_list(events) {
         }
 
         //if curr event is ever today, it wins!
-        if (curr_event["date"].toDateString() == today.toDateString()) {
+        if (curr_event["date"].toDateString() === today.toDateString()) {
             display_event = curr_event;
             continue;
         }
@@ -305,7 +303,7 @@ function makeCal(title, start, duration, end, address, description) {
         cal_options_holder.innerHTML = "";
     }
     cal_options_holder.appendChild(myCalendar);
-    cal_options_holder.hidden = "true"
+    cal_options_holder.hidden = "true";
 }
 
 function populate_event_display(d_event) {
@@ -356,7 +354,7 @@ function populate_event_display(d_event) {
     //set the class of the current event element in table to active
     current_event_element.style.background = "rgba(255, 198, 108, 0.51)";
 
-    previous_selection = current_event_element
+    previous_selection = current_event_element;
 
     //repopulate calendar
     makeCal(cal_title, cal_start, cal_duration, cal_end, cal_address, cal_description);
@@ -370,8 +368,8 @@ function populate_event_display(d_event) {
 
 function get_event_by_id(id) {
     //returns an event by it's event id
-    for (i in event_data) {
-        if (event_data[i]["id"] == id) {
+    for (var i = 0; i < event_data.length; i++) {
+        if (event_data[i]["id"] === id) {
             return event_data[i];
         }
     }
@@ -382,14 +380,14 @@ function set_row_click() {
         var lookup_id = ev.currentTarget.id;
         var current_event = get_event_by_id(lookup_id);
         populate_event_display(current_event);
-    })
+    });
 }
 
 function set_listeners() {
     set_row_click();
 
     //on click for only today button
-    $("#show-today").click(function(ev) {
+    $("#show-today").click(function() {
         filters.today = !(filters.today);
         if (filters.today) {
             $("#show-today")[0].className = "btn btn-active";
@@ -397,10 +395,10 @@ function set_listeners() {
             $("#show-today")[0].className = "btn btn-inactive";
         }
         filter_entries();
-    })
+    });
 
     //on click for show past button
-    $("#show-past").click(function(ev) {
+    $("#show-past").click(function() {
         filters.past = !(filters.past);
         if (!(filters.past)) {
             $("#show-past")[0].className = "btn btn-active";
@@ -408,38 +406,38 @@ function set_listeners() {
             $("#show-past")[0].className = "btn btn-inactive";
         }
         filter_entries();
-    })
+    });
 
     //on click for sort date button
-    $("#sort-date").click(function(ev) {
-        if (current_sort == 'date') {
+    $("#sort-date").click(function() {
+        if (current_sort === 'date') {
             return;
         }
         current_sort = 'date';
         $("#sort-date")[0].className = "btn btn-active";
         $("#sort-category")[0].className = "btn btn-inactive";
         sort_entries('date');
-    })
+    });
 
     //on click for sort category button
-    $("#sort-category").click(function(ev) {
-        if (current_sort == 'category') {
+    $("#sort-category").click(function() {
+        if (current_sort === 'category') {
             return;
         }
         current_sort = 'category';
         $("#sort-category")[0].className = "btn btn-active";
         $("#sort-date")[0].className = "btn btn-inactive";
         sort_entries('category');
-    })
+    });
 
     // set listener for search
-    $("#events-search").on("input", function(e) {
-        if ($(this).data("lastval") != $(this).val()) {
+    $("#events-search").on("input", function() {
+        if ($(this).data("lastval") !== $(this).val()) {
             $(this).data("lastval", $(this).val());
             //change action
-            filters.query = $(this).val()
-            filter_entries()
-        };
+            filters.query = $(this).val();
+            filter_entries();
+        }
     });
 }
 
@@ -450,17 +448,17 @@ function filter_entries() {
     var day = dateObj.getDate();
     var month = dateObj.getMonth();
     var today = new Date(dateObj.getFullYear(), month, day);
-    for (i in curr_entries) {
+    for (var i = 0; i < curr_entries.length; i++) {
         if (!(curr_entries[i].children)) {
             continue;
         }
         var name = curr_entries[i].children[0].innerHTML.toLocaleLowerCase();
         var ev_id = curr_entries[i].id;
-        curr_event = get_event_by_id(ev_id);
+        var curr_event = get_event_by_id(ev_id);
         //if filters.today, check if event time is today, else if hidden show it.
         //this may be overridden by the query filters
         if (filters.today) {
-            if (curr_event["date"].toDateString() != today.toDateString()) {
+            if (curr_event["date"].toDateString() !== today.toDateString()) {
                 curr_entries[i].parentElement.hidden = true;
                 continue;
             }
@@ -481,7 +479,7 @@ function filter_entries() {
 
         if (filters.query) {
             //if query not in entry, hide this li element.
-            if (name.indexOf(filters.query.toLocaleLowerCase()) == -1) {
+            if (name.indexOf(filters.query.toLocaleLowerCase()) === -1) {
                 curr_entries[i].parentElement.hidden = true;
             } else {
                 curr_entries[i].parentElement.hidden = false;
@@ -494,13 +492,13 @@ function filter_entries() {
 function filter_headers() {
     //Now filter out any section headers that have no real rows in them
     var headers = document.getElementsByClassName("header-tr");
-    for (i = 0; i < headers.length; i++) {
+    for (var i = 0; i < headers.length; i++) {
         var curr_header = headers[i];
         var next = curr_header.nextElementSibling;
         //go through all next siblings until they are no longer
         //events or one of them is not hidden 
         var hide = true;
-        while (next.className == "event-tr") {
+        while (next.className === "event-tr") {
             if (!(next.getElementsByClassName('event-entry-container')[0].parentElement.hidden)) {
                 hide = false;
             }
@@ -516,17 +514,17 @@ function filter_headers() {
 function sort_entries(type) {
     //sorts entries by:
     //'category' or 'date'
-    if (type == "category") {
+    if (type === "category") {
         event_data.sort(function(a, b) {
             var textA = a.category.toUpperCase();
             var textB = b.category.toUpperCase();
             return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
         });
 
-    } else if (type == "date") {
+    } else if (type === "date") {
         event_data.sort(function(a, b) {
             var textA = a.date;
-            var textB = b.date
+            var textB = b.date;
             return (textA > textB) ? -1 : (textA < textB) ? 1 : 0;
         });
     }
@@ -537,7 +535,7 @@ function sort_entries(type) {
     populate_list(event_data);
 
     //set table row listeners
-    set_row_click()
+    set_row_click();
 
     //re-apply filter
     filter_entries();
@@ -555,19 +553,16 @@ function coloring(num_colors) {
     var starting_hue = 50;
     var scheme;
     var variation = 'pastel';
+    var num_colors = 4;
 
-    if (num_colors <= 4) {
-        num_colors <= 4;
-        scheme = 'mono';
-    } else if (num_colors <= 12) {
+    if (num_colors <= 12) {
         scheme = 'triade';
-    } else {
-        num_colors <= 16;
+    } else if (num_colors <= 16) {
         scheme = 'tetrade';
     }
 
 
-    scm = new ColorScheme;
+    var scm = new ColorScheme();
     scm.from_hue(starting_hue)
         .scheme(scheme)
         .distance(0.2)
