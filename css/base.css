@@ -44,6 +44,12 @@ a:hover {
     font-size: 1.05em;
     font-family: Roboto Slab;
     letter-spacing: 0.1em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .navbar-default .navbar-nav>li>a:hover {
     /*border-bottom-color: rgb(87, 105, 118);*/
@@ -61,7 +67,7 @@ a:hover {
     
     background: rgb(136, 188, 215);
     width: 100%;
-    padding-top: 60px;
+    padding-top: 35px;
     text-align: center;
     font-size: 1.3em;
 }
@@ -73,13 +79,14 @@ a:hover {
     text-decoration: none;
     border: none !important;
     display: inline-block !important;
-    font-size: 1.4em !important;
+    font-size: 0.9em !important;
     font-weight: 300 !important;
-    font-family: SUNN !important;
+    font-family: PT Sans Narrow !important;
     text-transform: none !important;
     font-variant: small-caps;
-    letter-spacing: 0.05em !important;
+    letter-spacing: -0.05em !important;
     color: rgb(255, 249, 232) !important;
+    margin-left: 0px;
 }
 .logo > a:hover, .logo > a:focus {
     text-decoration: none !important;
@@ -94,11 +101,11 @@ a:hover {
     letter-spacing: 5px;
     padding-top: -10px;
     color: rgba(20, 20, 20, 0.7);
-    font-size: 5em;
-    font-weight: 200;
+    font-size: 2.9em;
+    font-weight: 300;
     margin-top: -10px;
     padding-bottom: 15px !important;
-    font-family: Roboto Slab;
+    font-family: Roboto Slab, sans-serif;
     text-transform: uppercase;
     Font-weight: 200;
 }
