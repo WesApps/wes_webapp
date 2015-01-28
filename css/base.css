@@ -111,6 +111,7 @@ a:hover {
 }
 .row {
     padding-top: 30px;
+    margin-left: 0px !important;
 }
 .box-container {
     border: rgb(226, 93, 64) solid 3px;
@@ -251,9 +252,9 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     text-align: left;
     border-left-style: solid;
     overflow-y: auto;
-    margin-left: 70px;
     padding: 23px;
     border-right-style: solid;
+    margin-left: 70px;
 }
 .light {
     font-weight: 500;
@@ -283,8 +284,8 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     margin-bottom: -5px;
 }
 .list-container {
-    padding: 23px;
     padding-top: 0px;
+    padding: 23px;
 }
 .display-container {
     padding: 23px;
@@ -473,7 +474,6 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         margin-left: 15px !important;
         width: 91%;
         margin-top: 11px !important;
-        ;
     }
     #directory-list {
         padding-top: 0px !important;
@@ -502,6 +502,12 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     .btn {
         font-size: 0.5em !important;
     }
+    #events-container {
+        margin-left: 0px !important;
+    }
+    #films-container {
+        margin-left: 0px !important;
+    }
     .event-entry-container {
         border-left: none !important;
         border-right: none !important;
@@ -521,5 +527,8 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     .header-tr > td {
         padding: 0px 1px 1px 10px !important;
         letter-spacing: 0.1em !important;
+    }
+    .menu-list-container {
+
     }
 }

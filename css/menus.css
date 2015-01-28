@@ -17,6 +17,9 @@ textarea:focus, input[type="search"]:focus {
 li {
     list-style: none;
 }
+#menu-area {
+    padding:0px;
+}
 #menu-container {
     text-align: center;
     font-size: 2em;
@@ -139,10 +142,10 @@ li {
     table-layout: fixed !important;
     float:none !important;
 }
-.menu-break {
-    height: 10px;
-}
+.menu-type {
+    margin-top: 25px;
 
+}
 .meal-title {
     font-weight: 700;
     font-size: 1.4em;

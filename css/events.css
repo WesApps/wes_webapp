@@ -11,6 +11,9 @@ textarea:focus, input[type="search"]:focus {
     box-shadow: none;
     outline: 0 none;
 }
+#events-container {
+    margin-left: -70px;
+}
 #events-row {
     font-size: 2em;
     text-align: center;

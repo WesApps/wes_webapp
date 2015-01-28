@@ -6,6 +6,9 @@
     color: rgb(226, 93, 64);
     padding-top: 0px;
 }
+#films-container {
+    margin-left: -70px;
+}
 #films-list {
     text-align: left;
     padding: 0px;
