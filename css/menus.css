@@ -144,20 +144,21 @@ li {
 }
 .menu-type {
     margin-top: 25px;
-
 }
 .meal-title {
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 1em;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    border-left: 181px solid;
-    border-color: rgba(13, 21, 53, 0.08);
+    border-left: 21px solid;
+    border-color: rgb(238, 92, 92);
     margin-top: 38px;
     padding-left: 11px;
 }
 .category-title {
     text-transform: uppercase;
     margin-bottom: -5px;
-    margin-top: 15px;
+    margin-top: 7px;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
 }

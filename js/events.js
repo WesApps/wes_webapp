@@ -352,7 +352,8 @@ function populate_event_display(d_event) {
     }
 
     //set the class of the current event element in table to active
-    current_event_element.style.background = "rgba(255, 198, 108, 0.51)";
+    current_event_element.style.background = "rgba(238, 92, 92, 0.15)";
+    // current_event_element.style.background = "rgba(238, 92, 92, 0.51);";
 
     previous_selection = current_event_element;
 

@@ -37,7 +37,6 @@ a:hover {
     margin-right: 20px;
     text-decoration: none;
     text-transform: uppercase;
-    color: rgb(86, 96, 99);
     transition: .15s ease-out;
     font-weight: 900;
     padding: 0px 0px;
@@ -50,6 +49,7 @@ a:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    color: rgb(86, 96, 99);
 }
 .navbar-default .navbar-nav>li>a:hover {
     /*border-bottom-color: rgb(87, 105, 118);*/
@@ -67,13 +67,20 @@ a:hover {
     
     background: rgb(136, 188, 215);
     width: 100%;
-    padding-top: 35px;
+    padding-top: 25px;
     text-align: center;
     font-size: 1.3em;
 }
+.mobile-logo {
+    font-family: Plaster;
+    color: rgb(255, 249, 232) !important;
+    font-size: 2em;
+}
 .logo {
-    font-size: 4em;
+    font-size: 3em;
     margin-top: -41px;
+    font-family: Passion One !important;
+    font-family: Plaster !important;
 }
 .logo > a {
     text-decoration: none;
@@ -81,12 +88,14 @@ a:hover {
     display: inline-block !important;
     font-size: 0.9em !important;
     font-weight: 300 !important;
-    font-family: PT Sans Narrow !important;
+    font-family: Passion One !important;
+    font-family: Plaster !important;
     text-transform: none !important;
     font-variant: small-caps;
-    letter-spacing: -0.05em !important;
-    color: rgb(255, 249, 232) !important;
+    letter-spacing: 0.05em !important;
+    color: rgba(255, 249, 232, 0.93) !important;
     margin-left: 0px;
+    margin-top: 40px;
 }
 .logo > a:hover, .logo > a:focus {
     text-decoration: none !important;
@@ -114,7 +123,7 @@ a:hover {
     margin-left: 0px !important;
 }
 .box-container {
-    border: rgb(226, 93, 64) solid 3px;
+    border: rgb(238, 92, 92) solid 3px;
 }
 .navbar-nav {
     margin: 0 auto;
@@ -129,19 +138,19 @@ a:hover {
     max-width: 650px;
     background: rgba(255, 249, 232, 0);
     border-radius: 0px;
-    border-color: rgb(226, 93, 64);
+    border-color: rgb(238, 92, 92);
     border-width: 3px !important;
     box-shadow: none;
     outline: 0 none;
     margin-top: -9px;
-    color: rgb(226, 93, 64);
+    color: rgb(238, 92, 92);
     font-family: PT sans;
     font-weight: 100;
     padding: 0px;
     padding-left: 10px;
 }
 textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
-    border-color: rgb(226, 93, 64) !important;
+    border-color: rgb(238, 92, 92) !important;
     box-shadow: none;
     outline: 0 none;
 }
@@ -225,7 +234,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     font-weight: 500;
     padding-top: 0px;
     margin-top: 0px;
-    color: rgb(226, 93, 64);
+    color: rgb(238, 92, 92);
     font-style: italic;
     display: inline;
 }
@@ -237,7 +246,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     font-size: 0.6em;
     font-style: italic;
     font-weight: 600;
-    padding-top: 4px;
+    padding-top: 14px;
     margin-top: 0px;
 }
 .display-description {
@@ -288,9 +297,8 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     padding: 23px;
 }
 .display-container {
-    padding: 23px;
     padding-bottom: 0px;
-    padding-top: 23px;
+    padding-top: 14px;
 }
 .navbar-default .navbar-toggle {
     border: none;
@@ -317,8 +325,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .navbar-default .navbar-nav>li>a {
         margin-left: 12px !important;
-        margin-right: 12px !important
-        ;
+        margin-right: 12px !important;
     }
 }
 @media (max-width: 875px) {
@@ -433,6 +440,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     #bs-example-navbar-collapse-1 {
         border: none;
+        margin-bottom: 6px;
     }
     .container-fluid {
         overflow: hidden;
@@ -528,7 +536,5 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         padding: 0px 1px 1px 10px !important;
         letter-spacing: 0.1em !important;
     }
-    .menu-list-container {
-
-    }
+    .menu-list-container {}
 }
