@@ -56,6 +56,7 @@ textarea:focus, input[type="search"]:focus {
     padding-right: 5px;
     margin-left: 14px;
     font-weight: 600;
+    opacity: 0.8;
 }
 #events-table-scroll {
     height: 553px;
@@ -69,6 +70,7 @@ textarea:focus, input[type="search"]:focus {
     width: 100%;
 }
 #event-display-time {
+    margin-top: 14px;
     /*margin-top: 14px;*/
 }
 #event-display-link {
@@ -78,13 +80,15 @@ textarea:focus, input[type="search"]:focus {
     -ms-user-select: none;
     user-select: none;
     text-transform: uppercase;
-    letter-spacing: 0.075em;
+    letter-spacing: 0.06em;
     font-weight: 600;
-    padding: 3px;
+    padding: 1.8px;
     background: rgb(218, 218, 218);
     padding-right: 6px;
     padding-left: 6px;
     margin-left: 9px;
+    font-family: Source Sans Pro;
+    font-size: 0.9em;
 }
 #event-display-link:hover {
     background: rgba(238, 92, 92, 0.81);

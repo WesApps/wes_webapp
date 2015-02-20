@@ -32,7 +32,7 @@ li {
     text-align: center;
     color: #49464b;
     font-size: 30px;
-    font-family: Roboto Slab, sans-serif;
+    font-family: Source Sans Pro;
 }
 .entry-name {
     font-size: 1.1em;
@@ -43,7 +43,7 @@ li {
     display: inline;
     float: left;
     font-weight: initial;
-    font-family: Josefin sans;
+    font-family: Source Sans Pro;
 }
 .entry-data {
     display: inline;
@@ -55,7 +55,7 @@ li {
     border-bottom-style: solid;
     border-bottom-width: 1px;
     text-align: right;
-    font-family: Josefin sans;
+    font-family: Source Sans Pro;
 }
 .field-div {
     text-align: left;
@@ -68,16 +68,17 @@ li {
     font-weight: 400;
 }
 .title {
-    font-family: Roboto Slab;
     color: rgb(238, 92, 92);
     font-style: normal;
-    font-size: 1.7em;
-    border-bottom: rgb(238, 92, 92) solid 6px;
+    font-size: 1.6em;
+    border-bottom: rgb(238, 92, 92) solid 2px;
     display: table;
     line-height: 1em;
     margin-bottom: 15px !important;
-    padding-bottom: 3px !important;
-    font-weight: bold;
+    padding-bottom: 4px !important;
+    font-weight: 800;
+    font-family: Source Sans Pro;
+    letter-spacing: 0em;
 }
 #menu-list-container {
     text-align: left;
@@ -88,17 +89,18 @@ li {
 .item-description {
     padding-bottom: 10px;
     line-height: 1.25em;
-    font-size: 0.75em;
-    margin-top: -6px;
+    font-size: 0.65em;
+    margin-top: -2px;
 }
 .item-title {
-    font-weight: bold;
+    font-weight: 600;
     padding-right: 15px;
-    display: inline-block;
-    font-size: 0.9em;
+    font-size: 0.7em;
 }
 .item-price {
-    font-size: 0.9em;
+    font-weight: 400;
+    padding-right: 15px;
+    font-size: 0.7em;
 }
 .name-description {
     font-weight: bold;
@@ -108,7 +110,7 @@ li {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.1em;
     padding: 3px;
     background: rgb(218, 218, 218);
     margin: 9px;
@@ -147,18 +149,22 @@ li {
 }
 .meal-title {
     font-weight: 700;
-    font-size: 1em;
+    font-size: 0.9em;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    border-left: 21px solid;
+    border-left: 4px solid;
     border-color: rgb(238, 92, 92);
     margin-top: 38px;
-    padding-left: 11px;
+    padding-left: 8px;
 }
 .category-title {
-    text-transform: uppercase;
-    margin-bottom: -5px;
+    margin-bottom: 8px;
     margin-top: 7px;
-    font-size: 0.9em;
+    font-size: 0.8em;
     letter-spacing: 0.05em;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: rgb(238, 92, 92);
+    border-bottom: 1px rgb(119, 119, 119) solid;
+    display: inline-block;
 }

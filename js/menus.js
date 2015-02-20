@@ -151,7 +151,7 @@ function process_type2(data, title, id) {
         var item_name_element = document.createElement("span");
         var name = data[i]["name"];
         item_name_element.innerHTML = name;
-        item_name_element.setAttribute("class", "name-description");
+        item_name_element.setAttribute("class", "item-title");
         menu_element.appendChild(item_name_element);
 
         var item_data = data[i]["data"];
