@@ -43,7 +43,7 @@ function adjust_table_heights() {
     } else {
         var viewport_height = $(window).height();
         var element_top = $("#films-table-scroll")[0].getBoundingClientRect().top;
-        var new_height = viewport_height - element_top - 50;
+        var new_height = viewport_height - element_top - 75;
         $("#films-table-scroll").height(new_height);
 
         var target_height = $("#films-list-container").height();

@@ -50,6 +50,7 @@ a:hover {
     padding: 0px 0px;
     font-size: 0.95em;
     font-family: Source Sans Pro;
+    /*font-family: Raleway;*/
     letter-spacing: 0.13em;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -63,7 +64,7 @@ a:hover {
     /*border-bottom-color: rgb(87, 105, 118);*/
     
     border-bottom-width: 10px;
-    color: rgba(255, 249, 232, 0.9);
+    color: rgba(0, 0, 0, 0.4);
 }
 .navbar-default {
     border: none;
@@ -103,7 +104,7 @@ a:hover {
 }
 .logo > a:hover, .logo > a:focus {
     text-decoration: none !important;
-    color: rgba(255, 255, 255, 0.4) !important;
+    color: rgba(0, 0, 0, 0.4) !important;
 }
 .active-nav {
     border-bottom-width: 10px !important;
@@ -258,7 +259,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     margin-top: 0px;
 }
 .display-description {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 0.75em;
     line-height: 1.405em;
     text-align: initial;
@@ -284,13 +285,13 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     text-transform: uppercase;
     font-size: 0.6em;
     padding-top: 4px;
-    font-family: Roboto Slab;
     font-style: italic;
     font-weight: 700;
+    font-family: Source Sans Pro;
 }
 .active-li {} .event-entry-name {
     font-size: 0.7em;
-    font-weight: 600;
+    font-weight: 500;
     font-family: Source Sans Pro;
     margin-bottom: -7px;
     line-height: 1.2em;
@@ -301,7 +302,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     color: rgba(64, 63, 63, 0.86);
     margin-bottom: -5px;
     font-family: Source Sans Pro;
-    font-weight: 400;
+    font-weight: 300;
 }
 .list-container {
     padding: 27px 50px 39px 50px;

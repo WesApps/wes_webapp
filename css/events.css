@@ -1,10 +1,12 @@
 #events-list-heading {
-    font-weight: 400;
+    font-weight: 800;
     font-size: 1.4em;
     text-align: left;
-    font-family: Roboto Slab;
+    font-family: Source Sans Pro;
     color: rgb(238, 92, 92);
     padding-top: 0px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 textarea:focus, input[type="search"]:focus {
     border-color: rgba(255, 83, 83, 0.48039);
@@ -21,8 +23,6 @@ textarea:focus, input[type="search"]:focus {
     padding-right: 0px;
 }
 #events-list-container {
-    padding: 23px;
-    padding-top: 7px;
 }
 #events-list {
     text-align: left;
@@ -36,10 +36,9 @@ textarea:focus, input[type="search"]:focus {
     border-color: rgb(238, 92, 92);
     border-right-style: solid;
     border-left-style: solid;
-    border-bottom-width: 1px;
-    border-right-width: 2px;
-    border-left-width: 4px;
-    border-width: 2px;
+    border-bottom-width: 2px;
+    border-right-width: 6px;
+    border-left-width: 6px;
     overflow-y: hidden;
 }
 .event-entry-container:hover {
@@ -48,15 +47,15 @@ textarea:focus, input[type="search"]:focus {
 }
 .event-entry-category {
     font-size: 0.55em;
-    color: rgb(255, 249, 232);
+    color: rgb(255, 255, 255);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-family: PT sans narrow;
+    font-family: Source Sans Pro;
     margin-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 14px;
-    font-weight: bold;;
+    font-weight: 600;
 }
 #events-table-scroll {
     height: 553px;
@@ -68,6 +67,9 @@ textarea:focus, input[type="search"]:focus {
     border-left-style: solid;
     border-top-style: solid;
     width: 100%;
+}
+#event-display-time {
+    /*margin-top: 14px;*/
 }
 #event-display-link {
     -webkit-touch-callout: none;
@@ -87,7 +89,7 @@ textarea:focus, input[type="search"]:focus {
 #event-display-link:hover {
     background: rgba(238, 92, 92, 0.81);
     color: white;
-}   
+}
 #event-display-description {} #show-div {
     text-align: left;
     margin-top: -18px;
@@ -105,7 +107,7 @@ input {
 .btn {
     color: rgba(89, 69, 69, 0.94);
     font-size: 0.525em;
-    font-weight: 700;
+    font-weight: 500;
     border-style: solid;
     margin-left: 7px;
     border-radius: 31px;
@@ -113,7 +115,7 @@ input {
     padding-right: 9px;
     background: none;
     border-width: 1px;
-    font-family: PT Sans Narrow;
+    font-family: Source Sans Pro;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: -1px;
@@ -121,17 +123,15 @@ input {
     padding-bottom: 1px;
     border-color: rgb(238, 92, 92);
 }
-.btn-inactive:hover {
-    
-}
-.btn-active:hover {
+.btn-inactive:hover {} .btn-active:hover {
     color: rgba(242, 238, 212, 0.78);
     background: rgba(95, 158, 160, 0.67);
 }
 .btn-active {
     background: rgb(95, 158, 160);
     color: rgb(255, 249, 232);
-    border-color: rgb(74, 68, 68) !important;;
+    border-color: rgb(74, 68, 68) !important;
+    ;
 }
 #events-search-holder {
     text-align: left;
@@ -154,8 +154,8 @@ input {
     text-transform: uppercase;
     font-size: 0.6em;
     color: rgb(255, 249, 232);
-    font-family: PT Sans caption;
-    font-weight: 200;
+    font-family: Source Sans Pro;
+    font-weight: 600;
     border-right: rgb(238, 92, 92);
     background: rgb(238, 92, 92);
 }
@@ -222,4 +222,3 @@ input[type=checkbox].add-to-calendar-checkbox {
     background: rgba(238, 92, 92, 0.81);
     color: white;
 }
-
