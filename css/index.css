@@ -1,3 +1,6 @@
+.logo > a {
+    color: rgb(238, 92, 92) !important;
+}
 #about-row {
     margin: auto;
     padding-top: 149px;
@@ -9,8 +12,8 @@ p {
     color: rgb(65, 56, 56);
 }
 .greeting {
-    font-family: Roboto Slab, sans-serif;
-    font-size: 2.9em;
+    font-family: Source Sans Pro;
+    font-size: 3.9em;
     font-weight: 300;
 }
 .intro {

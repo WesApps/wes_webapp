@@ -20,6 +20,7 @@ body {
     height: 100%;
     border-width: 11px;
     color: rgba(91, 91, 91, 0.95);
+    font-family: Source Sans Pro;
 }
 a {
     text-decoration: none;
@@ -58,7 +59,6 @@ a:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: rgb(86, 96, 99);
 }
 .navbar-default .navbar-nav>li>a:hover {
     /*border-bottom-color: rgb(87, 105, 118);*/
@@ -79,7 +79,6 @@ a:hover {
 }
 .mobile-logo {
     font-family: Plaster;
-    color: rgb(255, 249, 232) !important;
     font-size: 2em;
 }
 .logo {
@@ -314,7 +313,6 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     border: none;
 }
 .icon-bar {
-    background-color: rgba(255, 249, 232, 0.9) !important;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background: none !important;
