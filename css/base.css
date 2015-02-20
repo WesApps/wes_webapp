@@ -159,20 +159,20 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     outline: 0 none;
 }
 ::-webkit-input-placeholder {
-    color: rgb(226, 93, 64) !important;
+    color: rgba(238, 92, 92, 1) !important;
 }
 :-moz-placeholder {
     /* Firefox 18- */
     
-    color: rgb(226, 93, 64) !important;
+    color: rgba(238, 92, 92, 1) !important;
 }
 ::-moz-placeholder {
     /* Firefox 19+ */
     
-    color: rgb(226, 93, 64) !important;
+    color: rgba(238, 92, 92, 1) !important;
 }
 :-ms-input-placeholder {
-    color: rgb(226, 93, 64) !important;
+    color: rgba(238, 92, 92, 1) !important;
 }
 .new-cal {
     text-transform: uppercase;

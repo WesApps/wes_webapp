@@ -4,12 +4,13 @@ body{
 #directory-search {
     margin-left: auto;
     margin-right: auto;
-    font-size: 1em;
-    background: rgb(255, 249, 232);
+    font-size: 0.75em;
     padding-left: 15px;
     max-width: 650px;
     margin-top: 20px;
     border-radius: 0px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
 textarea:focus, input[type="search"]:focus {
     outline: 0 none;
@@ -36,7 +37,6 @@ li {
     text-align: left;
     display: inline;
     float: left;
-    font-family: PT sans;
     letter-spacing: 0.04em;
     font-weight: 100;
     font-size: 0.8em;
