@@ -66,6 +66,7 @@ function initialize_filmseries() {
         }
     });
     width = $(window).width();
+
     // hide the film display if mobile
     if (mobile) {
         $('#film-display-container').hide();
@@ -262,7 +263,7 @@ function populate_film_display(film) {
     }
 
     //set the class of the current film element in table to active
-    current_film_element.style.background = "rgb(226,93,64)";
+    current_film_element.style.background = "rgb(238, 92, 92)";
     for (var i = 0; i < current_film_element.childNodes.length; i++) {
         current_film_element.children[i].style.color = "rgb(255, 249, 232)";
     }
