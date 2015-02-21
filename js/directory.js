@@ -42,6 +42,9 @@ function directory_callback(res) {
             var data = raw_data[d];
             var field_li = document.createElement("li");
             var field_title = document.createElement("div");
+            if (d.toLowerCase() === "category") {
+                continue;
+            }
             var field_data = document.createElement("div");
             field_title.setAttribute("class", "field-div");
             field_data.setAttribute("class", "field-data");

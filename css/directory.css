@@ -1,10 +1,10 @@
-body{
+body {
     overflow: scroll;
 }
 #directory-search {
     margin-left: auto;
     margin-right: auto;
-    font-size: 0.75em;
+    font-size: 0.65em;
     padding-left: 15px;
     max-width: 650px;
     margin-top: 20px;
@@ -31,45 +31,49 @@ li {
     padding-left: 0px;
 }
 .entry-name {
-    max-width: 500px;
     /* float: left; */
     
+    letter-spacing: 0.04em;
+    font-weight: 400;
+    font-size: 0.8em;
     text-align: left;
+    max-width: 500px;
     display: inline;
     float: left;
-    letter-spacing: 0.04em;
-    font-weight: 100;
-    font-size: 0.8em;
 }
 .entry-data {
-    display: inline;
     max-width: 500px;
+    display: inline;
+}
+.entry-data > ul {
+    margin-top: -8px;
 }
 .entry-li {
-    border-bottom: rgb(226,93,64) solid 3px;
-    padding-top: 20px;
+    border-bottom: rgb(238, 92, 92) solid 3px;
     padding-bottom: 20px;
-    font-family: Josefin sans;
     border-bottom-style: solid;
+    padding-top: 20px;
     text-align: right;
 }
 .field-div {
-    /* font-size: 1em; */;
-    font-size: 0.75em;
-    font-family: PT sans;
-    font-weight: 600;
+    /* font-size: 1em; */
+    
+    ;
+    font-size: 0.65em;
+    font-weight: 900;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     text-align: left;
     display: inline;
+    color: rgba(119, 119, 119, 0.73);
 }
 .field-data {
     display: inline;
-    font-weight: 400;
-    font-family: PT sans;
+    font-weight: 300;
     font-size: 0.75em;
 }
 .data-hr {
     visibility: hidden;
-    margin-top: -26px;;
+    margin-top: -26px;
+    ;
 }
