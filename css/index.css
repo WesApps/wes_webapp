@@ -1,6 +1,9 @@
 .logo > a {
     color: rgb(238, 92, 92) !important;
 }
+.logo > a:hover {
+    color: red !important;
+}
 #about-row {
     margin: auto;
     padding-top: 149px;

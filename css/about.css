@@ -1,7 +1,29 @@
 #about-row {
     margin: auto;
-    padding-top: 149px;
+    padding-top: 68.9px;
 }
 .centered {
     text-align: center;
+}
+.greeting {
+    font-weight: 800;
+    font-size: 4em;
+    letter-spacing: 0.2em;
+    color: rgb(119, 119, 119);
+    margin-left: auto !important;
+    margin-right: auto;
+    display: table;
+    line-height: 101px;;
+}
+.intro {
+    font-weight: 300;
+}
+.about-text{
+    font-size: 1.7em;
+    margin-top: 40px;
+    font-weight: 300;
+}
+.about-text > b > a {
+    font-weight: 600;
+
 }

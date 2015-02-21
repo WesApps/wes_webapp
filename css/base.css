@@ -2,12 +2,6 @@
     width: 14px;
     height: 14px;
 }
-::-webkit-scrollbar-thumb {
-    height: 6px;
-    border: 4px solid rgba(0, 0, 0, 0);
-    background-clip: padding-box;
-    background-color: rgba(86, 96, 99, 1);
-}
 ::-webkit-scrollbar-button {
     width: 0;
     height: 0;
@@ -31,7 +25,7 @@ a {
 }
 a:hover {
     text-decoration: none;
-    color: red;
+    color: rgb(238, 102, 117);
 }
 @media (min-width: 769px) {
     .container-fluid {
@@ -103,7 +97,7 @@ a:hover {
 }
 .logo > a:hover, .logo > a:focus {
     text-decoration: none !important;
-    color: rgba(0, 0, 0, 0.4) !important;
+    color: rgba(0, 0, 0, 0.4);
 }
 .active-nav {
     border-bottom-width: 10px !important;
@@ -118,9 +112,8 @@ a:hover {
     font-weight: 300;
     margin-top: -10px;
     padding-bottom: 15px !important;
-    font-family: Roboto Slab, sans-serif;
-    text-transform: uppercase;
     Font-weight: 200;
+    text-transform: uppercase;
 }
 .row {
     padding-top: 30px;
@@ -289,7 +282,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     font-family: Source Sans Pro;
 }
 .active-li {} .event-entry-name {
-    font-size: 0.7em;
+    font-size: 0.65em;
     font-weight: 500;
     font-family: Source Sans Pro;
     margin-bottom: -7px;
@@ -438,9 +431,9 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         font-weight: 900 !important;
     }
     .navbar-nav>li {
-        padding-top: 4px;
-        padding-bottom: 5px;
-        font-size: 0.9em;
+        padding-top: 6px;
+        padding-bottom: 9px;
+        font-size: 1.2em;
     }
     .active-li {
         background: none;
@@ -545,4 +538,18 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         letter-spacing: 0.1em !important;
     }
     .menu-list-container {}
+}
+
+
+
+
+
+
+
+
+::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    background-color: rgba(86, 96, 99, 1);
 }
