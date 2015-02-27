@@ -75,7 +75,6 @@ li {
     display: table;
     line-height: 1em;
     margin-bottom: 15px !important;
-    padding-bottom: 4px !important;
     font-weight: 800;
     font-family: Source Sans Pro;
     letter-spacing: 0em;
@@ -88,19 +87,19 @@ li {
 }
 .item-description {
     padding-bottom: 10px;
-    line-height: 1.25em;
-    font-size: 0.65em;
-    margin-top: -2px;
+    line-height: 1.05em;
+    font-size: 0.55em;
+    margin-top: 9px;
 }
 .item-title {
     font-weight: 600;
+    font-size: 0.55em;
     padding-right: 15px;
-    font-size: 0.7em;
 }
 .item-price {
     font-weight: 400;
     padding-right: 15px;
-    font-size: 0.7em;
+    font-size: 0.52em;
 }
 .name-description {
     font-weight: bold;
@@ -139,10 +138,10 @@ li {
     float: right!important;
 }
 .navbar-nav{
-    margin: 0 auto !important;
-    display: table !important;
     table-layout: fixed !important;
-    float:none !important;
+    display: table !important;
+    margin: 0 auto !important;
+    float: none !important;
 }
 .menu-type {
     margin-top: 25px;

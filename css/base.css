@@ -466,7 +466,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         font-size: 2em !important;
         margin: 0px;
         margin-top: 14px;
-        font-weight: 400 !important;
+        padding-bottom: 2px !important;
     }
     #links-section {
         padding-top: 10px;
@@ -553,7 +553,38 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         padding: 0px 1px 1px 10px !important;
         letter-spacing: 0.1em !important;
     }
-    .menu-list-container {}
+    .menu-type > .title {
+        font-size: 0.8em !important;
+    }
+    #menus-nav > li {
+        font-size: .8em;
+        padding-top: 0px !important;
+        margin-bottom: -13px !important;
+    }
+    #menu-list-container {
+        padding-top: 0px !important;
+        margin-top: -7px;
+    }
+    .meal-title {
+        font-size: 0.55em !important;
+        margin-top: 19px !important;
+        margin-bottom: -8px !important;
+    }
+    .category-title {
+        font-size: 0.6em !important;
+        margin-bottom: 0px !important;
+    }
+    .item-title {
+        font-size: 0.55em !important;
+        padding-bottom: 6px;
+        margin-bottom: -10px !important;
+        text-transform: capitalize;
+    }
+    .item-description {
+        font-size: 0.55em !important;
+        margin-top: 6px !important;
+    }
+
 }
 ::-webkit-scrollbar-thumb {
     height: 6px;
