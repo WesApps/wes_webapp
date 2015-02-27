@@ -1,7 +1,12 @@
 $(document).ready(intialize_menus);
+$(window).resize(on_resize);
 
 var menus_container;
 var width;
+
+function on_resize() {
+    adjust_table_heights();
+}
 
 function intialize_menus() {
     menus_container = $("#menu-list-container")[0];
@@ -9,18 +14,10 @@ function intialize_menus() {
 }
 
 function adjust_table_heights() {
-    if (mobile) {
-        $("#events-table-scroll").height("100%");
-        $("#event-display-container").height("100%");
-    } else {
-        var viewport_height = $(window).height();
-        var element_top = $("#events-table-scroll")[0].getBoundingClientRect().top;
-        var new_height = viewport_height - element_top - 75;
-        $("#events-table-scroll").height(new_height);
-
-        var target_height = $("#events-list-container").height();
-        $("#event-display-container").height(target_height);
-    }
+    var viewport_height = $(window).height();
+    var element_top = $("#menu-container")[0].getBoundingClientRect().top;
+    var new_height = viewport_height - element_top - 50;
+    $("#menu-container").height(new_height);
 }
 
 function get_menus() {
@@ -52,6 +49,9 @@ function menu_callback(res) {
     process_latenight(latenight);
     process_weswings(weswings);
     process_redandblack(redandblack);
+
+    //Adjust height of scrolling div
+    adjust_table_heights()
 }
 
 function process_type0(data, title, id) {

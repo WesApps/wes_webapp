@@ -528,7 +528,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         font-size: 0.6em;
     }
     .event-entry-category {
-        font-size: 0.5em !important;
+        font-size: 0.45em !important;
     }
     .header-tr {
         font-size: 0.53em !important;
