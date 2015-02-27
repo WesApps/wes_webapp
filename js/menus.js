@@ -1,10 +1,26 @@
 $(document).ready(intialize_menus);
 
 var menus_container;
+var width;
 
 function intialize_menus() {
     menus_container = $("#menu-list-container")[0];
     get_menus();
+}
+
+function adjust_table_heights() {
+    if (mobile) {
+        $("#events-table-scroll").height("100%");
+        $("#event-display-container").height("100%");
+    } else {
+        var viewport_height = $(window).height();
+        var element_top = $("#events-table-scroll")[0].getBoundingClientRect().top;
+        var new_height = viewport_height - element_top - 75;
+        $("#events-table-scroll").height(new_height);
+
+        var target_height = $("#events-list-container").height();
+        $("#event-display-container").height(target_height);
+    }
 }
 
 function get_menus() {

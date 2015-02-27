@@ -1,13 +1,17 @@
 wes_webapp
 ==========
 
-Web interface for Wesleyan related info
+Web interface for Wesleyan related info.
 
 TODO:
 
+-Set cache headers on host!
+
+-Tighten general style and type 
 -Menus:
-	+do something about the broken scrollspy
+	+make mobile friendly
 -about
-	+add content
--favicon	
--Test, add in low bandwidth/still loading data visuals
+	+flesh out content
+-Logo:
+	-Finalize logo, update favicon	
+-Testing, add in low bandwidth/still loading data visuals
