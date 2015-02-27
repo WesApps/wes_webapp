@@ -46,7 +46,7 @@ textarea:focus, input[type="search"]:focus {
     cursor: pointer;
 }
 .event-entry-category {
-    font-size: 0.55em;
+    font-size: 0.5em;
     color: rgb(255, 255, 255);
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -56,7 +56,7 @@ textarea:focus, input[type="search"]:focus {
     padding-right: 5px;
     margin-left: 14px;
     font-weight: 600;
-    opacity: 0.75;
+    opacity: 0.72;
 }
 #events-table-scroll {
     height: 553px;

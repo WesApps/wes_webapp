@@ -5,15 +5,15 @@
 .centered {
     text-align: center;
 }
-.greeting {
+.about-greeting {
     font-weight: 800;
     font-size: 4em;
     letter-spacing: 0.2em;
     color: rgb(119, 119, 119);
-    margin-left: auto !important;
-    margin-right: auto;
+    line-height: 101px;
     display: table;
-    line-height: 101px;;
+    margin-left: auto !important;
+    margin-right: auto !important;;
 }
 .intro {
     font-weight: 300;

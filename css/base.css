@@ -46,6 +46,7 @@ a:hover {
     font-size: 0.85em;
     font-family: Source Sans Pro;
     /*font-family: Raleway;*/
+    
     letter-spacing: 0.13em;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -305,9 +306,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
 .navbar-default .navbar-toggle {
     border: none;
 }
-.icon-bar {
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+.icon-bar {} .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background: none !important;
 }
 .title-and-search {
@@ -328,8 +327,25 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         margin-left: 12px !important;
         margin-right: 12px !important;
     }
+    .about-text {
+        font-size: 1.5em !important;
+    }
 }
 @media (max-width: 875px) {
+    .about-greeting {
+        font-weight: 100 !important;
+        font-size: 2em !important;
+        letter-spacing: 1.3em !important;
+        margin-top: 0px;
+    }
+    .about-text {
+        font-size: 1.1em !important;
+        font-weight: 300 !important;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: -16px !important;
+        line-height: 1.6em;
+    }
     .navbar-holder {
         padding: 0px;
     }
@@ -539,14 +555,6 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .menu-list-container {}
 }
-
-
-
-
-
-
-
-
 ::-webkit-scrollbar-thumb {
     height: 6px;
     border: 4px solid rgba(0, 0, 0, 0);
