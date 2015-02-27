@@ -14,4 +14,4 @@ TODO:
 	+flesh out content
 -Logo:
 	-Finalize logo, update favicon	
--Testing, add in low bandwidth/still loading data visuals
+-Testing, add in low bandwidth/still loading data visuals 
