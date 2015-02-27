@@ -128,7 +128,7 @@ li {
 #myNavbar {
     padding-bottom: 10px;
 }
-.navbar-nav>li, .navbar-nav {
+#menus-nav > li {
     float: left !important;
 }
 .navbar-nav.navbar-right:last-child {

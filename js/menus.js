@@ -5,18 +5,32 @@ var menus_container;
 var width;
 
 function on_resize() {
+    mobile = is_mobile();
     adjust_table_heights();
 }
 
+function is_mobile() {
+    var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth;
+    return (x < 875);
+}
+
 function intialize_menus() {
+    mobile = is_mobile();
     menus_container = $("#menu-list-container")[0];
     get_menus();
 }
 
 function adjust_table_heights() {
+    var element_height = $("#menu-container").height();
     var viewport_height = $(window).height();
     var element_top = $("#menu-container")[0].getBoundingClientRect().top;
-    var new_height = viewport_height - element_top - 50;
+
+    var bottom_shift_amt = mobile ? 10 : 50;
+    var new_height = viewport_height - element_height - element_top - 10;
     $("#menu-container").height(new_height);
 }
 
@@ -50,8 +64,6 @@ function menu_callback(res) {
     process_weswings(weswings);
     process_redandblack(redandblack);
 
-    //Adjust height of scrolling div
-    adjust_table_heights()
 }
 
 function process_type0(data, title, id) {
@@ -184,6 +196,8 @@ function process_type2(data, title, id) {
         item_info_element.setAttribute("class", "item-description");
         menu_element.appendChild(item_info_element);
     }
+    // Since this is the last to populate, hackily add height adjust here
+    adjust_table_heights()
 }
 
 
