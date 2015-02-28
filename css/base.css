@@ -332,6 +332,20 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
 }
 @media (max-width: 875px) {
+    .entry-name {
+        font-weight: 900 !important;
+    }
+    .entry-data > ul {
+        text-align: left !important;
+        display: inline;
+    }
+    .field-div {
+        display: block !important;
+        margin-bottom: -12px;
+    }
+    .data-hr {
+        height: 0px;
+    }
     .about-greeting {
         font-weight: 100 !important;
         font-size: 2em !important;
@@ -585,7 +599,6 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         font-size: 0.55em !important;
         margin-top: -3px !important;
     }
-
 }
 ::-webkit-scrollbar-thumb {
     height: 6px;
