@@ -409,9 +409,8 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         padding: 0px 5px 0px 5px;
         border: rgba(54, 56, 60, 0.58) solid 1px;
         font-style: normal;
-        font-weight: 100;
+        font-weight: 800;
         border-radius: 200px;
-        font-family: PT Sans;
         font-size: 0.5em;
         color: rgba(54, 56, 60, 0.58);
         cursor: pointer;
