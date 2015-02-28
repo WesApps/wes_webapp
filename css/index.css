@@ -29,6 +29,11 @@ p {
 .centered {
     text-align: center;
 }
+sup {
+    font-size: 0.45em;
+    top: -1em;
+    font-weight: 300;
+}
 hr {
     margin-top: 30px;
     margin-bottom: 30px;
