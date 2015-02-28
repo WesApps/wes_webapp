@@ -554,7 +554,8 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
         letter-spacing: 0.1em !important;
     }
     .menu-type > .title {
-        font-size: 0.8em !important;
+        font-size: 1em !important;
+        margin-bottom: -5px !important;
     }
     #menus-nav > li {
         font-size: .8em;
@@ -582,7 +583,7 @@ textarea:focus, input[type="search"]:focus, input[type="button"]:focus {
     }
     .item-description {
         font-size: 0.55em !important;
-        margin-top: 6px !important;
+        margin-top: -3px !important;
     }
 
 }
